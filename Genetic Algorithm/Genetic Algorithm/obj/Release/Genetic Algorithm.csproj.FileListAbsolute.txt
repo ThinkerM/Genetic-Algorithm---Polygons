@@ -1,0 +1,33 @@
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\Genetic Algorithm.pdb
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\CustomButtons.dll
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\CustomExtensions.dll
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\GroupControls.dll
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\MessageBoxManager.dll
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\MoreLinq.dll
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\Polygons.dll
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\Randomization.dll
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\System.ValueTuple.dll
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\Polygons.pdb
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\CustomButtons.pdb
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\CustomExtensions.pdb
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\CustomExtensions.xml
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\GroupControls.pdb
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\MessageBoxManager.pdb
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\MoreLinq.xml
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\Randomization.pdb
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\Randomization.xml
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\obj\Release\Genetic Algorithm.csprojResolveAssemblyReference.cache
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\obj\Release\Genetic_Algorithm.Forms.ChooseVerticesCountToImportDialog.resources
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\obj\Release\Genetic_Algorithm.Forms.CrossroadForm.resources
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\obj\Release\Genetic_Algorithm.Forms.GaComponentIcon.resources
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\obj\Release\Genetic_Algorithm.Forms.GaViewerForm.resources
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\obj\Release\Genetic_Algorithm.Forms.PopulationGeneratorForm.resources
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\obj\Release\Genetic_Algorithm.Forms.LabeledPolygonImage.resources
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\obj\Release\Genetic_Algorithm.Properties.Resources.resources
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\obj\Release\Genetic Algorithm.csproj.GenerateResource.Cache
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\obj\Release\Genetic Algorithm.pdb
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\Genetic Algorithm.XML
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\Genetic Algorithm.dll.config
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\Genetic Algorithm.dll
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\obj\Release\Genetic Algorithm.dll
+C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\Polygons.xml

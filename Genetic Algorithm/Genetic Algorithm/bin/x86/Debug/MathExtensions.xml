@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MathExtensions</name>
+    </assembly>
+    <members>
+        <member name="T:MathExtensions.Angle">
+            <summary>
+            Normalized representation of an angle (within 0-2π / 0-360°)
+            </summary>
+        </member>
+        <member name="P:MathExtensions.Angle.Degrees">
+            <summary>
+            Representation of angle in degrees
+            </summary>
+        </member>
+        <member name="P:MathExtensions.Angle.Radians">
+            <summary>
+            Representation of angle in radians
+            </summary>
+        </member>
+        <member name="M:MathExtensions.Angle.FromDegrees(System.Int32)">
+            <summary>
+            Construct angle from a value in degrees
+            </summary>
+            <param name="degrees">Degrees representing angle</param>
+            <returns>Angle represented by value</returns>
+        </member>
+        <member name="M:MathExtensions.Angle.FromRadians(System.Double)">
+            <summary>
+            Construct angle from a value in radians
+            </summary>
+            <param name="radians">Radians representing angle</param>
+            <returns>Angle represented by value</returns>
+        </member>
+        <member name="M:MathExtensions.Angle.FlipAgainstYAxis(MathExtensions.Angle)">
+            <summary>
+            Calculate angle mirrored against the vertical axis
+            </summary>
+            <param name="toFlip">Angle to mirror</param>
+            <returns>Mirrored angle</returns>
+        </member>
+        <member name="M:MathExtensions.Angle.Equals(System.Object)">
+            <summary>
+            Determine equality of angle with another object
+            </summary>
+            <param name="other">Object to compare with</param>
+            <returns>True for "Equal", False otherwise</returns>
+        </member>
+        <member name="M:MathExtensions.Angle.Equals(MathExtensions.Angle)">
+            <summary>
+            Determine equality of angle with another angle
+            </summary>
+            <param name="other">Angle to compare with</param>
+            <returns>True for "Equal", False otherwise</returns>
+        </member>
+        <member name="M:MathExtensions.Angle.op_Equality(MathExtensions.Angle,MathExtensions.Angle)">
+            <summary>
+            Determine equality of two angles
+            </summary>
+            <param name="angle1"></param>
+            <param name="angle2"></param>
+            <returns>True if equal, False otherwise</returns>
+        </member>
+        <member name="M:MathExtensions.Angle.op_Inequality(MathExtensions.Angle,MathExtensions.Angle)">
+            <summary>
+            Determine inequality of two angles
+            </summary>
+            <param name="angle1"></param>
+            <param name="angle2"></param>
+            <returns>True if not equal, false if equal</returns>
+        </member>
+        <member name="M:MathExtensions.Angle.op_Addition(MathExtensions.Angle,MathExtensions.Angle)">
+            <summary>
+            Add up two angles
+            </summary>
+            <param name="angle1"></param>
+            <param name="angle2"></param>
+            <returns>Result of adding two angles</returns>
+        </member>
+        <member name="M:MathExtensions.Angle.op_Subtraction(MathExtensions.Angle,MathExtensions.Angle)">
+            <summary>
+            Subtract two angles
+            </summary>
+            <param name="angle1"></param>
+            <param name="angle2"></param>
+            <returns>Result of subtracting two angles</returns>
+        </member>
+        <member name="M:MathExtensions.Angle.GetHashCode">
+            <summary>
+            Get hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="M:MathExtensions.Angle.Normalize(System.Int32)">
+            <summary>
+            Ensure value is 0-360
+            </summary>
+            <param name="degrees">Value to normalize</param>
+        </member>
+        <member name="T:MathExtensions.Geometry">
+            <summary>
+            Provides methods for handling geometry-related problems
+            </summary>
+        </member>
+        <member name="M:MathExtensions.Geometry.RadiansToDegrees(System.Double)">
+            <summary>
+            Convert a value in radians to degrees
+            </summary>
+            <param name="radians">Value in radians to convert</param>
+            <returns>Degrees values</returns>
+        </member>
+        <member name="M:MathExtensions.Geometry.ToDegrees(System.Double)">
+            <summary>
+            Convert value in radians to degrees
+            </summary>
+            <param name="radians">Value in radians to convert</param>
+            <returns>Degrees value</returns>
+        </member>
+        <member name="M:MathExtensions.Geometry.DegreesToRadians(System.Int32)">
+            <summary>
+            Convert a value in degrees to radians
+            </summary>
+            <param name="degrees">Value in degrees to convert</param>
+            <returns>Radians value</returns>
+        </member>
+        <member name="M:MathExtensions.Geometry.ToRadians(System.Int32)">
+            <summary>
+            Convert value in degrees to radians
+            </summary>
+            <param name="degrees">Value in degrees to convert</param>
+            <returns>Value in radians</returns>
+        </member>
+        <member name="M:MathExtensions.Geometry.Distance(System.Drawing.Point,System.Drawing.Point)">
+            <summary>
+            Distance between two points on a 2D plane
+            </summary>
+            <param name="p1">Point 1</param>
+            <param name="p2">Point 2</param>
+            <returns>Euclidean distance between two points</returns>
+        </member>
+        <member name="M:MathExtensions.Geometry.DistanceTo(System.Drawing.Point,System.Drawing.Point)">
+            <summary>
+            Distance to another point on a 2D plane
+            </summary>
+            <param name="origin">Point of origin, this point</param>
+            <param name="other">Point to get distance to</param>
+            <returns>Distance between this and another point</returns>
+        </member>
+        <member name="T:MathExtensions.MathExtensions">
+            <summary>
+            Provides additional methods related to number manipulation
+            </summary>
+        </member>
+        <member name="M:MathExtensions.MathExtensions.Mean(System.Collections.Generic.ICollection{System.Double})">
+            <summary>
+            Arithmetic mean of a set of values
+            </summary>
+            <param name="values">Set of values to compute the mean from</param>
+            <returns>Arithmetic mean of values</returns>
+        </member>
+        <member name="M:MathExtensions.MathExtensions.Mean(System.Collections.Generic.ICollection{System.Int32})">
+            <summary>
+            Arithmetic mean of a set of values
+            </summary>
+            <param name="values">Set of values to compute the mean from</param>
+            <returns>Arithmetic mean of values</returns>
+        </member>
+        <member name="M:MathExtensions.MathExtensions.Mean(System.Double,System.Double)">
+            <summary>
+            Arithmetic mean of two values
+            </summary>
+            <param name="value1">First value to compute mean from</param>
+            <param name="value2">Second value to compute mean from</param>
+            <returns>Mean of both values</returns>
+        </member>
+        <member name="M:MathExtensions.MathExtensions.Mean(System.Int32,System.Int32)">
+            <summary>
+            Arithmetic mean of two values
+            </summary>
+            <param name="value1">First value to compute mean from</param>
+            <param name="value2">Second value to compute mean from</param>
+            <returns>Mean of both values</returns>
+        </member>
+        <member name="M:MathExtensions.MathExtensions.IsNaN(System.Double)">
+            <summary>
+            Checks whether the specified value is not a number (double.NaN)
+            </summary>
+            <param name="value">Value to check</param>
+            <returns>True if value is double.NaN, False otherwise</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Randomization</name>
+    </assembly>
+    <members>
+        <member name="T:Randomization.RandomCharsAndStrings">
+            <summary>
+            Provides static methods for generating random characters and strings of different length
+            </summary>
+        </member>
+        <member name="M:Randomization.RandomCharsAndStrings.RandomLowercaseLetter">
+            <summary>
+            Get a randomly generated lowercase character type
+            </summary>
+            <returns>Character a-z</returns>
+        </member>
+        <member name="M:Randomization.RandomCharsAndStrings.RandomUppercaseLetter">
+            <summary>
+            Get a randomly generated uppercase character type
+            </summary>
+            <returns>Character A-Z</returns>
+        </member>
+        <member name="M:Randomization.RandomCharsAndStrings.RandomLetterString(System.Int32)">
+            <summary>
+            Get a randomly generated string consisting of letters a-z, A-Z
+            </summary>
+            <param name="length">Length of desired result string</param>
+            <returns>Randomly generated string of letters</returns>
+        </member>
+        <member name="M:Randomization.RandomCharsAndStrings.RandomAlphanumericString(System.Int32)">
+            <summary>
+            Get a randomly generated string consisting of numbers 0-9 and letters a-z, A-Z
+            </summary>
+            <param name="length">Length of desired result string</param>
+            <returns>Randomly generated string of letters and numbers</returns>
+        </member>
+        <member name="T:Randomization.RandomColors">
+            <summary>
+            Provides static methods for generating random colors
+            </summary>
+        </member>
+        <member name="M:Randomization.RandomColors.RandomColor">
+            <summary>
+            Get a randomly generated color from the standard spectrum
+            </summary>
+            <returns>One out of approximately 16 million colors on the RGB spectrum</returns>
+        </member>
+    </members>
+</doc>

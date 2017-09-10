@@ -1,0 +1,674 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Genetic Algorithm</name>
+    </assembly>
+    <members>
+        <member name="T:Genetic_Algorithm.Forms.IndividualsOfVertexCountPair">
+            <summary>
+            Structure used to transfer constructor data to <see cref="T:Genetic_Algorithm.Forms.ChooseVerticesCountToImportDialog"/>.
+            <para>Holds information about a group of polygon individuals - the group's vertex count and number of individuals in the group.</para>
+            </summary>
+        </member>
+        <member name="T:Genetic_Algorithm.Forms.ChooseVerticesCountToImportDialog">
+            <summary>
+            Helper dialog form used to select a single group of individuals with a uniform vertex count
+            </summary>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.ChooseVerticesCountToImportDialog.#ctor(System.Collections.Generic.List{Genetic_Algorithm.Forms.IndividualsOfVertexCountPair})">
+            <summary>
+            Creates a dialog window asking the user to select one of multiple groups
+            </summary>
+            <param name="possibleCountPairs">All possible groups to be chosen from</param>
+        </member>
+        <member name="P:Genetic_Algorithm.Forms.ChooseVerticesCountToImportDialog.ChosenVertexCount">
+            <summary>
+            Return value of the dialog
+            </summary>
+        </member>
+        <member name="F:Genetic_Algorithm.Forms.ChooseVerticesCountToImportDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.ChooseVerticesCountToImportDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.ChooseVerticesCountToImportDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Genetic_Algorithm.Forms.CrossroadForm">
+            <summary>
+            Serves as a central form for the genetic algorithm - grants access to every important component of the application.
+            Only one instance of this form can be run at once.
+            </summary>
+        </member>
+        <member name="P:Genetic_Algorithm.Forms.CrossroadForm.Instance">
+            <summary>
+            Access an instance of CrossroadForm
+            </summary>
+        </member>
+        <member name="F:Genetic_Algorithm.Forms.CrossroadForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.CrossroadForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.CrossroadForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Genetic_Algorithm.Forms.GaComponentIcon.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.GaComponentIcon.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.GaComponentIcon.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Genetic_Algorithm.Forms.GaViewerForm">
+            <summary>
+            Visualization and customization of a Genetic algorithm with Polygons.
+            </summary>
+            <remarks>
+            Provides following features (among others):
+            <list type="bullet">
+                <item><description>Import previously created individuals into a GA's initial population</description></item>
+                <item><description>Modify parameters of the genetic algorithm</description></item>
+                <item><description>Change frequency of generations in the GA to be viewed</description></item>
+                <item><description>Change frequency of generations to be saved during the run of the GA</description></item>
+                <item><description>View generated populations and change basic properties of the images</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.GaViewerForm.#ctor(System.Collections.Generic.List{Genetic_Algorithm.GA.Generics.IFitnessCalculator{Genetic_Algorithm.GA.Polygon_based.PolygonIndividual,Genetic_Algorithm.GA.Polygon_based.IPolygonGene}})">
+            <summary>
+            Creates an instance of a form for visualizing and customizing the run of a Genetic algorithm for Polygons
+            </summary>
+            <param name="availableFitnessCalculators">All Fitness calculators which the form can load into its options</param>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.GaViewerForm.OnGaGenerationComplete(Genetic_Algorithm.GA.Generics.GaEventArgs{Genetic_Algorithm.GA.Polygon_based.PolygonIndividual,Genetic_Algorithm.GA.Polygon_based.IPolygonGene})">
+            <summary>
+            Process the event of a generation being finished from the underlying <see cref="T:Genetic_Algorithm.GA.Generics.GeneticAlgorithm`2"/> 
+            </summary>
+            <param name="e"><see cref="T:Genetic_Algorithm.GA.Generics.GaEventArgs`2"/> holding information about the finished generation</param>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.GaViewerForm.OnGaInitialised(Genetic_Algorithm.GA.Generics.GaEventArgs{Genetic_Algorithm.GA.Polygon_based.PolygonIndividual,Genetic_Algorithm.GA.Polygon_based.IPolygonGene})">
+            <summary>
+            Process the event of the underlying <see cref="T:Genetic_Algorithm.GA.Generics.GaEventArgs`2"/> having been initialised
+            </summary>
+            <param name="e"><see cref="T:Genetic_Algorithm.GA.Generics.GaEventArgs`2"/> holding information about the initial generation</param>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.GaViewerForm.ResolveDisplayedVertexCount">
+            <summary>
+            Evaluates number of vertices of display population,
+            current vertex count value specified in settings and adjusts either of them based on user's decision
+            </summary>
+            <remarks>
+            <list type="bullet">   
+                <item><see cref="F:System.Windows.Forms.DialogResult.Yes"/> to remove displayed population</item>
+                <item><see cref="F:System.Windows.Forms.DialogResult.No"/> to keep current displayed population and change settings</item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.GaViewerForm.ResolveDisplayedPopulationUniformity">
+            <summary>
+            Evaluates all sets of different vertex counts in current display population and ensures that only a single set of the same vertex count remains
+            </summary>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.GaViewerForm.ProcessDialogKey(System.Windows.Forms.Keys)">
+            <summary>
+            Safely close form on ESC press
+            </summary>
+            <param name="keyData"></param>
+            <returns>True to close form, False otherwise</returns>
+        </member>
+        <member name="F:Genetic_Algorithm.Forms.GaViewerForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.GaViewerForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.GaViewerForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Genetic_Algorithm.Forms.PopulationGeneratorForm">
+            <summary>
+            Management of multiple Genetic algorithm polygon individuals
+            </summary>
+            <remarks>
+            Provides following features (among others):
+            <list type="bullet">
+                <item><description>Import previously created shapes</description></item>
+                <item><description>Manage saved shapes in larger quantities</description></item>
+                <item><description>Sort viewed images by their fitness</description></item>
+                <item><description>Change basic properties of the images</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.PopulationGeneratorForm.#ctor">
+            <summary>
+            Creates a population management form for Genetic algorithm
+            </summary>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.PopulationGeneratorForm.ProcessDialogKey(System.Windows.Forms.Keys)">
+            <summary>
+            Safely close form on ESC press
+            </summary>
+            <param name="keyData"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Genetic_Algorithm.Forms.PopulationGeneratorForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.PopulationGeneratorForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.PopulationGeneratorForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Genetic_Algorithm.Forms.LabeledPolygonImage">
+            <summary>
+            Control containing a picture of a polygon, an optional description tag and a selection checkbox which appears when mouse-hovered over
+            </summary>
+        </member>
+        <member name="P:Genetic_Algorithm.Forms.LabeledPolygonImage.SavedPolygon">
+            <summary>
+            Polygon assigned to the image
+            </summary>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.LabeledPolygonImage.#ctor(Polygons.Polygon,System.String,System.Boolean)">
+            <summary>
+            Control containing a picturebox for a polygon picture, a selection checkbox and a custom description label
+            </summary>
+            <param name="assignedPolygon">Polygon to draw in a picturebox</param>
+            <param name="description">Optional description tag to inclue with the picture</param>
+            <param name="enableSelectionCheckbox">Whether selection checkbox should become functional (and visible)</param>
+        </member>
+        <member name="P:Genetic_Algorithm.Forms.LabeledPolygonImage.ImageHeight">
+            <summary>
+            Height of the image part of the control
+            </summary>
+        </member>
+        <member name="P:Genetic_Algorithm.Forms.LabeledPolygonImage.ImageWidth">
+            <summary>
+            Width of the image part of the control
+            </summary>
+        </member>
+        <member name="P:Genetic_Algorithm.Forms.LabeledPolygonImage.PictureBox">
+            <summary>
+            Handle of the picturebox of the control
+            </summary>
+        </member>
+        <member name="P:Genetic_Algorithm.Forms.LabeledPolygonImage.Selected">
+            <summary>
+            Indicates whether the control's selection box is checked
+            </summary>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.LabeledPolygonImage.Select">
+            <summary>
+            Change state of SelectionCheckbox to true
+            </summary>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.LabeledPolygonImage.Deselect">
+            <summary>
+            Change state of SelectionCheckbox to false
+            </summary>
+        </member>
+        <member name="P:Genetic_Algorithm.Forms.LabeledPolygonImage.Description">
+            <summary>
+            Optional description tag of the image
+            </summary>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.LabeledPolygonImage.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Redraw the control
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="E:Genetic_Algorithm.Forms.LabeledPolygonImage.LabeledImageMouseRightClicked">
+            <summary>
+            Mouse right-click occured anywhere on the control
+            </summary>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.LabeledPolygonImage.OnRightMouseClicked(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Right mouse-click occured
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="F:Genetic_Algorithm.Forms.LabeledPolygonImage.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.LabeledPolygonImage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Genetic_Algorithm.Forms.LabeledPolygonImage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Genetic_Algorithm.GA.Generics.GaEventArgs`2">
+            <summary>
+            Store relevant information for genetic algoritms to be passed for Ga event handlers
+            </summary>
+            <typeparam name="TIndividual">Type of the used <see cref="T:Genetic_Algorithm.GA.Generics.IIndividual`1"/> in the event population</typeparam>
+            <typeparam name="TGene">Type of the <see cref="T:Genetic_Algorithm.GA.Generics.IGene"/> in the event population</typeparam>
+        </member>
+        <member name="P:Genetic_Algorithm.GA.Generics.GaEventArgs`2.SavedPopulation">
+            <summary>
+            A collection of individuals with additional information about their generation's number within the running GA and the best individual within the population
+            </summary>
+        </member>
+        <member name="M:Genetic_Algorithm.GA.Generics.GaEventArgs`2.#ctor(Genetic_Algorithm.GA.Generics.Population{`0,`1},System.Int32)">
+            <summary>
+            Create a <see cref="T:Genetic_Algorithm.GA.Generics.GaEventArgs`2"/> instance
+            </summary>
+            <param name="eventPopulation">Current generation for the event</param>
+            <param name="populationNumber">Current number of the generation</param>
+        </member>
+        <member name="T:Genetic_Algorithm.GA.Generics.GeneticAlgorithm`2">
+            <summary>
+            Main driver class to handle logic of the genetic algorithm
+            </summary>
+            <typeparam name="TIndividual"></typeparam>
+            <typeparam name="TGene"></typeparam>
+        </member>
+        <member name="F:Genetic_Algorithm.GA.Generics.GeneticAlgorithm`2.adapter">
+            <summary>
+            Handles logic of breeding, selecting, mutating, etc.
+            </summary>
+        </member>
+        <member name="M:Genetic_Algorithm.GA.Generics.GeneticAlgorithm`2.#ctor(Genetic_Algorithm.GA.Generics.IGeneticAlgorithmAdapter{`0,`1},System.Int32)">
+            <summary>
+            Creates an instance of GA with a random initial population sample
+            </summary>
+            <param name="adapter">GA Adapter to be used by the algorithm</param>
+            <param name="desiredSize"></param>
+        </member>
+        <member name="M:Genetic_Algorithm.GA.Generics.GeneticAlgorithm`2.#ctor(Genetic_Algorithm.GA.Generics.IGeneticAlgorithmAdapter{`0,`1},System.Collections.Generic.ICollection{`0},System.Int32)">
+            <summary>
+            Creates an instance of GA whose initial population contains certain individuals 
+            (+ additional random individuals if desired population size is larger than number of defined ones)
+            </summary>
+            <param name="adapter">GA Adapter to be used by the algorithm</param>
+            <param name="include">Set of individuals to be included in the initial population</param>
+            <param name="desiredSize"></param>
+        </member>
+        <member name="M:Genetic_Algorithm.GA.Generics.GeneticAlgorithm`2.RunGenerations(System.Int32)">
+            <summary>
+            Perform necessary logic on a specified number of generations, then pause
+            </summary>
+            <param name="n">Number of generations to run</param>
+        </member>
+        <member name="M:Genetic_Algorithm.GA.Generics.GeneticAlgorithm`2.OnGenerationComplete(Genetic_Algorithm.GA.Generics.GaEventArgs{`0,`1})">
+            <summary>
+            Invokes the <see cref="E:Genetic_Algorithm.GA.Generics.GeneticAlgorithm`2.GenerationComplete"/> event
+            </summary>
+            <param name="ge">Information about the event population</param>
+        </member>
+        <member name="E:Genetic_Algorithm.GA.Generics.GeneticAlgorithm`2.Initialised">
+            <summary>
+            Raised when a <see cref="T:Genetic_Algorithm.GA.Generics.GeneticAlgorithm`2"/> finishes its construction and initialisation
+            </summary>
+        </member>
+        <member name="T:Genetic_Algorithm.GA.Generics.GeneticAlgorithmAdapter`2">
+            <summary>
+            Provides methods for manipulating populations in GA to produce new generations
+            </summary>
+            <typeparam name="TIndividual">Class implementing GA Individual</typeparam>
+            <typeparam name="TGene">Class implementing GA IGene</typeparam>
+        </member>
+        <member name="T:Genetic_Algorithm.GA.Generics.IFitnessCalculator`2">
+            <summary>
+            Evaluates <see cref="T:Genetic_Algorithm.GA.Generics.IIndividual`1"/>s and sets + returns their calculated fitness score
+            </summary>
+            <typeparam name="TIndividual"></typeparam>
+            <typeparam name="TGene"></typeparam>
+        </member>
+        <member name="M:Genetic_Algorithm.GA.Generics.IFitnessCalculator`2.IndividualFitness(`0)">
+            <summary>
+            Calculate fitness value for the whole individual
+            </summary>
+            <param name="individual">GA Individual to calculate for</param>
+            <returns>Fitness score</returns>
+        </member>
+        <member name="P:Genetic_Algorithm.GA.Generics.IFitnessCalculator`2.Name">
+            <summary>
+            Name of the calculator to be used in calculators selection (improved readability)
+            </summary>
+        </member>
+        <member name="T:Genetic_Algorithm.GA.Generics.IGene">
+            <summary>
+            Stores an encoded representation of any trait which can be mutated
+            </summary>
+        </member>
+        <member name="M:Genetic_Algorithm.GA.Generics.IGene.Mutate">
+            <summary>
+            Change encoded values of the gene
+            </summary>
+        </member>
+        <member name="T:Genetic_Algorithm.GA.Generics.IGene`1">
+            <summary>
+            Represents GA Gene with a specified encoded object
+            </summary>
+            <typeparam name="TEncoded">Encoded object type</typeparam>
+        </member>
+        <member name="M:Genetic_Algorithm.GA.Generics.IGene`1.Decode">
+            <summary>
+            Revert gene back into the object it is encoding
+            </summary>
+            <returns>Object which was encoded in the gene</returns>
+        </member>
+        <member name="T:Genetic_Algorithm.GA.Generics.IGeneticAlgorithmAdapter`2">
+            <summary>
+            Provides methods for manipulating populations in GA to produce new generations
+            </summary>
+            <typeparam name="TIndividual">Class implementing GA Individual</typeparam>
+            <typeparam name="TGene">Class implementing GA IGene</typeparam>
+        </member>
+        <member name="M:Genetic_Algorithm.GA.Generics.IGeneticAlgorithmAdapter`2.SelectForRouletteBreeding(Genetic_Algorithm.GA.Generics.Population{`0,`1},`0)">
+            <summary>
+            Chooses an individual for further reproduction based on roulette-rules
+            </summary>
+            <param name="sourcePopulation">Population to choose from</param>
+            <param name="forbiddenForBreeding"><para>Individuals which cannot be selected for breeding.</para>
+            Use primarily if you want to prevent an individual from breeding with itself</param>
+            <returns>Selected individual</returns>
+        </member>
+        <member name="M:Genetic_Algorithm.GA.Generics.IGeneticAlgorithmAdapter`2.SelectSteadyStateSurvivors(Genetic_Algorithm.GA.Generics.Population{`0,`1},System.Double,System.Boolean)">
+            <summary>
+            Selects fittest part of the population to transfer into the next generation
+            </summary>
+            <param name="sourcePopulation">Population to choose from</param>
+            <param name="survivalRatio">Proportion of individuals to keep alive</param>
+            <param name="elitism">Indicates whether elitism is on/off</param>
+            <returns></returns>
+        </member>
+        <member name="M:Genetic_Algorithm.GA.Generics.IGeneticAlgorithmAdapter`2.CrossOver(`0,`0)">
+            <summary>
+            Creates a new child from the genomes of two parents
+            </summary>
+            <param name="parent1">First parent to cross over</param>
+            <param name="parent2">Second parent to cross over</param>
+            <returns>Crossed over child</returns>
+        </member>
+        <member name="M:Genetic_Algorithm.GA.Generics.IGeneticAlgorithmAdapter`2.CrossoverShouldOccur(System.Double)">
+            <summary>
+            Determines whether a crossover of genomes between individuals should occur based on crossover probability
+            </summary>
+            <param name="crossoverProbability">Percentage value indicating how likely crossover should be to occur</param>
+            <returns>True to crossover, False to forbid crossover</returns>
+        </member>
+        <member name="M:Genetic_Algorithm.GA.Generics.IGeneticAlgorithmAdapter`2.GetEliteIndividual(Genetic_Algorithm.GA.Generics.Population{`0,`1})">
+            <summary>
+            Find the fittest individual and set its property to Elite
+            </summary>
+            <param name="population">Population to search in</param>
+        </member>
+        <member name="M:Genetic_Algorithm.GA.Generics.IGeneticAlgorithmAdapter`2.Mutate(`0,System.Double)">
+            <summary>
+            Invoke mutation on an individual
+            </summary>
+            <param name="individual"></param>
+            <param name="mutationProbability"></param>
+        </member>
+        <member name="M:Genetic_Algorithm.GA.Generics.IGeneticAlgorithmAdapter`2.MutatePopulation(Genetic_Algorithm.GA.Generics.Population{`0,`1},System.Double)">
+            <summary>
+            Invoke mutation on every non-elite member of population
+            </summary>
+            <param name="population">Population to perform mutation on</param>
+            <param name="mutationProbability"></param>
+        </member>
+        <member name="M:Genetic_Algorithm.GA.Generics.IGeneticAlgorithmAdapter`2.MutationShouldOccur(`0)">
+            <summary>
+            Determines whether individual is allowed to mutate based on its Elite property
+            </summary>
+            <param name="individual">Subject of decision</param>
+            <returns>True to mutate, False not to mutate</returns>
+        </member>
+        <member name="T:Genetic_Algorithm.GA.Generics.SavedNumberedPopulation`2">
+            <summary>
+            Extended population with additional information about its number as a generation in GA and the highest fitness value achieved
+            </summary>
+            <typeparam name="TIndividual">Type of <see cref="T:Genetic_Algorithm.GA.Generics.IIndividual`1"/> in the population</typeparam>
+            <typeparam name="TGene">Type of <see cref="T:Genetic_Algorithm.GA.Generics.IGene"/> in the population</typeparam>
+        </member>
+        <member name="P:Genetic_Algorithm.GA.Generics.SavedNumberedPopulation`2.Number">
+            <summary>
+            Ordinal number of the generation stored in the population
+            </summary>
+        </member>
+        <member name="M:Genetic_Algorithm.GA.Generics.SavedNumberedPopulation`2.#ctor(Genetic_Algorithm.GA.Generics.Population{`0,`1},System.Int32)">
+            <summary>
+            Create a population with additional GA information
+            </summary>
+            <param name="population">Individuals to store</param>
+            <param name="number">N-th generation in a GA</param>
+        </member>
+        <member name="M:Genetic_Algorithm.GA.Generics.SavedNumberedPopulation`2.TrySetFitness(System.Double)">
+            <summary>
+            Only allows to set <see cref="P:Genetic_Algorithm.GA.Generics.SavedNumberedPopulation`2.TopFitness"/> if it hasn't been initialised yet (in case top fitness couldn't be acquired during construction)
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="T:Genetic_Algorithm.GA.Generics.Population`2">
+            <summary>
+            Collection of individuals in a genetic algorithm
+            </summary>
+            <typeparam name="TIndividual">Type of the individual in the population</typeparam>
+            <typeparam name="TGene">Type of the gene encoded in individual's genome</typeparam>
+        </member>
+        <member name="P:Genetic_Algorithm.GA.Generics.Population`2.DesiredSize">
+            <summary>
+            Number of individuals in population which need to be achieved for a complete generation
+            </summary>
+        </member>
+        <member name="M:Genetic_Algorithm.GA.Generics.Population`2.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Construct a population of random individuals
+            </summary>
+            <param name="randomIndividuals">Number of individuals to add</param>
+            <param name="desiredSize">Size of the population which needs to be reached to be considered "adequately filled"</param>
+        </member>
+        <member name="M:Genetic_Algorithm.GA.Generics.Population`2.#ctor(Genetic_Algorithm.GA.Generics.Population{`0,`1})">
+            <summary>
+            Construct a new population as a copy of another population
+            </summary>
+            <param name="template">Population to copy</param>
+        </member>
+        <member name="T:Genetic_Algorithm.GA.Generics.IIndividual`1">
+            <summary>
+            Represents an organism/individual in a genetic algorithm
+            </summary>
+        </member>
+        <member name="P:Genetic_Algorithm.GA.Generics.IIndividual`1.Name">
+            <summary>
+            String identifier for the specific individual
+            </summary>
+        </member>
+        <member name="P:Genetic_Algorithm.GA.Generics.IIndividual`1.IsElite">
+            <summary>
+            Indicates whether the individual is currently the elite member of its generation.
+            Elite individuals will be copied over to the next generation without any mutations.
+            </summary>
+        </member>
+        <member name="M:Genetic_Algorithm.GA.Generics.IIndividual`1.Mutate(System.Double)">
+            <summary>
+            Allow for random alteration of the individual's genome
+            </summary>
+            <param name="mutationProbability">Likelihood for every single gene to mutate</param>
+        </member>
+        <member name="T:Genetic_Algorithm.GA.Polygon_based.FitnessCalculators.BasicSymmetryFitnessCalculator">
+            <summary>
+            For every <see cref="T:Genetic_Algorithm.GA.Polygon_based.IPolygonGene"/>, finds its closest Y axis mirrored relative and decreases fitness based on the distance difference from an ideal relative's position
+            </summary>
+        </member>
+        <member name="T:Genetic_Algorithm.GA.Polygon_based.FitnessCalculators.SymmetryIntersectionPenaltyFitnessCalculator">
+            <summary>
+            <seealso cref="T:Genetic_Algorithm.GA.Polygon_based.FitnessCalculators.BasicSymmetryFitnessCalculator"/>
+            Additonally reduces fitness for every intersecting edge pair in the polygon
+            </summary>
+        </member>
+        <member name="T:Genetic_Algorithm.GA.Polygon_based.FitnessCalculators.PolygonfitnessCalculators">
+            <summary>
+            Provides a centralised access to fitness calculators intended for <see cref="T:Genetic_Algorithm.GA.Polygon_based.PolygonIndividual"/>s
+            </summary>
+        </member>
+        <member name="T:Genetic_Algorithm.GA.Polygon_based.IPolygonGene">
+            <summary>
+            Gene which can be included in a <see cref="T:Genetic_Algorithm.GA.Polygon_based.PolygonIndividual"/>'s genome
+            </summary>
+        </member>
+        <member name="P:Genetic_Algorithm.GA.Polygon_based.IPolygonGene.X">
+            <summary>
+            X coordinate of the gene's encoded point
+            </summary>
+        </member>
+        <member name="P:Genetic_Algorithm.GA.Polygon_based.IPolygonGene.Y">
+            <summary>
+            Y coordinate of the gene's encoded point
+            </summary>
+        </member>
+        <member name="P:Genetic_Algorithm.GA.Polygon_based.IPolygonGene.DistanceFromCentroid">
+            <summary>
+            Distance between the point encoded by the gene and the whole individual's (polygon's) centroid
+            </summary>
+        </member>
+        <member name="P:Genetic_Algorithm.GA.Polygon_based.IPolygonGene.AngleRelativeToCentroid">
+            <summary>
+            Represents angle on a circle relative to whole individual's centroid.
+            0° to the right, 90° up, 180° left, 270° down
+            </summary>
+        </member>
+        <member name="M:Genetic_Algorithm.GA.Polygon_based.IPolygonGene.UpdateAngularRepresentation(System.Drawing.Point)">
+            <summary>
+            Rebuild DistanceFromCentroid and AngleRelativeToCentroid properties based on a new centroid point and current X,Y coordinates
+            </summary>
+            <param name="centroid">New centroid to update according to</param>
+        </member>
+        <member name="T:Genetic_Algorithm.GA.Polygon_based.PolygonAdapter">
+            <summary>
+            <see cref="T:Genetic_Algorithm.GA.Generics.GeneticAlgorithmAdapter`2"/> which contains the logic for crossover of the <see cref="T:Genetic_Algorithm.GA.Polygon_based.PolygonIndividual"/>s
+            </summary>
+        </member>
+        <member name="T:Genetic_Algorithm.GA.Polygon_based.SimplePolygonGene">
+            <summary>
+            Represents genetic information about one vertex of a polygon
+            </summary>
+        </member>
+        <member name="P:Genetic_Algorithm.GA.Polygon_based.SimplePolygonGene.AngleRelativeToCentroid">
+            <summary>
+            Represents angle on a circle relative to whole individual's centroid.
+            0° to the right, 90° up, 180° left, 270° down
+            </summary>
+        </member>
+        <member name="T:Genetic_Algorithm.GA.Polygon_based.PolygonIndividual">
+            <summary>
+            <see cref="T:Genetic_Algorithm.GA.Generics.IIndividual`1"/> which introduces the structure of <see cref="T:Polygons.IPolygon"/> into a genetic algorithm
+            </summary>
+        </member>
+        <member name="T:Genetic_Algorithm.GA.SelectionType">
+            <summary>
+            Defines different methods of selecting individuals to advance into further generations
+            </summary>
+        </member>
+        <member name="F:Genetic_Algorithm.GA.SelectionType.Roulette">
+            <summary>
+            Every individual's fitness proportionally increases its chance to be selected.
+            </summary>
+            <remarks>
+            If an individua's fitness makes up 30% of the whole population's summed scores, the individual has 30% chance to be selected.
+            </remarks>
+        </member>
+        <member name="F:Genetic_Algorithm.GA.SelectionType.SteadyState">
+            <summary>
+            Larger group of individuals is selected to survive into next generation.
+            </summary>
+            <remarks>
+            Certain percentage of individuals gets "killed", the remainder continues (and possibly gets mutated) 
+            and creates new offspring to fill the gap after the killed individuals.
+            </remarks>
+        </member>
+        <member name="T:Genetic_Algorithm.GA.SettingsAccessor">
+            <summary>
+            Serves as an intermediary to the Genetic Algorithm's GaSettings.Default
+            </summary>
+        </member>
+        <member name="T:Genetic_Algorithm.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Genetic_Algorithm.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Genetic_Algorithm.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Genetic_Algorithm.Properties.Resources.evolution">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Genetic_Algorithm.Properties.Resources.multiplePolygons">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Genetic_Algorithm.Properties.Resources.singlePolygon">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+    </members>
+</doc>
