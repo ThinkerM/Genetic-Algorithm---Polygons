@@ -1,6 +1,0 @@
-var class_genetic___algorithm_1_1_g_a_1_1_polygon__based_1_1_fitness_calculators_1_1_symmetry_intersfa9211a8c0a9bcbe90efc438ae9654b4 =
-[
-    [ "IndividualFitness", "class_genetic___algorithm_1_1_g_a_1_1_polygon__based_1_1_fitness_calculators_1_1_symmetry_intersfa9211a8c0a9bcbe90efc438ae9654b4.html#aa4dbc63d520f64e249ee2454fc6b437e", null ],
-    [ "ToString", "class_genetic___algorithm_1_1_g_a_1_1_polygon__based_1_1_fitness_calculators_1_1_symmetry_intersfa9211a8c0a9bcbe90efc438ae9654b4.html#ab1dcb728e8242616105828089a2e2e78", null ],
-    [ "Name", "class_genetic___algorithm_1_1_g_a_1_1_polygon__based_1_1_fitness_calculators_1_1_symmetry_intersfa9211a8c0a9bcbe90efc438ae9654b4.html#a43f395937ad5fbf6287c39d35b562977", null ]
-];

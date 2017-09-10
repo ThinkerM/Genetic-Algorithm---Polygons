@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['chooseverticescounttoimportdialog',['ChooseVerticesCountToImportDialog',['../class_genetic___algorithm_1_1_forms_1_1_choose_vertices_count_to_import_dialog.html#a44846a1ec576d20d346a757652a60cb0',1,'Genetic_Algorithm::Forms::ChooseVerticesCountToImportDialog']]],
   ['clear',['Clear',['../class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_population.html#ad59b0799c6a6f2e35cf929db7fcfc065',1,'Genetic_Algorithm::GA::Generics::Population']]],
-  ['compare',['Compare',['../class_genetic___algorithm_1_1_g_a_1_1_polygon__based_1_1_fitness_calculators_1_1_basic_symmetry_fitness_calculator.html#aafc1570f82b353d6870ddbd9e38dbe42',1,'Genetic_Algorithm.GA.Polygon_based.FitnessCalculators.BasicSymmetryFitnessCalculator.Compare()'],['../class_genetic___algorithm_1_1_g_a_1_1_polygon__based_1_1_fitness_calculators_1_1_symmetry_intersfa9211a8c0a9bcbe90efc438ae9654b4.html#a5e93b6e0d65c843cecba971bd3928eea',1,'Genetic_Algorithm.GA.Polygon_based.FitnessCalculators.SymmetryIntersectionPenaltyFitnessCalculator.Compare()']]],
+  ['compare',['Compare',['../class_genetic___algorithm_1_1_g_a_1_1_polygon__based_1_1_fitness_calculators_1_1_basic_symmetry_fitness_calculator.html#aafc1570f82b353d6870ddbd9e38dbe42',1,'Genetic_Algorithm::GA::Polygon_based::FitnessCalculators::BasicSymmetryFitnessCalculator']]],
   ['contains',['Contains',['../class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_population.html#af97a133a306007b14df8f03ad90c7887',1,'Genetic_Algorithm::GA::Generics::Population']]],
   ['copy',['Copy',['../class_polygons_1_1_polygon.html#a5cbc98bcf945fc3b5ad6a40cfdd17f47',1,'Polygons::Polygon']]],
   ['copyto',['CopyTo',['../class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_population.html#a21e4f5506cc63a0af5f4abbc67897503',1,'Genetic_Algorithm::GA::Generics::Population']]],

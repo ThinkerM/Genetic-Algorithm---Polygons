@@ -26,20 +26,6 @@ namespace Genetic_Algorithm.GA.Polygon_based.FitnessCalculators
             individual.Fitness = result;
             return individual.Fitness;
         }
-
-        private double GeneFitness(IPolygonGene evaluatedGene, PolygonIndividual individual)
-        {
-            Point centroid = individual.Polygon.Centroid;
-            if (evaluatedGene.X == centroid.X) { return 0; } //points directly on symmetry axis don't need to look for mirrored relatives
-
-            Point perfectRelative = TheoreticalPerfectlyMirroredRelative(evaluatedGene, centroid);
-            IPolygonGene closest = individual.Genome
-                .OrderBy(gene => OnSameAxisSide(evaluatedGene, gene)) //vertices on opposite side of axis have priority, OnSameAxisSide()=="false"(0) go first, "true"(1) second
-                .ThenBy(gene => GeometryExtensions.Distance(perfectRelative, gene.Decode()))
-                .First();
-
-            return GeometryExtensions.Distance(perfectRelative, new Point(closest.X, closest.Y));
-        }
         
         private int GetEdgeIntersectionCount(IEnumerable<Point> vertices)
         {
@@ -61,17 +47,6 @@ namespace Genetic_Algorithm.GA.Polygon_based.FitnessCalculators
                 { resultCount++; }
             }
             return resultCount;
-        }
-
-        private Point TheoreticalPerfectlyMirroredRelative(IPolygonGene gene, Point centroid)
-            => new Point(centroid.X - gene.X, gene.Y);
-
-        private bool OnSameAxisSide(IPolygonGene a, IPolygonGene b)
-        {
-            if (a.X < 0)
-            { return b.X < 0; }
-            else
-            { return b.X > 0; }
         }
 
         public override string ToString()

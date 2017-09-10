@@ -30,7 +30,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_basic_symmetry_calculator_8cs.html",
-"interface_genetic___algorithm_1_1_g_a_1_1_generics_1_1_i_fitness_calculator.html#abdcc63f1715bb2c59a3788324a358826"
+"interface_genetic___algorithm_1_1_g_a_1_1_generics_1_1_i_individual.html#ad13f7e7686b3e80364678c980ecb8f94"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
