@@ -15,7 +15,7 @@ namespace Genetic_Algorithm.Forms
     /// Structure used to transfer constructor data to <see cref="ChooseVerticesCountToImportDialog"/>.
     /// <para>Holds information about a group of polygon individuals - the group's vertex count and number of individuals in the group.</para>
     /// </summary>
-    struct IndividualsOfVertexCountPair
+    internal struct IndividualsOfVertexCountPair
     {
         public int VertexCount { get; }
         public int IndividualsCount { get; }
@@ -30,7 +30,7 @@ namespace Genetic_Algorithm.Forms
     /// <summary>
     /// Helper dialog form used to select a single group of individuals with a uniform vertex count
     /// </summary>
-    partial class ChooseVerticesCountToImportDialog : Form
+    internal partial class ChooseVerticesCountToImportDialog : Form
     {
         List<RadioButton> allRadioButtons = new List<RadioButton>();
 
