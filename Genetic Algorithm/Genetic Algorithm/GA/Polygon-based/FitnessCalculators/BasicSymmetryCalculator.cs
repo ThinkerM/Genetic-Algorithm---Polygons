@@ -14,9 +14,9 @@ namespace Genetic_Algorithm.GA.Polygon_based.FitnessCalculators
     /// </summary>
     class BasicSymmetryFitnessCalculator : IFitnessCalculator<PolygonIndividual, IPolygonGene>
     {
-        public string Name { get; } = "Basic Symmetry FitnessCalculator";
+        public virtual string Name { get; } = "Basic Symmetry FitnessCalculator";
 
-        public double IndividualFitness(PolygonIndividual individual)
+        public virtual double IndividualFitness(PolygonIndividual individual)
         {
             double fitness = 0;
             double normalizedResult = Double.NaN;

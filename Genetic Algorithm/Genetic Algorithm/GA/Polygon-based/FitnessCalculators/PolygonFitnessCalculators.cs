@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
-using CustomExtensions;
 using Genetic_Algorithm.GA.Generics;
 
 namespace Genetic_Algorithm.GA.Polygon_based.FitnessCalculators

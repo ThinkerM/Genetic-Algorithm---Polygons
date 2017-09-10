@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CustomExtensions.Graphics;
-using CustomExtensions.Math;
 using Randomization;
 using System.Drawing;
 using Genetic_Algorithm.GA.Generics;
-using Genetic_Algorithm.GA.Polygon_based;
 
 namespace Genetic_Algorithm.GA.Polygon_based
 {

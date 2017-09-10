@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using CustomExtensions.Geometry;
 using Genetic_Algorithm.GA.Generics;
-using Genetic_Algorithm.GA.Polygon_based;
 
 namespace Genetic_Algorithm.GA.Polygon_based
 {

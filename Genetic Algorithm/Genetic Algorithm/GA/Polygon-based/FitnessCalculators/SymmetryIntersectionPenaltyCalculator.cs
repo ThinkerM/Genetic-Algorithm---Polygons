@@ -7,7 +7,6 @@ using System.Drawing;
 using CustomExtensions.Geometry;
 using MoreLinq;
 using CustomExtensions.Collections;
-using Genetic_Algorithm.GA.Generics;
 
 namespace Genetic_Algorithm.GA.Polygon_based.FitnessCalculators
 {
@@ -15,28 +14,17 @@ namespace Genetic_Algorithm.GA.Polygon_based.FitnessCalculators
     /// <seealso cref="BasicSymmetryFitnessCalculator"/>
     /// Additonally reduces fitness for every intersecting edge pair in the polygon
     /// </summary>
-    class SymmetryIntersectionPenaltyFitnessCalculator : IFitnessCalculator<PolygonIndividual, IPolygonGene>
+    class SymmetryIntersectionPenaltyFitnessCalculator : BasicSymmetryFitnessCalculator
     {
-        public string Name { get { return "Symmetry (Intersection penalty) FitnessCalculator"; } }
+        public override string Name { get { return "Symmetry (Intersection penalty) FitnessCalculator"; } }
 
-        public int Compare(PolygonIndividual x, PolygonIndividual y)
-            => IndividualFitness(x).CompareTo(IndividualFitness(y));
-
-        public double IndividualFitness(PolygonIndividual individual)
+        public override double IndividualFitness(PolygonIndividual individual)
         {
-            double fitness = 0;
-            double normalizedResult = Double.NaN;
-            if (individual.Fitness.Equals(PolygonIndividual.InvalidFitnessIndicator))
-            {
-                foreach (var gene in individual.Genome)
-                {
-                    fitness -= GeneFitness(gene, individual);
-                }
-                fitness *= GetEdgeIntersectionCount(individual.Genome.Select(g => g.Decode()));
-                normalizedResult = fitness == 0 ? Double.MaxValue : -1000 / fitness; //turn fitness into positive values
-                individual.Fitness = normalizedResult;
-            }
-            return individual.Fitness; 
+            double baseResult = base.IndividualFitness(individual);
+            int intersectionCount = GetEdgeIntersectionCount(individual.Genome.Select(g => g.Decode()));
+            double result = intersectionCount > 0 ? baseResult / intersectionCount : baseResult;
+            individual.Fitness = result;
+            return individual.Fitness;
         }
 
         private double GeneFitness(IPolygonGene evaluatedGene, PolygonIndividual individual)
