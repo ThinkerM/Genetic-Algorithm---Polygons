@@ -20,8 +20,8 @@ namespace Genetic_Algorithm.GA.Polygon_based
 
         public override PolygonIndividual CrossOver(PolygonIndividual parent1, PolygonIndividual parent2)
         {
-            var parent1AngleOrderedGenome = parent1.Genome.OrderBy(g => g.AngleRelativeToCentroid.Radians).ToList();
-            var parent2AngleOrderedGenome = parent2.Genome.OrderBy(g => g.AngleRelativeToCentroid.Radians).ToList();
+            var parent1AngleOrderedGenome = parent1.Genome.OrderBy(g => g.AngleRelativeToCentroid.Radians);
+            var parent2AngleOrderedGenome = parent2.Genome.OrderBy(g => g.AngleRelativeToCentroid.Radians);
             if (parent1.Genome.Count == parent2.Genome.Count)
             {
                 var newGenome = new List<IPolygonGene>();

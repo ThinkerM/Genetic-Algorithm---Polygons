@@ -47,11 +47,10 @@ namespace Polygons
             {
                 if (vertices.Any())
                 {
-                    if (center == null)
-                    { UpdateCenter(); }
+                    UpdateCenter();
                     return (Point)center;
                 }
-                return new Point(-1, -1);
+                return Point.Empty;
             }
         }
 
@@ -71,7 +70,9 @@ namespace Polygons
                 return new Point(-1, -1);
             }
         }
+        #endregion
 
+        #region Manipulation
         private void UpdateCentroid()
         {
             int xMean = (int)Math.Round(vertices.Select(v => v.X).Average());
@@ -79,9 +80,6 @@ namespace Polygons
             centroid = new Point(xMean, yMean);
         }
 
-        #endregion
-
-        #region Manipulation
         private void UpdateCenter()
         {
             Point upperLeftCorner = UpperLeftCorner();

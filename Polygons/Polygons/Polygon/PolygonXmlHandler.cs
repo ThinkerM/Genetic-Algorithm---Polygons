@@ -20,7 +20,7 @@ namespace Polygons
         /// Checks if a file of same name already exists in specified location and removes any readonly accessors
         /// </summary>
         /// <param name="path">File path including the name of the potential file</param>
-        private static void MakeFileWritable(string path)
+        private static void EnableFileForWriting(string path)
         {
             FileInfo fInfo = new FileInfo(path);
             if (fInfo.Exists) { fInfo.IsReadOnly = false; }
@@ -33,8 +33,8 @@ namespace Polygons
         /// <param name="path">File path including the name of the output file</param>
         public static void Save(Polygon p, string path)
         {
-            MakeFileWritable(path);
-            using (System.IO.StreamWriter stream = new StreamWriter(path))
+            EnableFileForWriting(path);
+            using (StreamWriter stream = new StreamWriter(path))
             {
                 XmlWriterSettings writerSettings = new XmlWriterSettings();
                 writerSettings.Indent = true;
@@ -64,7 +64,7 @@ namespace Polygons
         }
 
         /// <summary>
-        /// Save polygon as .xml to the application's default shapes saving folder
+        /// Save <see cref="Polygon"/> as .xml to the application's default shapes saving folder
         /// </summary>
         /// <param name="p">Polygon to save</param>
         public static void SaveToDefaultFolder(Polygon p)
@@ -74,7 +74,7 @@ namespace Polygons
         }
 
         /// <summary>
-        /// Load an object from an XML file
+        /// Load a <see cref="Polygon"/> from an XML file
         /// </summary>
         /// <param name="uriPath">Path to desired XML file</param>
         /// <returns>The object created from the XML file</returns>

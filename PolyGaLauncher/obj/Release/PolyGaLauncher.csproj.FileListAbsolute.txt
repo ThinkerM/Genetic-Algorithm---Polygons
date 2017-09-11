@@ -25,3 +25,6 @@ C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\PolyGaLaunc
 C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\PolyGaLauncher\obj\Release\PolyGaLauncher.csproj.GenerateResource.Cache
 C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\PolyGaLauncher\obj\Release\PolyGaLauncher.exe
 C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\PolyGaLauncher\obj\Release\PolyGaLauncher.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\PolyGaLauncher.exe.config
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\obj\Release\PolyGaLauncher.exe
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\obj\Release\PolyGaLauncher.pdb
