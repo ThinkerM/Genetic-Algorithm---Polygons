@@ -103,7 +103,7 @@
             </list>
             </remarks>
         </member>
-        <member name="M:Genetic_Algorithm.Forms.GaViewerForm.#ctor(System.Collections.Generic.List{Genetic_Algorithm.GA.Generics.IFitnessCalculator{Genetic_Algorithm.GA.Polygon_based.PolygonIndividual,Genetic_Algorithm.GA.Polygon_based.IPolygonGene}})">
+        <member name="M:Genetic_Algorithm.Forms.GaViewerForm.#ctor(System.Collections.Generic.IEnumerable{Genetic_Algorithm.GA.Generics.IFitnessCalculator{Genetic_Algorithm.GA.Polygon_based.PolygonIndividual,Genetic_Algorithm.GA.Polygon_based.IPolygonGene}})">
             <summary>
             Creates an instance of a form for visualizing and customizing the run of a Genetic algorithm for Polygons
             </summary>
@@ -521,14 +521,15 @@
             </summary>
             <param name="template">Population to copy</param>
         </member>
+        <member name="M:Genetic_Algorithm.GA.Generics.Population`2.FilledDesiredSize">
+            <summary>
+            Indicates whether the population's size has reached or exceeded the set <see cref="P:Genetic_Algorithm.GA.Generics.Population`2.DesiredSize"/>
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Genetic_Algorithm.GA.Generics.IIndividual`1">
             <summary>
             Represents an organism/individual in a genetic algorithm
-            </summary>
-        </member>
-        <member name="P:Genetic_Algorithm.GA.Generics.IIndividual`1.Name">
-            <summary>
-            String identifier for the specific individual
             </summary>
         </member>
         <member name="P:Genetic_Algorithm.GA.Generics.IIndividual`1.IsElite">
@@ -554,7 +555,7 @@
             Additonally reduces fitness for every intersecting edge pair in the polygon
             </summary>
         </member>
-        <member name="T:Genetic_Algorithm.GA.Polygon_based.FitnessCalculators.PolygonfitnessCalculators">
+        <member name="T:Genetic_Algorithm.GA.Polygon_based.FitnessCalculators.CalculatorRetriever">
             <summary>
             Provides a centralised access to fitness calculators intended for <see cref="T:Genetic_Algorithm.GA.Polygon_based.PolygonIndividual"/>s
             </summary>

@@ -28,3 +28,27 @@ C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\PolyGaLaunc
 C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\PolyGaLauncher.exe.config
 C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\obj\Release\PolyGaLauncher.exe
 C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\obj\Release\PolyGaLauncher.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\PolyGaLauncher.exe
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\PolyGaLauncher.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\Genetic Algorithm.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\Polygons.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\CustomButtons.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\Randomization.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\MoreLinq.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\MessageBoxManager.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\System.ValueTuple.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\Genetic Algorithm.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\Polygons.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\Polygons.xml
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\CustomButtons.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\Randomization.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\Randomization.xml
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\MoreLinq.xml
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\MessageBoxManager.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\obj\Release\PolyGaLauncher.Properties.Resources.resources
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\obj\Release\PolyGaLauncher.csproj.GenerateResource.Cache
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\CustomExtensions.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\Genetic Algorithm.xml
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\CustomExtensions.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\CustomExtensions.xml
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\obj\Release\PolyGaLauncher.csprojResolveAssemblyReference.cache

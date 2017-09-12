@@ -53,9 +53,14 @@ namespace Genetic_Algorithm.GA.Polygon_based
             for (int i = 0; i < shortestParentLength; i++)
             {
                 if (UniqueRandom.HalfProbability())
-                { sb.Append(p1[i]); }
+                {
+                    if (UniqueRandom.HalfProbability())
+                    { sb.Append(p1[i]); }
+                    else
+                    { sb.Append(p2[i]); }
+                }
                 else
-                { sb.Append(p2[i]); }
+                { sb.Append(RandomCharsAndStrings.RandomAlphanumericCharacter()); }
             }
             int lengthToFill = Math.Min(longestParentLength, 15); //prevent too long names to avoid this becoming a bottleneck
             for (int i = sb.Length;  i <= lengthToFill; i++)

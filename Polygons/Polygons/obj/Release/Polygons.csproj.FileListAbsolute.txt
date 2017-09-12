@@ -32,3 +32,25 @@ C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Polygons\Po
 C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Release\Polygons.dll
 C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Release\Polygons.pdb
 C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Release\Polygons.csprojResolveAssemblyReference.cache
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Release\Polygons.dll.config
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Release\Polygons.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Release\Polygons.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Release\CustomButtons.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Release\CustomExtensions.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Release\GroupControls.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Release\Randomization.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Release\CustomButtons.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Release\CustomExtensions.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Release\CustomExtensions.xml
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Release\GroupControls.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Release\Randomization.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Release\Randomization.xml
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Release\Polygons.csprojResolveAssemblyReference.cache
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Release\Polygons.Forms.HelperForms.DeleteFileConfirmation.resources
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Release\Polygons.Forms.HelperForms.ShapeNameChooserPrompt.resources
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Release\Polygons.Forms.PolygonCreationForm.resources
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Release\Polygons.Properties.Resources.resources
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Release\Polygons.Forms.HelperForms.ShapeOverwritePromptForm.resources
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Release\Polygons.csproj.GenerateResource.Cache
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Release\Polygons.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Release\Polygons.pdb

@@ -31,3 +31,35 @@ C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Alg
 C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\Genetic Algorithm.dll
 C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\obj\Release\Genetic Algorithm.dll
 C:\Users\filip\Desktop\C-sharp projects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\Polygons.xml
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\Genetic Algorithm.dll.config
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\Genetic Algorithm.XML
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\Genetic Algorithm.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\Genetic Algorithm.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\CustomButtons.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\CustomExtensions.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\GroupControls.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\MessageBoxManager.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\MoreLinq.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\Polygons.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\Randomization.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\System.ValueTuple.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\CustomButtons.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\CustomExtensions.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\CustomExtensions.xml
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\GroupControls.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\MessageBoxManager.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\MoreLinq.xml
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\Polygons.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\Randomization.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\bin\Release\Randomization.xml
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\obj\Release\Genetic Algorithm.csprojResolveAssemblyReference.cache
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\obj\Release\Genetic_Algorithm.Forms.ChooseVerticesCountToImportDialog.resources
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\obj\Release\Genetic_Algorithm.Forms.CrossroadForm.resources
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\obj\Release\Genetic_Algorithm.Forms.GaComponentIcon.resources
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\obj\Release\Genetic_Algorithm.Forms.GaViewerForm.resources
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\obj\Release\Genetic_Algorithm.Forms.PopulationGeneratorForm.resources
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\obj\Release\Genetic_Algorithm.Forms.LabeledPolygonImage.resources
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\obj\Release\Genetic_Algorithm.Properties.Resources.resources
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\obj\Release\Genetic Algorithm.csproj.GenerateResource.Cache
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\obj\Release\Genetic Algorithm.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\Genetic Algorithm\Genetic Algorithm\obj\Release\Genetic Algorithm.pdb

@@ -16,9 +16,6 @@ namespace Genetic_Algorithm.GA.Generics
 
         double Fitness { get; set; }
 
-        /// <summary>
-        /// String identifier for the specific individual
-        /// </summary>
         string Name { get; }
 
         /// <summary>

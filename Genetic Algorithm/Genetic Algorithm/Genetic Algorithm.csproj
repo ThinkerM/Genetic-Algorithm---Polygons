@@ -102,7 +102,6 @@
     </Reference>
     <Reference Include="CustomExtensions">
       <HintPath>..\..\..\Libraries\Extensions\Extensions\bin\Debug\CustomExtensions.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="GroupControls">
       <HintPath>..\..\..\Libraries\CustomControls\GroupControls\bin\Debug\GroupControls.dll</HintPath>
@@ -115,7 +114,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Polygons">
-      <HintPath>..\..\Polygons\Polygons\bin\Debug\Polygons.dll</HintPath>
+      <HintPath>..\..\Polygons\Polygons\bin\Release\Polygons.dll</HintPath>
     </Reference>
     <Reference Include="Randomization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -186,7 +185,7 @@
     <Compile Include="GA\Polygon-based\FitnessCalculators\BasicSymmetryCalculator.cs" />
     <Compile Include="GA\Polygon-based\FitnessCalculators\SymmetryIntersectionPenaltyCalculator.cs" />
     <Compile Include="GA\Polygon-based\IPolygonGene.cs" />
-    <Compile Include="GA\Polygon-based\FitnessCalculators\PolygonFitnessCalculators.cs" />
+    <Compile Include="GA\Polygon-based\FitnessCalculators\CalculatorRetriever.cs" />
     <Compile Include="GA\Polygon-based\PolygonAdapter.cs" />
     <Compile Include="GA\Polygon-based\SimplePolygonGene.cs" />
     <Compile Include="GA\Polygon-based\PolygonIndividual.cs" />
@@ -244,9 +243,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\evolutionPicture.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\croppedEvolution.jpg" />

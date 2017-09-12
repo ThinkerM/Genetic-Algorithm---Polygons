@@ -46,8 +46,8 @@
             this.toolsLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.GaInitTab = new System.Windows.Forms.TabPage();
-            this.saveFrequencyUpdown = new System.Windows.Forms.NumericUpDown();
             this.savedGenerationsCombobox = new System.Windows.Forms.ComboBox();
+            this.saveFrequencyUpdown = new System.Windows.Forms.NumericUpDown();
             this.terminationConditionsGroupBox = new System.Windows.Forms.GroupBox();
             this.improvementRatioUpdown = new System.Windows.Forms.NumericUpDown();
             this.terminationGenerationUpdown = new System.Windows.Forms.NumericUpDown();
@@ -194,9 +194,9 @@
             // GaInitTab
             // 
             this.GaInitTab.BackColor = System.Drawing.Color.Teal;
+            this.GaInitTab.Controls.Add(this.savedGenerationsCombobox);
             this.GaInitTab.Controls.Add(this.saveFrequencyUpdown);
             this.GaInitTab.Controls.Add(saveFrequencyLabel);
-            this.GaInitTab.Controls.Add(this.savedGenerationsCombobox);
             this.GaInitTab.Controls.Add(this.terminationConditionsGroupBox);
             this.GaInitTab.Controls.Add(this.fitnessFunctionComboBox);
             this.GaInitTab.Controls.Add(stopFrequencyLabel2);
@@ -212,6 +212,17 @@
             this.GaInitTab.Size = new System.Drawing.Size(98, 474);
             this.GaInitTab.TabIndex = 0;
             this.GaInitTab.Text = "Genetic Algorithm";
+            // 
+            // savedGenerationsCombobox
+            // 
+            this.savedGenerationsCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.savedGenerationsCombobox.FormattingEnabled = true;
+            this.savedGenerationsCombobox.Location = new System.Drawing.Point(3, 23);
+            this.savedGenerationsCombobox.Name = "savedGenerationsCombobox";
+            this.savedGenerationsCombobox.Size = new System.Drawing.Size(92, 21);
+            this.savedGenerationsCombobox.TabIndex = 11;
+            this.savedGenerationsCombobox.Visible = false;
+            this.savedGenerationsCombobox.SelectedIndexChanged += new System.EventHandler(this.savedGenerationsCombobox_SelectedItemChanged);
             // 
             // saveFrequencyUpdown
             // 
@@ -238,20 +249,6 @@
             saveFrequencyLabel.Size = new System.Drawing.Size(72, 16);
             saveFrequencyLabel.TabIndex = 9;
             saveFrequencyLabel.Text = "Save every";
-            // 
-            // savedGenerationsCombobox
-            // 
-            this.savedGenerationsCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.savedGenerationsCombobox.FormattingEnabled = true;
-            this.savedGenerationsCombobox.Location = new System.Drawing.Point(3, 23);
-            this.savedGenerationsCombobox.MaxDropDownItems = 20;
-            this.savedGenerationsCombobox.Name = "savedGenerationsCombobox";
-            this.savedGenerationsCombobox.Size = new System.Drawing.Size(92, 21);
-            this.savedGenerationsCombobox.TabIndex = 8;
-            this.toolTip.SetToolTip(this.savedGenerationsCombobox, "Provides access to all the generations saved throughout the most recent session");
-            this.savedGenerationsCombobox.Visible = false;
-            this.savedGenerationsCombobox.DropDown += new System.EventHandler(this.savedGenerationsCombobox_DropDown);
-            this.savedGenerationsCombobox.DropDownClosed += new System.EventHandler(this.savedGenerationsCombobox_DropDownClosed);
             // 
             // terminationConditionsGroupBox
             // 
@@ -1147,7 +1144,7 @@
         private System.Windows.Forms.Label fitnessfunctionLabel;
         private System.Windows.Forms.NumericUpDown populationSizeUpdown;
         private System.Windows.Forms.Label populationSizeLabel;
-        private System.Windows.Forms.ComboBox savedGenerationsCombobox;
         private System.Windows.Forms.NumericUpDown saveFrequencyUpdown;
+        private System.Windows.Forms.ComboBox savedGenerationsCombobox;
     }
 }

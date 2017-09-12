@@ -72,6 +72,6 @@ namespace Genetic_Algorithm.Forms
         private void populationGenerationIcon_Click(object sender, EventArgs e) => new PopulationGeneratorForm().Show();
 
         private void geneticAlgorithmIcon_Click(object sender, EventArgs e) 
-            => new GaViewerForm(GA.Polygon_based.FitnessCalculators.PolygonfitnessCalculators.GetAllCalculators()).Show();
+            => new GaViewerForm(GA.Polygon_based.FitnessCalculators.CalculatorRetriever.GetAllCalculators()).Show();
     }
 }

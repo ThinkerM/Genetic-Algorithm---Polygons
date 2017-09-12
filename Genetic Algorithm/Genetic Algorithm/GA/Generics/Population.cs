@@ -89,6 +89,10 @@ namespace Genetic_Algorithm.GA.Generics
         public bool Empty 
             => individuals.Count == 0;
 
+        /// <summary>
+        /// Indicates whether the population's size has reached or exceeded the set <see cref="DesiredSize"/>
+        /// </summary>
+        /// <returns></returns>
         public bool FilledDesiredSize() 
             => Count >= DesiredSize;
 

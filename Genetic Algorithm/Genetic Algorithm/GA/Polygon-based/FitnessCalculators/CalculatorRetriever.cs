@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Drawing;
 using Genetic_Algorithm.GA.Generics;
 
 namespace Genetic_Algorithm.GA.Polygon_based.FitnessCalculators
@@ -11,15 +10,12 @@ namespace Genetic_Algorithm.GA.Polygon_based.FitnessCalculators
     /// <summary>
     /// Provides a centralised access to fitness calculators intended for <see cref="PolygonIndividual"/>s
     /// </summary>
-    static class PolygonfitnessCalculators
+    static class CalculatorRetriever
     {
-        public static List<IFitnessCalculator<PolygonIndividual, IPolygonGene>> GetAllCalculators()
+        public static IEnumerable<IFitnessCalculator<PolygonIndividual, IPolygonGene>> GetAllCalculators()
         {
-            return new List<IFitnessCalculator<PolygonIndividual, IPolygonGene>>
-            {
-                new BasicSymmetryFitnessCalculator(),
-                new SymmetryIntersectionPenaltyFitnessCalculator()
-            };
+            yield return new BasicSymmetryFitnessCalculator();
+            yield return new SymmetryIntersectionPenaltyFitnessCalculator();
             
             //would be nice with reflection but harder to make work properly
             /*  var subclasses = typeof(PolygonfitnessCalculators).GetNestedTypes().ToList();

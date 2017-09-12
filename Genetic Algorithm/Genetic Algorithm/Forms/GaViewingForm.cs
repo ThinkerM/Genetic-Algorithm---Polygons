@@ -44,7 +44,8 @@ namespace Genetic_Algorithm.Forms
                 set { fitnessCalculator = value; FitnessCalculatorChanged?.Invoke(null, EventArgs.Empty); }
             }
         }
-        private FitnessCalculatorWrapper fitnessCalculatorWrapper = new FitnessCalculatorWrapper();
+        private readonly FitnessCalculatorWrapper fitnessCalculatorWrapper = new FitnessCalculatorWrapper();
+        private readonly BindingList<IFitnessCalculator<PolygonIndividual, IPolygonGene>> availableFitnessCalculators;
         private IFitnessCalculator<PolygonIndividual, IPolygonGene> FitnessCalculator
         {
             get { return fitnessCalculatorWrapper.FitnessCalculator; }
@@ -56,24 +57,25 @@ namespace Genetic_Algorithm.Forms
         private double bestInitialFitness;
         private Population<PolygonIndividual, IPolygonGene> displayPopulation;
 
-        private IEnumerable<Control> gaRunningVisibilitySensitiveControls;
+        private readonly IEnumerable<Control> gaRunningVisibilitySensitiveControls;
         private static readonly Color DefaultPicturesBackground = Color.Teal;
 
         /// <summary>
         /// Creates an instance of a form for visualizing and customizing the run of a Genetic algorithm for Polygons
         /// </summary>
         /// <param name="availableFitnessCalculators">All Fitness calculators which the form can load into its options</param>
-        public GaViewerForm(List<IFitnessCalculator<PolygonIndividual, IPolygonGene>> availableFitnessCalculators)
+        public GaViewerForm(IEnumerable<IFitnessCalculator<PolygonIndividual, IPolygonGene>> availableFitnessCalculators)
         {
             InitializeComponent();
             ReadParametersFromSettings();
 
-            savedGenerationsCombobox.DataSource = savedGaPopulations;
             SavedGenerationsCombobox_DefaultWidth = savedGenerationsCombobox.Width;
+            savedGenerationsCombobox.DataSource = savedGaPopulations;
             logBox.DataSource = logLines;
             importPopulationDialog.InitialDirectory = Paths.PolygonSavedShapesFolder();
             picturesBackgroundColorDialog.Color = DefaultPicturesBackground;
-            fitnessFunctionComboBox.DataSource = availableFitnessCalculators;
+            this.availableFitnessCalculators = new BindingList<IFitnessCalculator<PolygonIndividual, IPolygonGene>>(availableFitnessCalculators.ToList());
+            fitnessFunctionComboBox.DataSource = this.availableFitnessCalculators;
             FitnessFunctionComboBox_DefaultWidth = fitnessFunctionComboBox.Width;
             displayPopulation = Population<PolygonIndividual, IPolygonGene>.EmptyPopulation();
 
@@ -100,7 +102,7 @@ namespace Genetic_Algorithm.Forms
             currentFunction = CurrentGaButtonFunction.Start;
             geneticAlgorithm = null;
             savedGaPopulations?.Clear();
-            displayPopulation?.Clear();
+            displayPopulation = Population<PolygonIndividual, IPolygonGene>.EmptyPopulation();
             logLines.Clear();
             continueButton.Visible = false;
             ignoreTerminationConditionsAbsence = false;
@@ -333,7 +335,7 @@ namespace Genetic_Algorithm.Forms
 
             displayPopulation = resultUniformPopulation;
             ResolveDisplayedVertexCount();
-        }       
+        }
 
         private readonly int SavedGenerationsCombobox_DefaultWidth;
         private void savedGenerationsCombobox_DropDown(object sender, EventArgs e)
@@ -370,6 +372,8 @@ namespace Genetic_Algorithm.Forms
 
         private void OnFitnessCalculatorChanged(object sender, EventArgs e)
         {
+            if (displayPopulation == null) return; 
+
             foreach (var individual in displayPopulation)
             {
                 individual.InvalidateFitness();
@@ -599,5 +603,11 @@ namespace Genetic_Algorithm.Forms
             return base.ProcessDialogKey(keyData);
         }
         #endregion
+
+        private void savedGenerationsCombobox_SelectedItemChanged(object sender, EventArgs e)
+        {
+            displayPopulation = (Population<PolygonIndividual, IPolygonGene>)savedGenerationsCombobox.SelectedItem;
+            UpdatePopulationPictures();
+        }
     }
 }

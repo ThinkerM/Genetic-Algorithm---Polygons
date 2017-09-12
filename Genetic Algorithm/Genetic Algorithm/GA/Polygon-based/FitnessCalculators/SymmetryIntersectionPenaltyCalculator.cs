@@ -20,10 +20,13 @@ namespace Genetic_Algorithm.GA.Polygon_based.FitnessCalculators
 
         public override double IndividualFitness(PolygonIndividual individual)
         {
-            double baseResult = base.IndividualFitness(individual);
-            int intersectionCount = GetEdgeIntersectionCount(individual.Genome.Select(g => g.Decode()));
-            double result = intersectionCount > 0 ? baseResult / intersectionCount : baseResult;
-            individual.Fitness = result;
+            if (individual.Fitness.Equals(PolygonIndividual.InvalidFitnessIndicator))
+            {
+                double baseResult = base.IndividualFitness(individual);
+                int intersectionCount = GetEdgeIntersectionCount(individual.Genome.Select(g => g.Decode())) - individual.Polygon.VerticesCount;
+                double result = intersectionCount > 0 ? baseResult / intersectionCount : baseResult;
+                individual.Fitness = result;
+            }
             return individual.Fitness;
         }
         

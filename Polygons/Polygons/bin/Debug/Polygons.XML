@@ -204,43 +204,43 @@
             <summary>
             Draw a complete polygon
             </summary>
-            <param name="p">Polygon to draw</param>
-            <param name="g">Graphics object to be used to draw the polygon</param>
+            <param name="p"><see cref="T:Polygons.Polygon"/> to draw</param>
+            <param name="g"><see cref="T:System.Drawing.Graphics"/> object to be used to draw the polygon</param>
         </member>
         <member name="M:Polygons.PolygonVisualizer.DrawIncomplete(Polygons.Polygon,System.Drawing.Graphics)">
             <summary>
             Draw polygon without connection between the first and last vertex of the polygon
             </summary>
-            <param name="p">Polygon to incompletely draw</param>
-            <param name="g">Graphics object to be used to draw the polygon</param>
+            <param name="p"><see cref="T:Polygons.Polygon"/> to incompletely draw</param>
+            <param name="g"><see cref="T:System.Drawing.Graphics"/> object to be used to draw the polygon</param>
         </member>
         <member name="M:Polygons.PolygonVisualizer.DrawCenter(Polygons.Polygon,System.Drawing.Graphics)">
             <summary>
             Draw a mark in the position of the polygon's center
             </summary>
-            <param name="p">Polygon whose center to draw</param>
-            <param name="g">Graphics object to be used to mark the center</param>
+            <param name="p"><see cref="T:Polygons.Polygon"/> whose center to draw</param>
+            <param name="g"><see cref="T:System.Drawing.Graphics"/> object to be used to mark the center</param>
         </member>
         <member name="M:Polygons.PolygonVisualizer.DrawCentroid(Polygons.Polygon,System.Drawing.Graphics)">
             <summary>
             Draw a mark in the position of the polygon's centroid
             </summary>
-            <param name="p">Polygon whose center to draw</param>
-            <param name="g">Graphics object to be used to mark the center</param>
+            <param name="p"><see cref="T:Polygons.Polygon"/> whose center to draw</param>
+            <param name="g"><see cref="T:System.Drawing.Graphics"/> object to be used to mark the center</param>
         </member>
         <member name="M:Polygons.PolygonVisualizer.PolygonNormalizedToBox(Polygons.Polygon,System.Windows.Forms.PictureBox)">
             <summary>
             Create a new polygon with the properties of its template, vertices coordinates scaled to fit a PictureBox
             </summary>
-            <param name="p">Polygon to normalize</param>
-            <param name="normalizeTo">Picturebox whose bounds should be used for normalization calculations</param>
+            <param name="p"><see cref="T:Polygons.Polygon"/> to normalize</param>
+            <param name="normalizeTo"><see cref="T:System.Windows.Forms.PictureBox"/> whose bounds should be used for normalization calculations</param>
             <returns></returns>
         </member>
         <member name="M:Polygons.PolygonVisualizer.PolygonNormalizedToBox(Polygons.Polygon,System.Int32,System.Int32)">
             <summary>
-            Create a new polygon with the properties of its template, vertices coordinates scaled to fit a container of specified dimensions
+            Create a new <see cref="T:Polygons.Polygon"/> with the properties of its template, vertices coordinates scaled to fit a container of specified dimensions
             </summary>
-            <param name="p">Polygon to normalize</param>
+            <param name="p"><see cref="T:Polygons.Polygon"/> to normalize</param>
             <param name="width">Width of the container</param>
             <param name="height">Height of the container</param>
             <returns></returns>
@@ -250,7 +250,7 @@
             Provides static methods for loading and saving Polygons from/to .xml files
             </summary>
         </member>
-        <member name="M:Polygons.PolygonXmlHandler.MakeFileWritable(System.String)">
+        <member name="M:Polygons.PolygonXmlHandler.EnableFileForWriting(System.String)">
             <summary>
             Checks if a file of same name already exists in specified location and removes any readonly accessors
             </summary>
@@ -265,13 +265,13 @@
         </member>
         <member name="M:Polygons.PolygonXmlHandler.SaveToDefaultFolder(Polygons.Polygon)">
             <summary>
-            Save polygon as .xml to the application's default shapes saving folder
+            Save <see cref="T:Polygons.Polygon"/> as .xml to the application's default shapes saving folder
             </summary>
             <param name="p">Polygon to save</param>
         </member>
         <member name="M:Polygons.PolygonXmlHandler.Load(System.String)">
             <summary>
-            Load an object from an XML file
+            Load a <see cref="T:Polygons.Polygon"/> from an XML file
             </summary>
             <param name="uriPath">Path to desired XML file</param>
             <returns>The object created from the XML file</returns>

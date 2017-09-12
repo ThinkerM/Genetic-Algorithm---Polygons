@@ -5,8 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using Polygons;
-using CustomExtensions;
-using MoreLinq;
 using Genetic_Algorithm.GA.Generics;
 
 namespace Genetic_Algorithm.GA.Polygon_based
