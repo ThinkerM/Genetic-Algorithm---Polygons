@@ -4,7 +4,7 @@ currently support for polygons (using their axial symmetry as a fitness function
 
 ## Main program components:
   - Genetic Algorithm
-    - Adjust genetic algorithm parameters, choose different fitness function calculators, run genetic algorithm
+    - Adjust genetic algorithm parameters, choose between different fitness function calculators, run genetic algorithm
   - Population Manager
     - Manage multiple polygons at once (automatic generation, saving, loading)
   - Shape Creator
