@@ -12,7 +12,7 @@ namespace Genetic_Algorithm.GA.Generics
     /// </summary>
     /// <typeparam name="TIndividual">Type of <see cref="IIndividual{IGene}"/> in the population</typeparam>
     /// <typeparam name="TGene">Type of <see cref="IGene"/> in the population</typeparam>
-    class SavedNumberedPopulation<TIndividual, TGene> : Population<TIndividual, TGene>
+    class NumberedPopulation<TIndividual, TGene> : Population<TIndividual, TGene>
         where TIndividual : IIndividual<TGene>, new()
         where TGene : IGene
     {
@@ -27,7 +27,7 @@ namespace Genetic_Algorithm.GA.Generics
         /// </summary>
         /// <param name="population">Individuals to store</param>
         /// <param name="number">N-th generation in a GA</param>
-        public SavedNumberedPopulation(Population<TIndividual, TGene> population, int number) : base(population)
+        public NumberedPopulation(Population<TIndividual, TGene> population, int number) : base(population)
         {
             Number = number;
             TopFitness = individuals.Select(i => i.Fitness).Max();

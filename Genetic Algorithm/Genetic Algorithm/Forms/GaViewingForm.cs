@@ -53,7 +53,7 @@ namespace Genetic_Algorithm.Forms
         }
         private GeneticAlgorithm<PolygonIndividual, IPolygonGene> geneticAlgorithm;
 
-        private BindingList<SavedNumberedPopulation<PolygonIndividual, IPolygonGene>> savedGaPopulations = new BindingList<SavedNumberedPopulation<PolygonIndividual, IPolygonGene>>();
+        private BindingList<NumberedPopulation<PolygonIndividual, IPolygonGene>> savedGaPopulations = new BindingList<NumberedPopulation<PolygonIndividual, IPolygonGene>>();
         private double bestInitialFitness;
         private Population<PolygonIndividual, IPolygonGene> displayPopulation;
 
@@ -569,7 +569,7 @@ namespace Genetic_Algorithm.Forms
         #region GaLogs
         private const int MAXIMUM_LOG_LINES = 500;
         private BindingList<string> logLines = new BindingList<string>();
-        private void LogGeneration(SavedNumberedPopulation<PolygonIndividual, IPolygonGene> populationToLog)
+        private void LogGeneration(NumberedPopulation<PolygonIndividual, IPolygonGene> populationToLog)
         {
             var sortedFitnesses = populationToLog
                 .Select(i => FitnessCalculator.IndividualFitness(i))

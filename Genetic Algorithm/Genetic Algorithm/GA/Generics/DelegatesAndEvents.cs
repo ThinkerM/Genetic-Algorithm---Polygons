@@ -27,7 +27,7 @@ namespace Genetic_Algorithm.GA.Generics
         /// <summary>
         /// A collection of individuals with additional information about their generation's number within the running GA and the best individual within the population
         /// </summary>
-        public SavedNumberedPopulation<TIndividual, TGene> SavedPopulation { get; }
+        public NumberedPopulation<TIndividual, TGene> SavedPopulation { get; }
 
         /// <summary>
         /// Create a <see cref="GaEventArgs{TIndividual, TGene}"/> instance
@@ -36,7 +36,7 @@ namespace Genetic_Algorithm.GA.Generics
         /// <param name="populationNumber">Current number of the generation</param>
         public GaEventArgs(Population<TIndividual, TGene> eventPopulation, int populationNumber)
         {
-            SavedPopulation = new SavedNumberedPopulation<TIndividual, TGene>(eventPopulation, populationNumber);
+            SavedPopulation = new NumberedPopulation<TIndividual, TGene>(eventPopulation, populationNumber);
         }
     }    
 }

@@ -471,28 +471,28 @@
             <param name="individual">Subject of decision</param>
             <returns>True to mutate, False not to mutate</returns>
         </member>
-        <member name="T:Genetic_Algorithm.GA.Generics.SavedNumberedPopulation`2">
+        <member name="T:Genetic_Algorithm.GA.Generics.NumberedPopulation`2">
             <summary>
             Extended population with additional information about its number as a generation in GA and the highest fitness value achieved
             </summary>
             <typeparam name="TIndividual">Type of <see cref="T:Genetic_Algorithm.GA.Generics.IIndividual`1"/> in the population</typeparam>
             <typeparam name="TGene">Type of <see cref="T:Genetic_Algorithm.GA.Generics.IGene"/> in the population</typeparam>
         </member>
-        <member name="P:Genetic_Algorithm.GA.Generics.SavedNumberedPopulation`2.Number">
+        <member name="P:Genetic_Algorithm.GA.Generics.NumberedPopulation`2.Number">
             <summary>
             Ordinal number of the generation stored in the population
             </summary>
         </member>
-        <member name="M:Genetic_Algorithm.GA.Generics.SavedNumberedPopulation`2.#ctor(Genetic_Algorithm.GA.Generics.Population{`0,`1},System.Int32)">
+        <member name="M:Genetic_Algorithm.GA.Generics.NumberedPopulation`2.#ctor(Genetic_Algorithm.GA.Generics.Population{`0,`1},System.Int32)">
             <summary>
             Create a population with additional GA information
             </summary>
             <param name="population">Individuals to store</param>
             <param name="number">N-th generation in a GA</param>
         </member>
-        <member name="M:Genetic_Algorithm.GA.Generics.SavedNumberedPopulation`2.TrySetFitness(System.Double)">
+        <member name="M:Genetic_Algorithm.GA.Generics.NumberedPopulation`2.TrySetFitness(System.Double)">
             <summary>
-            Only allows to set <see cref="P:Genetic_Algorithm.GA.Generics.SavedNumberedPopulation`2.TopFitness"/> if it hasn't been initialised yet (in case top fitness couldn't be acquired during construction)
+            Only allows to set <see cref="P:Genetic_Algorithm.GA.Generics.NumberedPopulation`2.TopFitness"/> if it hasn't been initialised yet (in case top fitness couldn't be acquired during construction)
             </summary>
             <param name="value"></param>
         </member>
