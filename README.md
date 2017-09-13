@@ -11,3 +11,8 @@ Main program components:
     . Define polygon shapes, colors, names
     
 To create a new domain, the following needs to be implemented:
+  - IGene(s)
+  - IIndividual(s) using your implemented IGene
+  - GeneticAlgortihm Adapter (Crossover method between your IIndividuals, all other methods are already implemented generically)
+  - Fitness Calculator(s) evaluating your IIndividual's fitness
+  - (Optional: some sort of feedback on the progress of your domain's GAs)
