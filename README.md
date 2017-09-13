@@ -2,6 +2,9 @@
 *Implementation of a genetic algorithm, generic support for various domains, 
 currently support for polygons (using their axial symmetry as a fitness function).*
 
+##How to launch:
+After downloading the files, you can launch the app without any other necessary steps via the PolyGaLauncher in ```PolyGaLauncher\bin\Release\PolyGaLauncher.exe```
+
 ## Main program components:
   - Genetic Algorithm
     - Adjust genetic algorithm parameters, choose between different fitness function calculators, run genetic algorithm
