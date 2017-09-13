@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Genetic_Algorithm.GA.Generics
 {
-    delegate void GenerationCompleteEventHandler<TIndividual, TGene>(GaEventArgs<TIndividual, TGene> ge)
+    public delegate void GenerationCompleteEventHandler<TIndividual, TGene>(GaEventArgs<TIndividual, TGene> ge)
         where TIndividual : IIndividual<TGene>, new()
         where TGene : IGene;
 
-    delegate void GaInitialisedEventHandler<TIndividual, TGene>(GaEventArgs<TIndividual, TGene> ge)
+    public delegate void GaInitialisedEventHandler<TIndividual, TGene>(GaEventArgs<TIndividual, TGene> ge)
         where TIndividual : IIndividual<TGene>, new()
         where TGene : IGene;
 
@@ -20,7 +20,7 @@ namespace Genetic_Algorithm.GA.Generics
     /// </summary>
     /// <typeparam name="TIndividual">Type of the used <see cref="IIndividual{IGene}"/> in the event population</typeparam>
     /// <typeparam name="TGene">Type of the <see cref="IGene"/> in the event population</typeparam>
-    class GaEventArgs<TIndividual, TGene> : EventArgs
+    public class GaEventArgs<TIndividual, TGene> : EventArgs
         where TIndividual : IIndividual<TGene>, new()
         where TGene : IGene
     {

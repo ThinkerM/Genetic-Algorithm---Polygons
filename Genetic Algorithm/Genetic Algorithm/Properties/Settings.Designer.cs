@@ -43,15 +43,6 @@ namespace Genetic_Algorithm.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("10")]
-        public int PolygonVertices {
-            get {
-                return ((int)(this["PolygonVertices"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("20")]
         public int PopulationSize {
             get {
@@ -83,24 +74,6 @@ namespace Genetic_Algorithm.Properties {
         public double SteadyStateSurvivalRate {
             get {
                 return ((double)(this["SteadyStateSurvivalRate"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("30")]
-        public int AngleMutationMaximumVariance {
-            get {
-                return ((int)(this["AngleMutationMaximumVariance"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.2")]
-        public double CentroidDistanceMaximumMutation {
-            get {
-                return ((double)(this["CentroidDistanceMaximumMutation"]));
             }
         }
     }

@@ -19,6 +19,11 @@ namespace Polygons
             }
         }
 
+        public static bool HalfProbability()
+        {
+            return Instance.NextDouble() <= 0.5;
+        }
+
         private UniqueRandom() { }
     }
 }

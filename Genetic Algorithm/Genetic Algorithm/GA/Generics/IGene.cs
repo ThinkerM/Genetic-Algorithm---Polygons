@@ -9,7 +9,7 @@ namespace Genetic_Algorithm.GA.Generics
     /// <summary>
     /// Stores an encoded representation of any trait which can be mutated
     /// </summary>
-    interface IGene
+    public interface IGene
     {
         /// <summary>
         /// Change encoded values of the gene
@@ -21,7 +21,7 @@ namespace Genetic_Algorithm.GA.Generics
     /// Represents GA Gene with a specified encoded object
     /// </summary>
     /// <typeparam name="TEncoded">Encoded object type</typeparam>
-    interface IGene<out TEncoded> : IGene
+    public interface IGene<out TEncoded> : IGene
     {
         /// <summary>
         /// Revert gene back into the object it is encoding

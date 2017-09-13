@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['savedpopulation',['SavedPopulation',['../class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_ga_event_args.html#a0b374b1fe0550ce4430f8f094e4a1f3b',1,'Genetic_Algorithm::GA::Generics::GaEventArgs']]],
-  ['shapename',['ShapeName',['../class_polygons_1_1_forms_1_1_polygon_creation_form.html#ad5ec58add1a5fbe15c866a910374640c',1,'Polygons::Forms::PolygonCreationForm']]]
+  ['outlinecolor',['OutlineColor',['../d7/dc3/interface_polygons_1_1_i_polygon.html#a89a577e2141ff595091f8bc614b137b7',1,'Polygons.IPolygon.OutlineColor()'],['../da/d09/class_polygons_1_1_polygon.html#a3f7dbdf4dad6fb215bde2da6ceb428b3',1,'Polygons.Polygon.OutlineColor()']]]
 ];

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Genetic_Algorithm.Utils;
 
 namespace Genetic_Algorithm.GA.Generics
 { 
@@ -12,7 +13,7 @@ namespace Genetic_Algorithm.GA.Generics
     /// </summary>
     /// <typeparam name="TIndividual"></typeparam>
     /// <typeparam name="TGene"></typeparam>
-    class GeneticAlgorithm<TIndividual, TGene>
+    public class GeneticAlgorithm<TIndividual, TGene>
         where TIndividual : IIndividual<TGene>, new()
         where TGene : IGene
     {

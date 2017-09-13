@@ -13,7 +13,7 @@ namespace PolyGaLauncher
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(Genetic_Algorithm.Forms.CrossroadForm.Instance);
+            Application.Run(Polygons.Forms.CrossroadForm.Instance);
         }
     }
 }

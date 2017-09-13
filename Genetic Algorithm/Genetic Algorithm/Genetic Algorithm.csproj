@@ -41,6 +41,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\Genetic Algorithm.XML</DocumentationFile>
+    <NoWarn>CS1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -113,9 +114,6 @@
       <HintPath>..\..\packages\morelinq.2.6.0\lib\net40\MoreLinq.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Polygons">
-      <HintPath>..\..\Polygons\Polygons\bin\Release\Polygons.dll</HintPath>
-    </Reference>
     <Reference Include="Randomization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Libraries\Randomization\Randomization\bin\Debug\Randomization.dll</HintPath>
@@ -138,42 +136,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\ChooseVerticesCountToImportDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ChooseVerticesCountToImportDialog.Designer.cs">
-      <DependentUpon>ChooseVerticesCountToImportDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\CrossroadForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CrossroadForm.Designer.cs">
-      <DependentUpon>CrossroadForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\CustomControls\GaComponentIcon.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\CustomControls\GaComponentIcon.Designer.cs">
-      <DependentUpon>GaComponentIcon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\GaViewingForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\GaViewingForm.designer.cs">
-      <DependentUpon>GaViewingForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\PopulationGeneratorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PopulationGeneratorForm.Designer.cs">
-      <DependentUpon>PopulationGeneratorForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\CustomControls\LabeledPolygonImage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\CustomControls\LabeledPolygonImage.Designer.cs">
-      <DependentUpon>LabeledPolygonImage.cs</DependentUpon>
-    </Compile>
     <Compile Include="GA\Generics\DelegatesAndEvents.cs" />
     <Compile Include="GA\Generics\GeneticAlgorithm.cs" />
     <Compile Include="GA\Generics\GeneticAlgorithmAdapter.cs" />
@@ -182,39 +144,14 @@
     <Compile Include="GA\Generics\IGeneticAlgorithmAdapter.cs" />
     <Compile Include="GA\Generics\Population.cs" />
     <Compile Include="GA\Generics\IIndividual.cs" />
-    <Compile Include="GA\Polygon-based\FitnessCalculators\BasicSymmetryCalculator.cs" />
-    <Compile Include="GA\Polygon-based\FitnessCalculators\SymmetryIntersectionPenaltyCalculator.cs" />
-    <Compile Include="GA\Polygon-based\IPolygonGene.cs" />
-    <Compile Include="GA\Polygon-based\FitnessCalculators\CalculatorRetriever.cs" />
-    <Compile Include="GA\Polygon-based\PolygonAdapter.cs" />
-    <Compile Include="GA\Polygon-based\SimplePolygonGene.cs" />
-    <Compile Include="GA\Polygon-based\PolygonIndividual.cs" />
     <Compile Include="Properties\GaSettings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>GaSettings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Utils\UniqueRandom.cs" />
     <Compile Include="Utils\SettingsAccessor.cs" />
+    <Compile Include="Utils\UniqueRandom.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\ChooseVerticesCountToImportDialog.resx">
-      <DependentUpon>ChooseVerticesCountToImportDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CrossroadForm.resx">
-      <DependentUpon>CrossroadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CustomControls\GaComponentIcon.resx">
-      <DependentUpon>GaComponentIcon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\GaViewingForm.resx">
-      <DependentUpon>GaViewingForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PopulationGeneratorForm.resx">
-      <DependentUpon>PopulationGeneratorForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CustomControls\LabeledPolygonImage.resx">
-      <DependentUpon>LabeledPolygonImage.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -226,7 +163,6 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\Genetic_Algorithm.Properties.GaSettings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -243,15 +179,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\croppedEvolution.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\multiplePolygons.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\singlePolygon.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

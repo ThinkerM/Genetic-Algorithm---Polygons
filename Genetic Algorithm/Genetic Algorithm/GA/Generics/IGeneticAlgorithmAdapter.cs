@@ -11,7 +11,7 @@ namespace Genetic_Algorithm.GA.Generics
     /// </summary>
     /// <typeparam name="TIndividual">Class implementing GA Individual</typeparam>
     /// <typeparam name="TGene">Class implementing GA IGene</typeparam>
-    interface IGeneticAlgorithmAdapter<TIndividual, TGene>
+    public interface IGeneticAlgorithmAdapter<TIndividual, TGene>
         where TIndividual : IIndividual<TGene>, new()
         where TGene : IGene
     {

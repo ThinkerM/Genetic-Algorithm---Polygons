@@ -12,7 +12,7 @@ namespace Genetic_Algorithm.GA.Generics
     /// </summary>
     /// <typeparam name="TIndividual">Type of <see cref="IIndividual{IGene}"/> in the population</typeparam>
     /// <typeparam name="TGene">Type of <see cref="IGene"/> in the population</typeparam>
-    class NumberedPopulation<TIndividual, TGene> : Population<TIndividual, TGene>
+    public class NumberedPopulation<TIndividual, TGene> : Population<TIndividual, TGene>
         where TIndividual : IIndividual<TGene>, new()
         where TGene : IGene
     {
@@ -38,6 +38,11 @@ namespace Genetic_Algorithm.GA.Generics
         /// </summary>
         /// <param name="value"></param>
         public void TrySetFitness(double value) { if (TopFitness.Equals(double.NaN)) TopFitness = value; }
+
+        /// <summary>
+        /// String representation of <see cref="NumberedPopulation{TIndividual, TGene}"/>
+        /// </summary>
+        /// <returns></returns>
         public override string ToString() => $"Generation {Number} : Top fitness {TopFitness}";
     }
 
@@ -46,7 +51,7 @@ namespace Genetic_Algorithm.GA.Generics
     /// </summary>
     /// <typeparam name="TIndividual">Type of the individual in the population</typeparam>
     /// <typeparam name="TGene">Type of the gene encoded in individual's genome</typeparam>
-    class Population<TIndividual, TGene> : IList<TIndividual>
+    public class Population<TIndividual, TGene> : IList<TIndividual>
         where TIndividual : IIndividual<TGene>, new()
         where TGene : IGene
     {
@@ -71,6 +76,10 @@ namespace Genetic_Algorithm.GA.Generics
             DesiredSize = desiredSize;
         }
 
+        /// <summary>
+        /// Create a <see cref="Population{TIndividual, TGene}"/> with no members
+        /// </summary>
+        /// <returns></returns>
         public static Population<TIndividual, TGene> EmptyPopulation()
         {
             return new Population<TIndividual, TGene>();

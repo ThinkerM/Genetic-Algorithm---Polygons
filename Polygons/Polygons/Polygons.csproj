@@ -81,14 +81,28 @@
     <Reference Include="CustomExtensions">
       <HintPath>..\..\..\Libraries\Extensions\Extensions\bin\Debug\CustomExtensions.dll</HintPath>
     </Reference>
+    <Reference Include="Genetic Algorithm">
+      <HintPath>..\..\Genetic Algorithm\Genetic Algorithm\bin\Release\Genetic Algorithm.dll</HintPath>
+    </Reference>
     <Reference Include="GroupControls">
       <HintPath>..\..\..\Libraries\CustomControls\GroupControls\bin\Debug\GroupControls.dll</HintPath>
+    </Reference>
+    <Reference Include="MessageBoxManager">
+      <HintPath>..\..\Genetic Algorithm\Genetic Algorithm\bin\Release\MessageBoxManager.dll</HintPath>
+    </Reference>
+    <Reference Include="MoreLinq, Version=2.6.20831.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\morelinq.2.7.0\lib\net40\MoreLinq.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Randomization">
       <HintPath>..\..\..\Libraries\Randomization\Randomization\bin\Debug\Randomization.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -100,11 +114,59 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GA\FitnessCalculators\BasicSymmetryCalculator.cs" />
+    <Compile Include="GA\FitnessCalculators\CalculatorRetriever.cs" />
+    <Compile Include="Forms\DialogForms\ChooseVerticesCountToImportDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DialogForms\ChooseVerticesCountToImportDialog.Designer.cs">
+      <DependentUpon>ChooseVerticesCountToImportDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CrossroadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CrossroadForm.Designer.cs">
+      <DependentUpon>CrossroadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomControls\GaComponentIcon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomControls\GaComponentIcon.Designer.cs">
+      <DependentUpon>GaComponentIcon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomControls\LabeledPolygonImage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomControls\LabeledPolygonImage.Designer.cs">
+      <DependentUpon>LabeledPolygonImage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DialogForms\DeleteFileConfirmation.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\DialogForms\DeleteFileConfirmation.Designer.cs">
       <DependentUpon>DeleteFileConfirmation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GaViewingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GaViewingForm.designer.cs">
+      <DependentUpon>GaViewingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopulationGeneratorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopulationGeneratorForm.Designer.cs">
+      <DependentUpon>PopulationGeneratorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GA\IPolygonGene.cs" />
+    <Compile Include="GA\PolygonAdapter.cs" />
+    <Compile Include="GA\PolygonIndividual.cs" />
+    <Compile Include="GA\SimplePolygonGene.cs" />
+    <Compile Include="GA\FitnessCalculators\SymmetryIntersectionPenaltyCalculator.cs" />
+    <Compile Include="Properties\PolygonGaSettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>PolygonGaSettings.settings</DependentUpon>
     </Compile>
     <Compile Include="Utils\Paths.cs" />
     <Compile Include="Polygon\Polygons.cs" />
@@ -131,15 +193,34 @@
     <Compile Include="Forms\DialogForms\ShapeOverwritePromptForm.Designer.cs">
       <DependentUpon>ShapeOverwritePromptForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\SettingsAccessor.cs" />
     <Compile Include="Utils\UniqueRandom.cs" />
+    <EmbeddedResource Include="Forms\DialogForms\ChooseVerticesCountToImportDialog.resx">
+      <DependentUpon>ChooseVerticesCountToImportDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CrossroadForm.resx">
+      <DependentUpon>CrossroadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomControls\GaComponentIcon.resx">
+      <DependentUpon>GaComponentIcon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomControls\LabeledPolygonImage.resx">
+      <DependentUpon>LabeledPolygonImage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DialogForms\DeleteFileConfirmation.resx">
       <DependentUpon>DeleteFileConfirmation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DialogForms\ShapeNameChooserPrompt.resx">
       <DependentUpon>ShapeNameChooserPrompt.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GaViewingForm.resx">
+      <DependentUpon>GaViewingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PolygonCreationForm.resx">
       <DependentUpon>PolygonCreationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PopulationGeneratorForm.resx">
+      <DependentUpon>PopulationGeneratorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -149,10 +230,16 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Forms\DialogForms\ShapeOverwritePromptForm.resx">
       <DependentUpon>ShapeOverwritePromptForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\PolygonGaSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>PolygonGaSettings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -177,6 +264,15 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\croppedEvolution.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\multiplePolygons.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\singlePolygon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

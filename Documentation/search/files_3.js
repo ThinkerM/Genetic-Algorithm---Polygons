@@ -1,17 +1,6 @@
 var searchData=
 [
-  ['assemblyinfo_2ecs',['AssemblyInfo.cs',['../_genetic_01_algorithm_2_genetic_01_algorithm_2_properties_2_assembly_info_8cs.html',1,'']]],
-  ['gacomponenticon_2ecs',['GaComponentIcon.cs',['../_ga_component_icon_8cs.html',1,'']]],
-  ['gacomponenticon_2edesigner_2ecs',['GaComponentIcon.Designer.cs',['../_ga_component_icon_8_designer_8cs.html',1,'']]],
-  ['gasettings_2edesigner_2ecs',['GaSettings.Designer.cs',['../_ga_settings_8_designer_8cs.html',1,'']]],
-  ['gaviewingform_2ecs',['GaViewingForm.cs',['../_ga_viewing_form_8cs.html',1,'']]],
-  ['gaviewingform_2edesigner_2ecs',['GaViewingForm.designer.cs',['../_ga_viewing_form_8designer_8cs.html',1,'']]],
-  ['geneticalgorithm_2ecs',['GeneticAlgorithm.cs',['../_genetic_algorithm_8cs.html',1,'']]],
-  ['geneticalgorithmadapter_2ecs',['GeneticAlgorithmAdapter.cs',['../_genetic_algorithm_adapter_8cs.html',1,'']]],
-  ['resources_2edesigner_2ecs',['Resources.Designer.cs',['../_genetic_01_algorithm_2_genetic_01_algorithm_2_properties_2_resources_8_designer_8cs.html',1,'']]],
-  ['settings_2edesigner_2ecs',['Settings.Designer.cs',['../_genetic_01_algorithm_2_genetic_01_algorithm_2_properties_2_settings_8_designer_8cs.html',1,'']]],
-  ['temporarygeneratedfile_5f036c0b5b_2d1481_2d4323_2d8d20_2d8f5adcb23d92_2ecs',['TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs',['../_genetic_01_algorithm_2_genetic_01_algorithm_2obj_2_debug_2_temporary_generated_file__036_c0_b5_6032e6a990aa288256cf82a5339cc15c.html',1,'(Global Namespace)'],['../_genetic_01_algorithm_2_genetic_01_algorithm_2obj_2_release_2_temporary_generated_file__036_c0_bf11e0a19ccf25d9a335c783ba92c5ccf.html',1,'(Global Namespace)'],['../_genetic_01_algorithm_2_genetic_01_algorithm_2obj_2x64_2_debug_2_temporary_generated_file__036_ce1e417eb8530d5fd01bbb516a803d4b1.html',1,'(Global Namespace)'],['../_genetic_01_algorithm_2_genetic_01_algorithm_2obj_2x86_2_debug_2_temporary_generated_file__036_cf701ad8ba74b68a1f0988fb0f9ff395f.html',1,'(Global Namespace)']]],
-  ['temporarygeneratedfile_5f5937a670_2d0e60_2d4077_2d877b_2df7221da3dda1_2ecs',['TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs',['../_genetic_01_algorithm_2_genetic_01_algorithm_2obj_2_debug_2_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs.html',1,'(Global Namespace)'],['../_genetic_01_algorithm_2_genetic_01_algorithm_2obj_2_release_2_temporary_generated_file__5937a670ff3989029a4c2ae829f8eb900e4fd4a2.html',1,'(Global Namespace)'],['../_genetic_01_algorithm_2_genetic_01_algorithm_2obj_2x64_2_debug_2_temporary_generated_file__5937a1f4d7de2e1dae7f8f6f270ce0e97dec2.html',1,'(Global Namespace)'],['../_genetic_01_algorithm_2_genetic_01_algorithm_2obj_2x86_2_debug_2_temporary_generated_file__5937a662a9ed8ce39fd76efd97776a6d9c313.html',1,'(Global Namespace)']]],
-  ['temporarygeneratedfile_5fe7a71f73_2d0f8d_2d4b9b_2db56e_2d8e70b10bc5d3_2ecs',['TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs',['../_genetic_01_algorithm_2_genetic_01_algorithm_2obj_2_debug_2_temporary_generated_file___e7_a71_f7db6aa82cd3c5d41b56fcbd06e62deae2.html',1,'(Global Namespace)'],['../_genetic_01_algorithm_2_genetic_01_algorithm_2obj_2_release_2_temporary_generated_file___e7_a71_692e908a35890dd3e2ccdfce44f22da6.html',1,'(Global Namespace)'],['../_genetic_01_algorithm_2_genetic_01_algorithm_2obj_2x64_2_debug_2_temporary_generated_file___e7_a56a20fafaf9a4f22e4d6769052b4e7f6.html',1,'(Global Namespace)'],['../_genetic_01_algorithm_2_genetic_01_algorithm_2obj_2x86_2_debug_2_temporary_generated_file___e7_a4f6ec5483981807a2ff32c0135b97013.html',1,'(Global Namespace)']]],
-  ['uniquerandom_2ecs',['UniqueRandom.cs',['../_genetic_01_algorithm_2_genetic_01_algorithm_2_utils_2_unique_random_8cs.html',1,'']]]
+  ['delegatesandevents_2ecs',['DelegatesAndEvents.cs',['../de/d51/_delegates_and_events_8cs.html',1,'']]],
+  ['deletefileconfirmation_2ecs',['DeleteFileConfirmation.cs',['../d7/d3e/_delete_file_confirmation_8cs.html',1,'']]],
+  ['deletefileconfirmation_2edesigner_2ecs',['DeleteFileConfirmation.Designer.cs',['../d0/d4c/_delete_file_confirmation_8_designer_8cs.html',1,'']]]
 ];

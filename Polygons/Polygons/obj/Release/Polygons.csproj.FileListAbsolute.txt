@@ -54,3 +54,18 @@ C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Release\Poly
 C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Release\Polygons.csproj.GenerateResource.Cache
 C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Release\Polygons.dll
 C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Release\Polygons.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Release\Polygons.Forms.DialogForms.ChooseVerticesCountToImportDialog.resources
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Release\Polygons.Forms.CrossroadForm.resources
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Release\Polygons.Forms.CustomControls.GaComponentIcon.resources
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Release\Polygons.Forms.CustomControls.LabeledPolygonImage.resources
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Release\Polygons.Forms.GaViewerForm.resources
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Release\Polygons.Forms.PopulationGeneratorForm.resources
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Release\Genetic Algorithm.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Release\MessageBoxManager.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Release\MoreLinq.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Release\System.ValueTuple.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Release\Genetic Algorithm.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Release\Genetic Algorithm.xml
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Release\MessageBoxManager.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Release\MoreLinq.xml
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Release\System.ValueTuple.xml

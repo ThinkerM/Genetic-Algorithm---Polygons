@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['selectiontype',['SelectionType',['../namespace_genetic___algorithm_1_1_g_a.html#acc062a26d72be43ec335b267aac5cdc3',1,'Genetic_Algorithm::GA']]]
+  ['selectiontype',['SelectionType',['../d4/d1c/namespace_genetic___algorithm_1_1_utils.html#afe83b6d703257076d2d5b43432c6c665',1,'Genetic_Algorithm::Utils']]]
 ];

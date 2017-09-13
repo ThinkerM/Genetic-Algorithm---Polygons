@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['x',['X',['../interface_genetic___algorithm_1_1_g_a_1_1_polygon__based_1_1_i_polygon_gene.html#abf364a2ed81c0cabb5dff69458bd3855',1,'Genetic_Algorithm.GA.Polygon_based.IPolygonGene.X()'],['../class_genetic___algorithm_1_1_g_a_1_1_polygon__based_1_1_simple_polygon_gene.html#a3a78056b9693b7772bbc6a3a8b62fed5',1,'Genetic_Algorithm.GA.Polygon_based.SimplePolygonGene.X()']]]
+  ['this_5bint_20index_5d',['this[int index]',['../dd/d05/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_population.html#a3599852a3435afc0eeaf0508cf8b89c7',1,'Genetic_Algorithm::GA::Generics::Population']]],
+  ['topfitness',['TopFitness',['../d8/d05/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_numbered_population.html#afab2ed4fe58d3e14d5ad32358172c801',1,'Genetic_Algorithm::GA::Generics::NumberedPopulation']]]
 ];

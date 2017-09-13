@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['updateangularrepresentation',['UpdateAngularRepresentation',['../interface_genetic___algorithm_1_1_g_a_1_1_polygon__based_1_1_i_polygon_gene.html#a37f1ec9ad38f946eb4be0a25f3ea7ddd',1,'Genetic_Algorithm.GA.Polygon_based.IPolygonGene.UpdateAngularRepresentation()'],['../class_genetic___algorithm_1_1_g_a_1_1_polygon__based_1_1_simple_polygon_gene.html#a266775980cc9c4f29cc65340130f68c3',1,'Genetic_Algorithm.GA.Polygon_based.SimplePolygonGene.UpdateAngularRepresentation()']]],
-  ['updatepointrepresentation',['UpdatePointRepresentation',['../class_genetic___algorithm_1_1_g_a_1_1_polygon__based_1_1_simple_polygon_gene.html#aa1257dbdc6b6051b59432441be2f1c44',1,'Genetic_Algorithm::GA::Polygon_based::SimplePolygonGene']]]
+  ['uniquerandom_2ecs',['UniqueRandom.cs',['../db/d1d/_genetic_01_algorithm_2_genetic_01_algorithm_2_utils_2_unique_random_8cs.html',1,'(Global Namespace)'],['../d0/dc6/_polygons_2_polygons_2_utils_2_unique_random_8cs.html',1,'(Global Namespace)']]],
+  ['updateangularrepresentation',['UpdateAngularRepresentation',['../d8/d4e/interface_polygons_1_1_g_a_1_1_i_polygon_gene.html#ad7115551cd592223c150c901aa043b53',1,'Polygons.GA.IPolygonGene.UpdateAngularRepresentation()'],['../d2/d74/class_polygons_1_1_g_a_1_1_simple_polygon_gene.html#aed1f0f7c7bcd92543c9252e7461369bd',1,'Polygons.GA.SimplePolygonGene.UpdateAngularRepresentation()']]],
+  ['updatepointrepresentation',['UpdatePointRepresentation',['../d2/d74/class_polygons_1_1_g_a_1_1_simple_polygon_gene.html#ad592bd9c5216e50f38094cdeded1d768',1,'Polygons::GA::SimplePolygonGene']]]
 ];

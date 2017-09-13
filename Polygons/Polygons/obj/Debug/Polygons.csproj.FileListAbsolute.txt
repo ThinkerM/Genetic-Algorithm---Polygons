@@ -68,5 +68,20 @@ C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Debug\Polygo
 C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Debug\Polygons.csproj.GenerateResource.Cache
 C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Debug\Polygons.dll
 C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Debug\Polygons.pdb
-C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Debug\CustomExtensions.xml
 C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Debug\Polygons.csprojResolveAssemblyReference.cache
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Debug\Genetic Algorithm.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Debug\MessageBoxManager.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Debug\MoreLinq.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Debug\System.ValueTuple.dll
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Debug\Genetic Algorithm.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Debug\Genetic Algorithm.xml
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Debug\MessageBoxManager.pdb
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Debug\MoreLinq.xml
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Debug\System.ValueTuple.xml
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Debug\Polygons.Forms.DialogForms.ChooseVerticesCountToImportDialog.resources
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Debug\Polygons.Forms.CrossroadForm.resources
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Debug\Polygons.Forms.CustomControls.GaComponentIcon.resources
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Debug\Polygons.Forms.CustomControls.LabeledPolygonImage.resources
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Debug\Polygons.Forms.GaViewerForm.resources
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\obj\Debug\Polygons.Forms.PopulationGeneratorForm.resources
+C:\_CodeProjects\Genetic Algorithm - Polygons\Polygons\Polygons\bin\Debug\CustomExtensions.xml

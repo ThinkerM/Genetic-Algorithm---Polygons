@@ -1,6 +1,7 @@
 var NAVTREE =
 [
-  [ "PolyGA", "index.html", [
+  [ "PolyGenetic Algorithm", "index.html", [
+    [ "PolyGenetic Algorithm", "dd/dbf/md__c_1___code_projects__genetic__algorithm_-__polygons__r_e_a_d_m_e.html", null ],
     [ "Packages", null, [
       [ "Packages", "namespaces.html", "namespaces" ],
       [ "Package Functions", "namespacemembers.html", [
@@ -29,8 +30,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_basic_symmetry_calculator_8cs.html",
-"interface_genetic___algorithm_1_1_g_a_1_1_generics_1_1_i_individual.html#ad13f7e7686b3e80364678c980ecb8f94"
+"annotated.html",
+"dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#ac8bcba807f1bf2ca5b759ab17b758b1c"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Genetic_Algorithm.Properties;
 using System.Windows.Forms;
 
-namespace Genetic_Algorithm.GA
+namespace Genetic_Algorithm.Utils
 {
     /// <summary>
     /// Defines different methods of selecting individuals to advance into further generations
@@ -33,14 +33,20 @@ namespace Genetic_Algorithm.GA
     /// <summary>
     /// Serves as an intermediary to the Genetic Algorithm's GaSettings.Default
     /// </summary>
-    internal static class SettingsAccessor
+    public static class SettingsAccessor
     {
+        /// <summary>
+        /// Indicates whether top individual of population should always be guaranteed to continue without changes
+        /// </summary>
         public static bool Elitism
         {
             get { return GaSettings.Default.Elitism; }
             set { GaSettings.Default.Elitism = value; }
         }
 
+        /// <summary>
+        /// Chance that two individuals will generate a meiotic offspring instead of continuing unchanged
+        /// </summary>
         public static double CrossoverProbability
         {
             get { return GaSettings.Default.CrossoverProbability; }
@@ -52,6 +58,9 @@ namespace Genetic_Algorithm.GA
             }            
         }
 
+        /// <summary>
+        /// Percentage of individuals to automatically survive each generation
+        /// </summary>
         public static double SteadyStateSurvivalRate
         {
             get { return GaSettings.Default.SteadyStateSurvivalRate; }
@@ -63,20 +72,9 @@ namespace Genetic_Algorithm.GA
             }
         }
 
-        public static int PolygonsVertices
-        {
-            get { return GaSettings.Default.PolygonVertices; }
-            set
-            {
-                if (value >=3)
-                {
-                    GaSettings.Default.PolygonVertices = value;
-                }
-                else
-                { MessageBox.Show("Polygons must have at least 3 vertices."); }
-            }
-        }
-
+        /// <summary>
+        /// Chance that a single gene will mutate
+        /// </summary>
         public static double MutationProbability
         {
                 get { return GaSettings.Default.MutationProbability; }
@@ -88,6 +86,9 @@ namespace Genetic_Algorithm.GA
         }
 
         private static readonly int MIN_POP_SIZE = 2;
+        /// <summary>
+        /// Number of individuals per generation
+        /// </summary>
         public static int PopulationSize
         {
             get { return GaSettings.Default.PopulationSize; }
@@ -100,49 +101,33 @@ namespace Genetic_Algorithm.GA
             }
         }
 
+        /// <summary>
+        /// <see cref="SelectionType"/> currently used
+        /// </summary>
         public static SelectionType Selection
         {
             get { return (SelectionType)Enum.Parse(typeof(SelectionType), GaSettings.Default.SelectionType, true); }
             set { GaSettings.Default.SelectionType = Enum.GetName(typeof(SelectionType), value); }
         }
 
-        public static double CentroidDistanceMaximumMutation
-        {
-            get { return GaSettings.Default.CentroidDistanceMaximumMutation; }
-            set
-            {
-                if (value >= 0 && value <= 1)
-                { GaSettings.Default.CentroidDistanceMaximumMutation = value; }
-                else { MessageBox.Show(PROBABILITY_ERROR_MESSAGE); }
-            }
-        }
-
-        public static int AngleMaximumMutation
-        {
-            get { return GaSettings.Default.AngleMutationMaximumVariance; }
-            set
-            {
-                if(value>=0 && value <= 180)
-                { GaSettings.Default.AngleMutationMaximumVariance = value; }
-                else { MessageBox.Show("Angle mutation must be between 0 and 180."); }
-            }
-        }
-
+        /// <summary>
+        /// Write current settings state to permanent settings file
+        /// </summary>
         public static void SaveSettings() => GaSettings.Default.Save();
 
         private static readonly string PROBABILITY_ERROR_MESSAGE = "Invalid value, probability must be between 0 and 1";
 
+        /// <summary>
+        /// Retrieve GA parameters from a backup settings file
+        /// </summary>
         public static void ResetToDefaults()
         {
             Elitism = Settings.Default.Elitism;
             MutationProbability = Settings.Default.MutationProbability;
             CrossoverProbability = Settings.Default.CrossoverProbability;
-            PolygonsVertices = Settings.Default.PolygonVertices;
             PopulationSize  = Settings.Default.PopulationSize;
             SteadyStateSurvivalRate = Settings.Default.SteadyStateSurvivalRate;
             Selection = (SelectionType)Enum.Parse(typeof(SelectionType), Settings.Default.SelectionType, true);
-            AngleMaximumMutation = Settings.Default.AngleMutationMaximumVariance;
-            CentroidDistanceMaximumMutation = Settings.Default.CentroidDistanceMaximumMutation;
         }
     }
 }

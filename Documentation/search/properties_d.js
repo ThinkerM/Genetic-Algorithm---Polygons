@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['y',['Y',['../interface_genetic___algorithm_1_1_g_a_1_1_polygon__based_1_1_i_polygon_gene.html#a29cf938360ea786c7a4aac8aacb8abdc',1,'Genetic_Algorithm.GA.Polygon_based.IPolygonGene.Y()'],['../class_genetic___algorithm_1_1_g_a_1_1_polygon__based_1_1_simple_polygon_gene.html#a0511148e71051fd1a3edc8922687f240',1,'Genetic_Algorithm.GA.Polygon_based.SimplePolygonGene.Y()']]]
+  ['vertices',['Vertices',['../d7/dc3/interface_polygons_1_1_i_polygon.html#aaea10a01930eb14fce2899ee63ba7950',1,'Polygons.IPolygon.Vertices()'],['../da/d09/class_polygons_1_1_polygon.html#a299607be5e00a2acb70f32748214cfad',1,'Polygons.Polygon.Vertices()']]],
+  ['verticescount',['VerticesCount',['../d7/dc3/interface_polygons_1_1_i_polygon.html#ad02e00a22d88b8d522f0ffae9e344f77',1,'Polygons.IPolygon.VerticesCount()'],['../da/d09/class_polygons_1_1_polygon.html#a9b1ad967421005b602ab72657d23e14a',1,'Polygons.Polygon.VerticesCount()']]]
 ];

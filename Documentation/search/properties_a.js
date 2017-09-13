@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['this_5bint_20index_5d',['this[int index]',['../class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_population.html#a3599852a3435afc0eeaf0508cf8b89c7',1,'Genetic_Algorithm::GA::Generics::Population']]],
-  ['topfitness',['TopFitness',['../class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_saved_numbered_population.html#a495fe5150fff07b7bbb3722aa27adcdd',1,'Genetic_Algorithm::GA::Generics::SavedNumberedPopulation']]]
+  ['polygon',['Polygon',['../db/dd3/class_polygons_1_1_g_a_1_1_polygon_individual.html#ac74d97cbbc90e83d50da09b021da2c2a',1,'Polygons::GA::PolygonIndividual']]],
+  ['populationsize',['PopulationSize',['../da/d51/class_genetic___algorithm_1_1_utils_1_1_settings_accessor.html#ad6ab078464d84cf8210c5112ffecde6a',1,'Genetic_Algorithm::Utils::SettingsAccessor']]]
 ];

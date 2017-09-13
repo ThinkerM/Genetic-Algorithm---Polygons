@@ -25,3 +25,4 @@ C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Debug\CustomExt
 C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Debug\CustomExtensions.pdb
 C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Debug\CustomExtensions.xml
 C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\obj\Debug\PolyGaLauncher.csprojResolveAssemblyReference.cache
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Debug\System.ValueTuple.xml
