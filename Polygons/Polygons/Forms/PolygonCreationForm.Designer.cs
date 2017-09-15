@@ -50,7 +50,6 @@
             this.loadShapeButton = new CustomButtons.GA_BaseButton();
             this.deleteShapeButton = new CustomButtons.GA_BaseButton();
             this.polygonBox = new System.Windows.Forms.PictureBox();
-            this.helpTextBox = new System.Windows.Forms.TextBox();
             this.paintGroupBox = new System.Windows.Forms.GroupBox();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.toolBox = new System.Windows.Forms.GroupBox();
@@ -308,22 +307,8 @@
             this.polygonBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.polygonBox_MouseDown);
             this.polygonBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.polygonBox_MouseMove);
             // 
-            // helpTextBox
-            // 
-            this.helpTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.helpTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.helpTextBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.helpTextBox.Enabled = false;
-            this.helpTextBox.Location = new System.Drawing.Point(3, 16);
-            this.helpTextBox.Name = "helpTextBox";
-            this.helpTextBox.ReadOnly = true;
-            this.helpTextBox.Size = new System.Drawing.Size(285, 13);
-            this.helpTextBox.TabIndex = 4;
-            this.helpTextBox.Text = "Use this rectangle to specify your desired shape by clicking";
-            // 
             // paintGroupBox
             // 
-            this.paintGroupBox.Controls.Add(this.helpTextBox);
             this.paintGroupBox.Controls.Add(this.polygonBox);
             this.paintGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.paintGroupBox.Location = new System.Drawing.Point(0, 0);
@@ -428,7 +413,6 @@
             this.fileHandlingPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.polygonBox)).EndInit();
             this.paintGroupBox.ResumeLayout(false);
-            this.paintGroupBox.PerformLayout();
             this.splitContainer.Panel1.ResumeLayout(false);
             this.splitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
@@ -449,7 +433,6 @@
         private System.Windows.Forms.FlowLayoutPanel fileHandlingPanel;
         private CustomButtons.GA_BaseButton saveShapeButton;
         private System.Windows.Forms.GroupBox paintGroupBox;
-        private System.Windows.Forms.TextBox helpTextBox;
         private System.Windows.Forms.PictureBox polygonBox;
         private System.Windows.Forms.SplitContainer splitContainer;
         private System.Windows.Forms.GroupBox toolBox;

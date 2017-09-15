@@ -52,3 +52,4 @@ C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\Genetic
 C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\CustomExtensions.pdb
 C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\CustomExtensions.xml
 C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\obj\Release\PolyGaLauncher.csprojResolveAssemblyReference.cache
+C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Release\System.ValueTuple.xml

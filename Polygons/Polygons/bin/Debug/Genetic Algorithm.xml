@@ -311,5 +311,45 @@
             Serves as an intermediary to the Genetic Algorithm's GaSettings.Default
             </summary>
         </member>
+        <member name="P:Genetic_Algorithm.Utils.SettingsAccessor.Elitism">
+            <summary>
+            Indicates whether top individual of population should always be guaranteed to continue without changes
+            </summary>
+        </member>
+        <member name="P:Genetic_Algorithm.Utils.SettingsAccessor.CrossoverProbability">
+            <summary>
+            Chance that two individuals will generate a meiotic offspring instead of continuing unchanged
+            </summary>
+        </member>
+        <member name="P:Genetic_Algorithm.Utils.SettingsAccessor.SteadyStateSurvivalRate">
+            <summary>
+            Percentage of individuals to automatically survive each generation
+            </summary>
+        </member>
+        <member name="P:Genetic_Algorithm.Utils.SettingsAccessor.MutationProbability">
+            <summary>
+            Chance that a single gene will mutate
+            </summary>
+        </member>
+        <member name="P:Genetic_Algorithm.Utils.SettingsAccessor.PopulationSize">
+            <summary>
+            Number of individuals per generation
+            </summary>
+        </member>
+        <member name="P:Genetic_Algorithm.Utils.SettingsAccessor.Selection">
+            <summary>
+            <see cref="T:Genetic_Algorithm.Utils.SelectionType"/> currently used
+            </summary>
+        </member>
+        <member name="M:Genetic_Algorithm.Utils.SettingsAccessor.SaveSettings">
+            <summary>
+            Write current settings state to permanent settings file
+            </summary>
+        </member>
+        <member name="M:Genetic_Algorithm.Utils.SettingsAccessor.ResetToDefaults">
+            <summary>
+            Retrieve GA parameters from a backup settings file
+            </summary>
+        </member>
     </members>
 </doc>

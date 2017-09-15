@@ -46,7 +46,6 @@ namespace Polygons.Forms
            
             PolygonColor = Color.Black;
             polygonBox.Paint += new PaintEventHandler(polygonBox_Paint);
-            DefaultBackground = polygonBox.BackColor;
 
             loadShapeDialog.InitialDirectory = Paths.PolygonSavedShapesFolderNoBacklash();
             deleteShapeDialog.InitialDirectory = Paths.PolygonSavedShapesFolderNoBacklash();
@@ -85,13 +84,12 @@ namespace Polygons.Forms
         {
             Graphics g = e.Graphics;
 
+            polygonBox.BackColor = inversionCheckbox.Checked 
+                ? PolygonColor.Invert() 
+                : DefaultBackground;
+
             if (useGridCheckBox.Checked)
             { PaintGrid(polygonBox, g); }
-
-            if (inversionCheckbox.Checked)
-            { polygonBox.BackColor.Invert(); }
-            else
-            { polygonBox.BackColor = DefaultBackColor; }
 
             if (closeShapeCheckbox.Checked)
             { Draw(DefinedPolygon, g); }
@@ -150,7 +148,6 @@ namespace Polygons.Forms
         #region User-painting
         private void polygonBox_Click(object sender, EventArgs e)
         {
-            helpTextBox.Visible = false;
             MouseEventArgs me = (MouseEventArgs)e;
             if (me.Button == MouseButtons.Left)
             {
@@ -172,8 +169,7 @@ namespace Polygons.Forms
 
         private void ColorButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = polygonColorDialog.ShowDialog();
-            if (result == DialogResult.OK)
+            if (polygonColorDialog.ShowDialog() == DialogResult.OK)
             {
                 PolygonColor = polygonColorDialog.Color;
                 polygonBox.Invalidate();
@@ -378,7 +374,7 @@ namespace Polygons.Forms
         #endregion
 
         #region Background
-        private Color DefaultBackground { get; }
+        private static readonly Color DefaultBackground = Color.White;
 
         private void inversionCheckbox_CheckedChanged(object sender, EventArgs e)
         {

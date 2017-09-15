@@ -517,6 +517,20 @@
             combined by <paramref name="resultSelector"/>.
             </returns>
         </member>
+        <member name="M:MoreLinq.MoreEnumerable.Evaluate``1(System.Collections.Generic.IEnumerable{System.Func{``0}})">
+            <summary>
+            Returns a sequence containing the values resulting from invoking (in order) each function in the source sequence of functions.
+            </summary>
+            <remarks>
+            This operator uses deferred execution and streams the results.
+            If the resulting sequence is enumerated multiple times, the functions will be
+            evaluated multiple times too.
+            </remarks>
+            <typeparam name="T">The type of the object returned by the functions.</typeparam>
+            <param name="functions">The functions to evaluate.</param>
+            <returns>A sequence with results from invoking <paramref name="functions"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">When <paramref name="functions"/> is <c>null</c>.</exception>
+        </member>
         <member name="M:MoreLinq.MoreEnumerable.ExceptBy``2(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
             <summary>
             Returns the set of elements in the first sequence which aren't
@@ -1104,6 +1118,62 @@
             <param name="source">The sequence of elements</param>
             <param name="action">The action to execute on each element; the second parameter
             of the action represents the index of the source element.</param>
+        </member>
+        <member name="M:MoreLinq.MoreEnumerable.From``1(System.Func{``0})">
+            <summary>
+            Returns a single-element sequence containing the result of invoking the function.
+            </summary>
+            <remarks>
+            This operator uses deferred execution and streams the results.
+            If the resulting sequence is enumerated multiple times, the function will be
+            invoked multiple times too.
+            </remarks>
+            <typeparam name="T">The type of the object returned by the function.</typeparam>
+            <param name="function">The function to evaluate.</param>
+            <returns>A sequence with the value resulting from invoking <paramref name="function"/>.</returns>
+        </member>
+        <member name="M:MoreLinq.MoreEnumerable.From``1(System.Func{``0},System.Func{``0})">
+            <summary>
+            Returns a sequence containing the result of invoking each parameter function in order.
+            </summary>
+            <remarks>
+            This operator uses deferred execution and streams the results.
+            If the resulting sequence is enumerated multiple times, the functions will be
+            invoked multiple times too.
+            </remarks>
+            <typeparam name="T">The type of the object returned by the functions.</typeparam>
+            <param name="function1">The first function to evaluate.</param>
+            <param name="function2">The second function to evaluate.</param>
+            <returns>A sequence with the values resulting from invoking <paramref name="function1"/> and <paramref name="function2"/>.</returns>
+        </member>
+        <member name="M:MoreLinq.MoreEnumerable.From``1(System.Func{``0},System.Func{``0},System.Func{``0})">
+            <summary>
+            Returns a sequence containing the result of invoking each parameter function in order.
+            </summary>
+            <remarks>
+            This operator uses deferred execution and streams the results.
+            If the resulting sequence is enumerated multiple times, the functions will be
+            invoked multiple times too.
+            </remarks>
+            <typeparam name="T">The type of the object returned by the functions.</typeparam>
+            <param name="function1">The first function to evaluate.</param>
+            <param name="function2">The second function to evaluate.</param>
+            <param name="function3">The third function to evaluate.</param>
+            <returns>A sequence with the values resulting from invoking <paramref name="function1"/>, <paramref name="function2"/> and <paramref name="function3"/>.</returns>
+        </member>
+        <member name="M:MoreLinq.MoreEnumerable.From``1(System.Func{``0}[])">
+            <summary>
+            Returns a sequence containing the values resulting from invoking (in order) each function in the source sequence of functions.
+            </summary>
+            <remarks>
+            This operator uses deferred execution and streams the results.
+            If the resulting sequence is enumerated multiple times, the functions will be
+            invoked multiple times too.
+            </remarks>
+            <typeparam name="T">The type of the object returned by the functions.</typeparam>
+            <param name="functions">The functions to evaluate.</param>
+            <returns>A sequence with the values resulting from invoking all of the <paramref name="functions"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">When <paramref name="functions"/> is <c>null</c>.</exception>
         </member>
         <member name="M:MoreLinq.MoreEnumerable.FullGroupJoin``3(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},System.Func{``0,``2},System.Func{``1,``2})">
             <summary>
@@ -4225,7 +4295,7 @@
             mapped to their keys.
             </returns>
         </member>
-        <member name="M:MoreLinq.MoreEnumerable.ToDictionary``2(System.Collections.Generic.IEnumerable{System.})">
+        <member name="M:MoreLinq.MoreEnumerable.ToDictionary``2(System.Collections.Generic.IEnumerable{System.ValueTuple{``0,``1}})">
             <summary>
             Creates a <see cref="T:System.Collections.Generic.Dictionary`2" /> from a sequence of
             tuples of 2 where the first item is the key and the second the
@@ -4239,7 +4309,7 @@
             mapped to their keys.
             </returns>
         </member>
-        <member name="M:MoreLinq.MoreEnumerable.ToDictionary``2(System.Collections.Generic.IEnumerable{System.},System.Collections.Generic.IEqualityComparer{``0})">
+        <member name="M:MoreLinq.MoreEnumerable.ToDictionary``2(System.Collections.Generic.IEnumerable{System.ValueTuple{``0,``1}},System.Collections.Generic.IEqualityComparer{``0})">
             <summary>
             Creates a <see cref="T:System.Collections.Generic.Dictionary`2" /> from a sequence of
             tuples of 2 where the first item is the key and the second the
@@ -4309,7 +4379,7 @@
             mapped to their keys.
             </returns>
         </member>
-        <member name="M:MoreLinq.MoreEnumerable.ToLookup``2(System.Collections.Generic.IEnumerable{System.})">
+        <member name="M:MoreLinq.MoreEnumerable.ToLookup``2(System.Collections.Generic.IEnumerable{System.ValueTuple{``0,``1}})">
             <summary>
             Creates a <see cref="T:MoreLinq.Lookup`2" /> from a sequence of
             tuples of 2 where the first item is the key and the second the
@@ -4323,7 +4393,7 @@
             mapped to their keys.
             </returns>
         </member>
-        <member name="M:MoreLinq.MoreEnumerable.ToLookup``2(System.Collections.Generic.IEnumerable{System.},System.Collections.Generic.IEqualityComparer{``0})">
+        <member name="M:MoreLinq.MoreEnumerable.ToLookup``2(System.Collections.Generic.IEnumerable{System.ValueTuple{``0,``1}},System.Collections.Generic.IEqualityComparer{``0})">
             <summary>
             Creates a <see cref="T:MoreLinq.Lookup`2" /> from a sequence of
             tuples of 2 where the first item is the key and the second the
