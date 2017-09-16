@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Genetic Algorithm", "Geneti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polygons", "Polygons\Polygons\Polygons.csproj", "{82FA6A37-0056-4FD8-B945-56E31A0B81FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomExtensions", "..\Libraries\Extensions\Extensions\CustomExtensions.csproj", "{5E8A171A-E3E6-4DB3-98F7-DECCF371C5C7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolyGaLauncher", "PolyGaLauncher\PolyGaLauncher.csproj", "{A3D0F792-03C8-4B4F-9419-7246EFE04506}"
 EndProject
 Global
@@ -35,14 +33,6 @@ Global
 		{82FA6A37-0056-4FD8-B945-56E31A0B81FA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{82FA6A37-0056-4FD8-B945-56E31A0B81FA}.Release|x86.ActiveCfg = Release|x86
 		{82FA6A37-0056-4FD8-B945-56E31A0B81FA}.Release|x86.Build.0 = Release|x86
-		{5E8A171A-E3E6-4DB3-98F7-DECCF371C5C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5E8A171A-E3E6-4DB3-98F7-DECCF371C5C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5E8A171A-E3E6-4DB3-98F7-DECCF371C5C7}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5E8A171A-E3E6-4DB3-98F7-DECCF371C5C7}.Debug|x86.Build.0 = Debug|Any CPU
-		{5E8A171A-E3E6-4DB3-98F7-DECCF371C5C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5E8A171A-E3E6-4DB3-98F7-DECCF371C5C7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5E8A171A-E3E6-4DB3-98F7-DECCF371C5C7}.Release|x86.ActiveCfg = Release|x86
-		{5E8A171A-E3E6-4DB3-98F7-DECCF371C5C7}.Release|x86.Build.0 = Release|x86
 		{A3D0F792-03C8-4B4F-9419-7246EFE04506}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A3D0F792-03C8-4B4F-9419-7246EFE04506}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3D0F792-03C8-4B4F-9419-7246EFE04506}.Debug|x86.ActiveCfg = Debug|Any CPU
