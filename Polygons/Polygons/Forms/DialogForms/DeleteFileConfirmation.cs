@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Polygons.Forms.HelperForms
+namespace Polygons.Forms.DialogForms
 {
     internal partial class DeleteFileConfirmation : Form
     {

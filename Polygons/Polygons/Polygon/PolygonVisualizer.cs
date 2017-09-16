@@ -17,9 +17,9 @@ namespace Polygons
         /// <summary>
         /// Draw a complete polygon
         /// </summary>
-        /// <param name="p"><see cref="Polygon"/> to draw</param>
+        /// <param name="p"><see cref="IPolygon"/> to draw</param>
         /// <param name="g"><see cref="System.Drawing.Graphics"/> object to be used to draw the polygon</param>
-        public static void Draw(Polygon p, Graphics g)
+        public static void Draw(this IPolygon p, Graphics g)
         {
             using (Brush vertexBrush = new SolidBrush(p.OutlineColor))
             {
@@ -38,9 +38,9 @@ namespace Polygons
         /// <summary>
         /// Draw polygon without connection between the first and last vertex of the polygon
         /// </summary>
-        /// <param name="p"><see cref="Polygon"/> to incompletely draw</param>
+        /// <param name="p"><see cref="IPolygon"/> to incompletely draw</param>
         /// <param name="g"><see cref="System.Drawing.Graphics"/> object to be used to draw the polygon</param>
-        public static void DrawIncomplete(Polygon p, Graphics g)
+        public static void DrawIncomplete(this IPolygon p, Graphics g)
         {
             using (Brush filler = new SolidBrush(p.OutlineColor))
             {
@@ -59,9 +59,9 @@ namespace Polygons
         /// <summary>
         /// Draw a mark in the position of the polygon's center
         /// </summary>
-        /// <param name="p"><see cref="Polygon"/> whose center to draw</param>
+        /// <param name="p"><see cref="IPolygon"/> whose center to draw</param>
         /// <param name="g"><see cref="System.Drawing.Graphics"/> object to be used to mark the center</param>
-        public static void DrawCenter(Polygon p, Graphics g)
+        public static void DrawCenter(this IPolygon p, Graphics g)
         {
             using (Brush b = new SolidBrush(p.OutlineColor))
             {
@@ -73,9 +73,9 @@ namespace Polygons
         /// <summary>
         /// Draw a mark in the position of the polygon's centroid
         /// </summary>
-        /// <param name="p"><see cref="Polygon"/> whose center to draw</param>
+        /// <param name="p"><see cref="IPolygon"/> whose center to draw</param>
         /// <param name="g"><see cref="System.Drawing.Graphics"/> object to be used to mark the center</param>
-        public static void DrawCentroid(Polygon p, Graphics g)
+        public static void DrawCentroid(this IPolygon p, Graphics g)
         {
             using (Brush b = new SolidBrush(p.OutlineColor))
             {
@@ -90,7 +90,7 @@ namespace Polygons
         /// <param name="p"><see cref="Polygon"/> to normalize</param>
         /// <param name="normalizeTo"><see cref="PictureBox"/> whose bounds should be used for normalization calculations</param>
         /// <returns></returns>
-        public static Polygon PolygonNormalizedToBox(Polygon p, PictureBox normalizeTo)
+        public static Polygon PolygonNormalizedToBox(this Polygon p, PictureBox normalizeTo)
             => new Polygon(p, p.GetScalingFactor(normalizeTo.Width, normalizeTo.Height));
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Polygons
         /// <param name="width">Width of the container</param>
         /// <param name="height">Height of the container</param>
         /// <returns></returns>
-        public static Polygon PolygonNormalizedToBox(Polygon p, int width, int height)
+        public static Polygon PolygonNormalizedToBox(this Polygon p, int width, int height)
             => new Polygon(p, p.GetScalingFactor(width, height));
 
     }

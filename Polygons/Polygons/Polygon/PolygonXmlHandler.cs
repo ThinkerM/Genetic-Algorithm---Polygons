@@ -31,7 +31,7 @@ namespace Polygons
         /// </summary>
         /// <param name="p">Polygon to be saved</param>
         /// <param name="path">File path including the name of the output file</param>
-        public static void Save(Polygon p, string path)
+        public static void Save(this Polygon p, string path)
         {
             EnableFileForWriting(path);
             using (StreamWriter stream = new StreamWriter(path))
@@ -67,7 +67,7 @@ namespace Polygons
         /// Save <see cref="Polygon"/> as .xml to the application's default shapes saving folder
         /// </summary>
         /// <param name="p">Polygon to save</param>
-        public static void SaveToDefaultFolder(Polygon p)
+        public static void SaveToDefaultFolder(this Polygon p)
         {
             string path = Paths.SaveXmlPath(p.Name);
             Save(p, path);

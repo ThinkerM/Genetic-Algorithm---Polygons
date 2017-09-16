@@ -11,7 +11,6 @@ C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Debug\System.Va
 C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Debug\Genetic Algorithm.pdb
 C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Debug\Genetic Algorithm.xml
 C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Debug\Polygons.pdb
-C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Debug\Polygons.xml
 C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Debug\CustomButtons.pdb
 C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Debug\Randomization.pdb
 C:\_CodeProjects\Genetic Algorithm - Polygons\PolyGaLauncher\bin\Debug\Randomization.xml

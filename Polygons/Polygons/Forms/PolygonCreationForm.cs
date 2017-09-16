@@ -7,8 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Polygons.Forms.HelperForms;
-using static Polygons.PolygonVisualizer;
+using Polygons.Forms.DialogForms;
 using CustomExtensions.Graphics;
 
 namespace Polygons.Forms
@@ -92,12 +91,12 @@ namespace Polygons.Forms
             { PaintGrid(polygonBox, g); }
 
             if (closeShapeCheckbox.Checked)
-            { Draw(DefinedPolygon, g); }
+            { DefinedPolygon.Draw(g); }
             else
-            { DrawIncomplete(DefinedPolygon, g); }
+            { DefinedPolygon.DrawIncomplete(g); }
 
             if (showCentroidCheckBox.Checked)
-            { DrawCentroid(DefinedPolygon, g); }
+            { DefinedPolygon.DrawCentroid(g); }
         }
         #endregion
 

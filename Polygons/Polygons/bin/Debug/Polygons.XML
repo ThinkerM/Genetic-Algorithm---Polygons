@@ -535,18 +535,18 @@
             <param name="fileName">Name of the file to construct a path to</param>
             <returns></returns>
         </member>
-        <member name="T:Polygons.Polygons">
+        <member name="T:Polygons.PolygonGenerator">
             <summary>
-            Provides methods for static generation of polygons
+            Provides static methods for generation of polygons
             </summary>
         </member>
-        <member name="M:Polygons.Polygons.RandomPolygon">
+        <member name="M:Polygons.PolygonGenerator.RandomPolygon">
             <summary>
             Generate a random polygon with a random number of vertices
             </summary>
             <returns>Random polygon</returns>
         </member>
-        <member name="M:Polygons.Polygons.RandomPolygon(System.Int32)">
+        <member name="M:Polygons.PolygonGenerator.RandomPolygon(System.Int32)">
             <summary>
             Generate a random polygon with the specified number of vertices
             </summary>
@@ -588,32 +588,32 @@
             Provides static methods for drawing polygons
             </summary>
         </member>
-        <member name="M:Polygons.PolygonVisualizer.Draw(Polygons.Polygon,System.Drawing.Graphics)">
+        <member name="M:Polygons.PolygonVisualizer.Draw(Polygons.IPolygon,System.Drawing.Graphics)">
             <summary>
             Draw a complete polygon
             </summary>
-            <param name="p"><see cref="T:Polygons.Polygon"/> to draw</param>
+            <param name="p"><see cref="T:Polygons.IPolygon"/> to draw</param>
             <param name="g"><see cref="T:System.Drawing.Graphics"/> object to be used to draw the polygon</param>
         </member>
-        <member name="M:Polygons.PolygonVisualizer.DrawIncomplete(Polygons.Polygon,System.Drawing.Graphics)">
+        <member name="M:Polygons.PolygonVisualizer.DrawIncomplete(Polygons.IPolygon,System.Drawing.Graphics)">
             <summary>
             Draw polygon without connection between the first and last vertex of the polygon
             </summary>
-            <param name="p"><see cref="T:Polygons.Polygon"/> to incompletely draw</param>
+            <param name="p"><see cref="T:Polygons.IPolygon"/> to incompletely draw</param>
             <param name="g"><see cref="T:System.Drawing.Graphics"/> object to be used to draw the polygon</param>
         </member>
-        <member name="M:Polygons.PolygonVisualizer.DrawCenter(Polygons.Polygon,System.Drawing.Graphics)">
+        <member name="M:Polygons.PolygonVisualizer.DrawCenter(Polygons.IPolygon,System.Drawing.Graphics)">
             <summary>
             Draw a mark in the position of the polygon's center
             </summary>
-            <param name="p"><see cref="T:Polygons.Polygon"/> whose center to draw</param>
+            <param name="p"><see cref="T:Polygons.IPolygon"/> whose center to draw</param>
             <param name="g"><see cref="T:System.Drawing.Graphics"/> object to be used to mark the center</param>
         </member>
-        <member name="M:Polygons.PolygonVisualizer.DrawCentroid(Polygons.Polygon,System.Drawing.Graphics)">
+        <member name="M:Polygons.PolygonVisualizer.DrawCentroid(Polygons.IPolygon,System.Drawing.Graphics)">
             <summary>
             Draw a mark in the position of the polygon's centroid
             </summary>
-            <param name="p"><see cref="T:Polygons.Polygon"/> whose center to draw</param>
+            <param name="p"><see cref="T:Polygons.IPolygon"/> whose center to draw</param>
             <param name="g"><see cref="T:System.Drawing.Graphics"/> object to be used to mark the center</param>
         </member>
         <member name="M:Polygons.PolygonVisualizer.PolygonNormalizedToBox(Polygons.Polygon,System.Windows.Forms.PictureBox)">

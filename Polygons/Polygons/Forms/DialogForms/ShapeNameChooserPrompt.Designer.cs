@@ -1,4 +1,4 @@
-﻿namespace Polygons.Forms.HelperForms
+﻿namespace Polygons.Forms.DialogForms
 {
     partial class ShapeNameChooserPrompt
     {

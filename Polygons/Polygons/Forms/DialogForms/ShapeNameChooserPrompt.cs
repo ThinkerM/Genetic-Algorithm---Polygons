@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Polygons.Forms.HelperForms
+namespace Polygons.Forms.DialogForms
 {
     /// <summary>
     /// Dialog box asking the user to specify a name for a polygon
