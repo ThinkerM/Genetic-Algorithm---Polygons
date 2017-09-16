@@ -1,0 +1,93 @@
+.TH "Polygons.Paths" 3 "Sat Sep 16 2017" "Version 1.1.2" "PolyGenetic Algorithm" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Polygons.Paths \- Provides methods for determining paths to various relevant locations and creating appropriate paths for specific files  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static string \fBPolygonSavedShapesFolder\fP ()"
+.br
+.RI "Folder where saved polygons are stored "
+.ti -1c
+.RI "static string \fBPolygonSavedShapesFolderNoBacklash\fP ()"
+.br
+.RI "Folder where saved polygons are stored, final directory separator omitted "
+.ti -1c
+.RI "static string \fBLocalPath\fP (string uriPath)"
+.br
+.RI "Local-path representation of a uriPath "
+.ti -1c
+.RI "static string \fBSaveXmlPath\fP (string fileName)"
+.br
+.RI "Whole path to a file with a given name "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides methods for determining paths to various relevant locations and creating appropriate paths for specific files 
+
+
+.SH "Member Function Documentation"
+.PP 
+.SS "static string Polygons\&.Paths\&.LocalPath (string uriPath)\fC [static]\fP"
+
+.PP
+Local-path representation of a uriPath 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuriPath\fP uriPath to construct local path from
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Local-path representation of uriPath
+.RE
+.PP
+
+.SS "static string Polygons\&.Paths\&.PolygonSavedShapesFolder ()\fC [static]\fP"
+
+.PP
+Folder where saved polygons are stored 
+.PP
+\fBReturns:\fP
+.RS 4
+Path to save folder for polygons
+.RE
+.PP
+
+.SS "static string Polygons\&.Paths\&.PolygonSavedShapesFolderNoBacklash ()\fC [static]\fP"
+
+.PP
+Folder where saved polygons are stored, final directory separator omitted 
+.PP
+\fBReturns:\fP
+.RS 4
+Path to save folder for polygons without final directory separator
+.RE
+.PP
+
+.SS "static string Polygons\&.Paths\&.SaveXmlPath (string fileName)\fC [static]\fP"
+
+.PP
+Whole path to a file with a given name 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfileName\fP Name of the file to construct a path to
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PolyGenetic Algorithm from the source code\&.

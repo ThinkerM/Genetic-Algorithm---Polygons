@@ -1,0 +1,235 @@
+.TH "Genetic_Algorithm.GA.Generics.GeneticAlgorithmAdapter< TIndividual, TGene >" 3 "Sat Sep 16 2017" "Version 1.1.2" "PolyGenetic Algorithm" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Genetic_Algorithm.GA.Generics.GeneticAlgorithmAdapter< TIndividual, TGene > \- Provides methods for manipulating populations in \fBGA\fP to produce new generations  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBGenetic_Algorithm\&.GA\&.Generics\&.IGeneticAlgorithmAdapter< TIndividual, TGene >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGeneticAlgorithmAdapter\fP (\fBIFitnessCalculator\fP< TIndividual, TGene > \fBfitnessCalculator\fP)"
+.br
+.ti -1c
+.RI "abstract TIndividual \fBCrossOver\fP (TIndividual parent1, TIndividual parent2)"
+.br
+.RI "Creates a new child from the genomes of two parents "
+.ti -1c
+.RI "bool \fBCrossoverShouldOccur\fP (double crossoverProbability)"
+.br
+.RI "Determines whether a crossover of genomes between individuals should occur based on crossover probability "
+.ti -1c
+.RI "TIndividual \fBGetEliteIndividual\fP (\fBPopulation\fP< TIndividual, TGene > population)"
+.br
+.RI "Find the fittest individual and set its property to Elite "
+.ti -1c
+.RI "void \fBMutate\fP (TIndividual individual, double mutationProbability)"
+.br
+.RI "Invoke mutation on an individual "
+.ti -1c
+.RI "void \fBMutatePopulation\fP (\fBPopulation\fP< TIndividual, TGene > population, double mutationProbability)"
+.br
+.RI "Invoke mutation on every non-elite member of population "
+.ti -1c
+.RI "bool \fBMutationShouldOccur\fP (TIndividual individual)"
+.br
+.RI "Determines whether individual is allowed to mutate based on its Elite property "
+.ti -1c
+.RI "TIndividual \fBSelectForRouletteBreeding\fP (\fBPopulation\fP< TIndividual, TGene > sourcePopulation, TIndividual forbiddenForBreeding=default(TIndividual))"
+.br
+.RI "Chooses an individual for further reproduction based on roulette-rules "
+.ti -1c
+.RI "IEnumerable< TIndividual > \fBSelectSteadyStateSurvivors\fP (\fBPopulation\fP< TIndividual, TGene > sourcePopulation, double survivalRatio, bool elitism)"
+.br
+.RI "Selects fittest part of the population to transfer into the next generation "
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBIFitnessCalculator\fP< TIndividual, TGene > \fBfitnessCalculator\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides methods for manipulating populations in \fBGA\fP to produce new generations 
+
+
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fITIndividual\fP Class implementing \fBGA\fP Individual
+.br
+\fITGene\fP Class implementing \fBGA\fP \fBIGene\fP
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fITIndividual\fP : \fI\fBIIndividual\fP<TGene>\fP
+.TP
+\fITIndividual\fP : \fInew()\fP
+.TP
+\fITGene\fP : \fI\fBIGene\fP\fP
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBGenetic_Algorithm\&.GA\&.Generics\&.GeneticAlgorithmAdapter\fP< TIndividual, TGene >\&.\fBGeneticAlgorithmAdapter\fP (\fBIFitnessCalculator\fP< TIndividual, TGene > fitnessCalculator)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "abstract TIndividual \fBGenetic_Algorithm\&.GA\&.Generics\&.GeneticAlgorithmAdapter\fP< TIndividual, TGene >\&.CrossOver (TIndividual parent1, TIndividual parent2)\fC [pure virtual]\fP"
+
+.PP
+Creates a new child from the genomes of two parents 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparent1\fP First parent to cross over
+.br
+\fIparent2\fP Second parent to cross over
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Crossed over child
+.RE
+.PP
+
+.PP
+Implements \fBGenetic_Algorithm\&.GA\&.Generics\&.IGeneticAlgorithmAdapter< TIndividual, TGene >\fP\&.
+.SS "bool \fBGenetic_Algorithm\&.GA\&.Generics\&.GeneticAlgorithmAdapter\fP< TIndividual, TGene >\&.CrossoverShouldOccur (double crossoverProbability)"
+
+.PP
+Determines whether a crossover of genomes between individuals should occur based on crossover probability 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcrossoverProbability\fP Percentage value indicating how likely crossover should be to occur
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True to crossover, False to forbid crossover
+.RE
+.PP
+
+.PP
+Implements \fBGenetic_Algorithm\&.GA\&.Generics\&.IGeneticAlgorithmAdapter< TIndividual, TGene >\fP\&.
+.SS "TIndividual \fBGenetic_Algorithm\&.GA\&.Generics\&.GeneticAlgorithmAdapter\fP< TIndividual, TGene >\&.GetEliteIndividual (\fBPopulation\fP< TIndividual, TGene > population)"
+
+.PP
+Find the fittest individual and set its property to Elite 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpopulation\fP \fBPopulation\fP to search in
+.RE
+.PP
+
+.PP
+Implements \fBGenetic_Algorithm\&.GA\&.Generics\&.IGeneticAlgorithmAdapter< TIndividual, TGene >\fP\&.
+.SS "void \fBGenetic_Algorithm\&.GA\&.Generics\&.GeneticAlgorithmAdapter\fP< TIndividual, TGene >\&.Mutate (TIndividual individual, double mutationProbability)"
+
+.PP
+Invoke mutation on an individual 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindividual\fP 
+.br
+\fImutationProbability\fP 
+.RE
+.PP
+
+.PP
+Implements \fBGenetic_Algorithm\&.GA\&.Generics\&.IGeneticAlgorithmAdapter< TIndividual, TGene >\fP\&.
+.SS "void \fBGenetic_Algorithm\&.GA\&.Generics\&.GeneticAlgorithmAdapter\fP< TIndividual, TGene >\&.MutatePopulation (\fBPopulation\fP< TIndividual, TGene > population, double mutationProbability)"
+
+.PP
+Invoke mutation on every non-elite member of population 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpopulation\fP \fBPopulation\fP to perform mutation on
+.br
+\fImutationProbability\fP 
+.RE
+.PP
+
+.PP
+Implements \fBGenetic_Algorithm\&.GA\&.Generics\&.IGeneticAlgorithmAdapter< TIndividual, TGene >\fP\&.
+.SS "bool \fBGenetic_Algorithm\&.GA\&.Generics\&.GeneticAlgorithmAdapter\fP< TIndividual, TGene >\&.MutationShouldOccur (TIndividual individual)"
+
+.PP
+Determines whether individual is allowed to mutate based on its Elite property 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindividual\fP Subject of decision
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True to mutate, False not to mutate
+.RE
+.PP
+
+.PP
+Implements \fBGenetic_Algorithm\&.GA\&.Generics\&.IGeneticAlgorithmAdapter< TIndividual, TGene >\fP\&.
+.SS "TIndividual \fBGenetic_Algorithm\&.GA\&.Generics\&.GeneticAlgorithmAdapter\fP< TIndividual, TGene >\&.SelectForRouletteBreeding (\fBPopulation\fP< TIndividual, TGene > sourcePopulation, TIndividual forbiddenForBreeding = \fCdefault(TIndividual)\fP)"
+
+.PP
+Chooses an individual for further reproduction based on roulette-rules 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsourcePopulation\fP \fBPopulation\fP to choose from
+.br
+\fIforbiddenForBreeding\fP Individuals which cannot be selected for breeding\&.
+.PP
+Use primarily if you want to prevent an individual from breeding with itself
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Selected individual
+.RE
+.PP
+
+.PP
+Implements \fBGenetic_Algorithm\&.GA\&.Generics\&.IGeneticAlgorithmAdapter< TIndividual, TGene >\fP\&.
+.SS "IEnumerable<TIndividual> \fBGenetic_Algorithm\&.GA\&.Generics\&.GeneticAlgorithmAdapter\fP< TIndividual, TGene >\&.SelectSteadyStateSurvivors (\fBPopulation\fP< TIndividual, TGene > sourcePopulation, double survivalRatio, bool elitism)"
+
+.PP
+Selects fittest part of the population to transfer into the next generation 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsourcePopulation\fP \fBPopulation\fP to choose from
+.br
+\fIsurvivalRatio\fP Proportion of individuals to keep alive
+.br
+\fIelitism\fP Indicates whether elitism is on/off
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+
+.PP
+Implements \fBGenetic_Algorithm\&.GA\&.Generics\&.IGeneticAlgorithmAdapter< TIndividual, TGene >\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBIFitnessCalculator\fP<TIndividual, TGene> \fBGenetic_Algorithm\&.GA\&.Generics\&.GeneticAlgorithmAdapter\fP< TIndividual, TGene >\&.fitnessCalculator\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PolyGenetic Algorithm from the source code\&.

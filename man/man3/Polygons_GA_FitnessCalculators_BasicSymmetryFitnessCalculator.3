@@ -1,0 +1,56 @@
+.TH "Polygons.GA.FitnessCalculators.BasicSymmetryFitnessCalculator" 3 "Sat Sep 16 2017" "Version 1.1.2" "PolyGenetic Algorithm" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Polygons.GA.FitnessCalculators.BasicSymmetryFitnessCalculator \- For every \fBIPolygonGene\fP, finds its closest Y axis mirrored relative and decreases fitness based on the distance difference from an ideal relative's position  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBGenetic_Algorithm\&.GA\&.Generics\&.IFitnessCalculator< PolygonIndividual, IPolygonGene >\fP\&.
+.PP
+Inherited by \fBPolygons\&.GA\&.FitnessCalculators\&.SymmetryIntersectionPenaltyFitnessCalculator\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual double \fBIndividualFitness\fP (\fBPolygonIndividual\fP individual)"
+.br
+.ti -1c
+.RI "int \fBCompare\fP (\fBPolygonIndividual\fP x, \fBPolygonIndividual\fP y)"
+.br
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "virtual string \fBName\fP\fC [get]\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+For every \fBIPolygonGene\fP, finds its closest Y axis mirrored relative and decreases fitness based on the distance difference from an ideal relative's position 
+
+
+.SH "Member Function Documentation"
+.PP 
+.SS "int Polygons\&.GA\&.FitnessCalculators\&.BasicSymmetryFitnessCalculator\&.Compare (\fBPolygonIndividual\fP x, \fBPolygonIndividual\fP y)"
+
+.SS "virtual double Polygons\&.GA\&.FitnessCalculators\&.BasicSymmetryFitnessCalculator\&.IndividualFitness (\fBPolygonIndividual\fP individual)\fC [virtual]\fP"
+
+.PP
+Reimplemented in \fBPolygons\&.GA\&.FitnessCalculators\&.SymmetryIntersectionPenaltyFitnessCalculator\fP\&.
+.SS "override string Polygons\&.GA\&.FitnessCalculators\&.BasicSymmetryFitnessCalculator\&.ToString ()"
+
+.SH "Property Documentation"
+.PP 
+.SS "virtual string Polygons\&.GA\&.FitnessCalculators\&.BasicSymmetryFitnessCalculator\&.Name\fC [get]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PolyGenetic Algorithm from the source code\&.

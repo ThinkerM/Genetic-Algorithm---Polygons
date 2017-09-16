@@ -1,0 +1,247 @@
+.TH "Genetic_Algorithm.GA.Generics.Population< TIndividual, TGene >" 3 "Sat Sep 16 2017" "Version 1.1.2" "PolyGenetic Algorithm" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Genetic_Algorithm.GA.Generics.Population< TIndividual, TGene > \- Collection of individuals in a genetic algorithm  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IList< TIndividual >\&.
+.PP
+Inherited by \fBGenetic_Algorithm\&.GA\&.Generics\&.NumberedPopulation< TIndividual, TGene >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPopulation\fP (int randomIndividuals=0, int desiredSize=0)"
+.br
+.RI "Construct a population of random individuals "
+.ti -1c
+.RI "\fBPopulation\fP (\fBPopulation\fP< TIndividual, TGene > template)"
+.br
+.RI "Construct a new population as a copy of another population "
+.ti -1c
+.RI "bool \fBFilledDesiredSize\fP ()"
+.br
+.RI "Indicates whether the population's size has reached or exceeded the set \fBDesiredSize\fP "
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.ti -1c
+.RI "TIndividual \fBFind\fP (string name)"
+.br
+.ti -1c
+.RI "void \fBReplace\fP (TIndividual toReplace, TIndividual replaceWith)"
+.br
+.ti -1c
+.RI "virtual TIndividual \fBGetIndividual\fP (int index)"
+.br
+.ti -1c
+.RI "virtual IEnumerable< TIndividual > \fBGetFittest\fP (\fBIFitnessCalculator\fP< TIndividual, TGene > fitnessCalculator, int n)"
+.br
+.ti -1c
+.RI "virtual TIndividual \fBGetFittest\fP (\fBIFitnessCalculator\fP< TIndividual, TGene > fitnessCalculator)"
+.br
+.ti -1c
+.RI "void \fBAdd\fP (TIndividual item)"
+.br
+.ti -1c
+.RI "void \fBAddRange\fP (IEnumerable< TIndividual > items)"
+.br
+.ti -1c
+.RI "void \fBSort\fP (\fBIFitnessCalculator\fP< TIndividual, TGene > fitnessCalculator)"
+.br
+.ti -1c
+.RI "bool \fBContains\fP (TIndividual item)"
+.br
+.ti -1c
+.RI "void \fBCopyTo\fP (TIndividual[] array, int arrayIndex)"
+.br
+.ti -1c
+.RI "bool \fBRemove\fP (TIndividual item)"
+.br
+.ti -1c
+.RI "IEnumerator< TIndividual > \fBGetEnumerator\fP ()"
+.br
+.ti -1c
+.RI "int \fBIndexOf\fP (TIndividual item)"
+.br
+.ti -1c
+.RI "void \fBInsert\fP (int index, TIndividual item)"
+.br
+.ti -1c
+.RI "void \fBRemoveAt\fP (int index)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBPopulation\fP< TIndividual, TGene > \fBEmptyPopulation\fP ()"
+.br
+.RI "Create a \fBPopulation<TIndividual, TGene>\fP with no members "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBEmpty\fP => individuals\&.Count == 0"
+.br
+.ti -1c
+.RI "int \fBCount\fP => ((ICollection<TIndividual>)\fBindividuals\fP)\&.Count"
+.br
+.ti -1c
+.RI "int \fBCapacity\fP => individuals\&.Capacity"
+.br
+.ti -1c
+.RI "bool \fBIsReadOnly\fP => ((ICollection<TIndividual>)\fBindividuals\fP)\&.IsReadOnly"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "List< TIndividual > \fBindividuals\fP = new List<TIndividual>()"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBDesiredSize\fP\fC [get]\fP"
+.br
+.RI "Number of individuals in population which need to be achieved for a complete generation "
+.ti -1c
+.RI "TIndividual \fBthis[int index]\fP\fC [get, set]\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Collection of individuals in a genetic algorithm 
+
+
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fITIndividual\fP Type of the individual in the population
+.br
+\fITGene\fP Type of the gene encoded in individual's genome
+.RE
+.PP
+
+.PP
+\fBType Constraints\fP
+.TP
+\fITIndividual\fP : \fI\fBIIndividual\fP<TGene>\fP
+.TP
+\fITIndividual\fP : \fInew()\fP
+.TP
+\fITGene\fP : \fI\fBIGene\fP\fP
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.\fBPopulation\fP (int randomIndividuals = \fC0\fP, int desiredSize = \fC0\fP)"
+
+.PP
+Construct a population of random individuals 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIrandomIndividuals\fP Number of individuals to add
+.br
+\fIdesiredSize\fP Size of the population which needs to be reached to be considered 'adequately filled'
+.RE
+.PP
+
+.SS "\fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.\fBPopulation\fP (\fBPopulation\fP< TIndividual, TGene > template)"
+
+.PP
+Construct a new population as a copy of another population 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItemplate\fP \fBPopulation\fP to copy
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void \fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.Add (TIndividual item)"
+
+.SS "void \fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.AddRange (IEnumerable< TIndividual > items)"
+
+.SS "void \fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.Clear ()"
+
+.SS "bool \fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.Contains (TIndividual item)"
+
+.SS "void \fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.CopyTo (TIndividual [] array, int arrayIndex)"
+
+.SS "static \fBPopulation\fP<TIndividual, TGene> \fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.EmptyPopulation ()\fC [static]\fP"
+
+.PP
+Create a \fBPopulation<TIndividual, TGene>\fP with no members 
+.PP
+\fBReturns:\fP
+.RS 4
+
+.RE
+.PP
+
+.SS "bool \fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.FilledDesiredSize ()"
+
+.PP
+Indicates whether the population's size has reached or exceeded the set \fBDesiredSize\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+
+.RE
+.PP
+
+.SS "TIndividual \fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.Find (string name)"
+
+.SS "IEnumerator<TIndividual> \fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.GetEnumerator ()"
+
+.SS "virtual IEnumerable<TIndividual> \fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.GetFittest (\fBIFitnessCalculator\fP< TIndividual, TGene > fitnessCalculator, int n)\fC [virtual]\fP"
+
+.SS "virtual TIndividual \fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.GetFittest (\fBIFitnessCalculator\fP< TIndividual, TGene > fitnessCalculator)\fC [virtual]\fP"
+
+.SS "virtual TIndividual \fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.GetIndividual (int index)\fC [virtual]\fP"
+
+.SS "int \fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.IndexOf (TIndividual item)"
+
+.SS "void \fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.Insert (int index, TIndividual item)"
+
+.SS "bool \fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.Remove (TIndividual item)"
+
+.SS "void \fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.RemoveAt (int index)"
+
+.SS "void \fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.Replace (TIndividual toReplace, TIndividual replaceWith)"
+
+.SS "void \fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.Sort (\fBIFitnessCalculator\fP< TIndividual, TGene > fitnessCalculator)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "int \fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.Capacity => individuals\&.Capacity"
+
+.SS "int \fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.Count => ((ICollection<TIndividual>)\fBindividuals\fP)\&.Count"
+
+.SS "bool \fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.Empty => individuals\&.Count == 0"
+
+.SS "List<TIndividual> \fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.individuals = new List<TIndividual>()\fC [protected]\fP"
+
+.SS "bool \fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.IsReadOnly => ((ICollection<TIndividual>)\fBindividuals\fP)\&.IsReadOnly"
+
+.SH "Property Documentation"
+.PP 
+.SS "int \fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.DesiredSize\fC [get]\fP"
+
+.PP
+Number of individuals in population which need to be achieved for a complete generation 
+.SS "TIndividual \fBGenetic_Algorithm\&.GA\&.Generics\&.Population\fP< TIndividual, TGene >\&.this[int index]\fC [get]\fP, \fC [set]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PolyGenetic Algorithm from the source code\&.

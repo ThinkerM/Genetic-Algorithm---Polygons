@@ -1,0 +1,100 @@
+.TH "Polygons.Forms.PolygonCreationForm" 3 "Sat Sep 16 2017" "Version 1.1.2" "PolyGenetic Algorithm" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Polygons.Forms.PolygonCreationForm \- Form allowing user to specify and modify a custom shape  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Form\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPolygonCreationForm\fP ()"
+.br
+.RI "Form allowing user to specify and modify a custom shape "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "override bool \fBProcessDialogKey\fP (Keys keyData)"
+.br
+.RI "Safely close form on ESC press "
+.ti -1c
+.RI "override void \fBDispose\fP (bool disposing)"
+.br
+.RI "Clean up any resources being used\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "string \fBShapeName\fP\fC [get, set]\fP"
+.br
+.RI "Name of the shape being currently edited "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Form allowing user to specify and modify a custom shape 
+
+Provides following features (among others): 
+.PD 0
+
+.IP "\(bu" 2
+Define the shape of a polygon 
+.IP "\(bu" 2
+Rename created shapes 
+.IP "\(bu" 2
+Change color of a shape 
+.IP "\(bu" 2
+Limited file management of shapes 
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Polygons\&.Forms\&.PolygonCreationForm\&.PolygonCreationForm ()"
+
+.PP
+Form allowing user to specify and modify a custom shape 
+.SH "Member Function Documentation"
+.PP 
+.SS "override void Polygons\&.Forms\&.PolygonCreationForm\&.Dispose (bool disposing)\fC [protected]\fP"
+
+.PP
+Clean up any resources being used\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdisposing\fP true if managed resources should be disposed; otherwise, false\&.
+.RE
+.PP
+
+.SS "override bool Polygons\&.Forms\&.PolygonCreationForm\&.ProcessDialogKey (Keys keyData)\fC [protected]\fP"
+
+.PP
+Safely close form on ESC press 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkeyData\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+
+.SH "Property Documentation"
+.PP 
+.SS "string Polygons\&.Forms\&.PolygonCreationForm\&.ShapeName\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Name of the shape being currently edited 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PolyGenetic Algorithm from the source code\&.

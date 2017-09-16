@@ -1,0 +1,136 @@
+.TH "Polygons.PolygonVisualizer" 3 "Sat Sep 16 2017" "Version 1.1.2" "PolyGenetic Algorithm" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Polygons.PolygonVisualizer \- Provides static methods for drawing polygons  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBDraw\fP (this \fBIPolygon\fP p, Graphics g)"
+.br
+.RI "Draw a complete polygon "
+.ti -1c
+.RI "static void \fBDrawIncomplete\fP (this \fBIPolygon\fP p, Graphics g)"
+.br
+.RI "Draw polygon without connection between the first and last vertex of the polygon "
+.ti -1c
+.RI "static void \fBDrawCenter\fP (this \fBIPolygon\fP p, Graphics g)"
+.br
+.RI "Draw a mark in the position of the polygon's center "
+.ti -1c
+.RI "static void \fBDrawCentroid\fP (this \fBIPolygon\fP p, Graphics g)"
+.br
+.RI "Draw a mark in the position of the polygon's centroid "
+.ti -1c
+.RI "static \fBPolygon\fP \fBPolygonNormalizedToBox\fP (this \fBPolygon\fP p, PictureBox normalizeTo)"
+.br
+.RI "Create a new polygon with the properties of its template, vertices coordinates scaled to fit a PictureBox "
+.ti -1c
+.RI "static \fBPolygon\fP \fBPolygonNormalizedToBox\fP (this \fBPolygon\fP p, int width, int height)"
+.br
+.RI "Create a new \fBPolygon\fP with the properties of its template, vertices coordinates scaled to fit a container of specified dimensions "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides static methods for drawing polygons 
+
+
+.SH "Member Function Documentation"
+.PP 
+.SS "static void Polygons\&.PolygonVisualizer\&.Draw (this \fBIPolygon\fP p, Graphics g)\fC [static]\fP"
+
+.PP
+Draw a complete polygon 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIp\fP \fBIPolygon\fP to draw
+.br
+\fIg\fP System\&.Drawing\&.Graphics object to be used to draw the polygon
+.RE
+.PP
+
+.SS "static void Polygons\&.PolygonVisualizer\&.DrawCenter (this \fBIPolygon\fP p, Graphics g)\fC [static]\fP"
+
+.PP
+Draw a mark in the position of the polygon's center 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIp\fP \fBIPolygon\fP whose center to draw
+.br
+\fIg\fP System\&.Drawing\&.Graphics object to be used to mark the center
+.RE
+.PP
+
+.SS "static void Polygons\&.PolygonVisualizer\&.DrawCentroid (this \fBIPolygon\fP p, Graphics g)\fC [static]\fP"
+
+.PP
+Draw a mark in the position of the polygon's centroid 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIp\fP \fBIPolygon\fP whose center to draw
+.br
+\fIg\fP System\&.Drawing\&.Graphics object to be used to mark the center
+.RE
+.PP
+
+.SS "static void Polygons\&.PolygonVisualizer\&.DrawIncomplete (this \fBIPolygon\fP p, Graphics g)\fC [static]\fP"
+
+.PP
+Draw polygon without connection between the first and last vertex of the polygon 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIp\fP \fBIPolygon\fP to incompletely draw
+.br
+\fIg\fP System\&.Drawing\&.Graphics object to be used to draw the polygon
+.RE
+.PP
+
+.SS "static \fBPolygon\fP Polygons\&.PolygonVisualizer\&.PolygonNormalizedToBox (this \fBPolygon\fP p, PictureBox normalizeTo)\fC [static]\fP"
+
+.PP
+Create a new polygon with the properties of its template, vertices coordinates scaled to fit a PictureBox 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIp\fP \fBPolygon\fP to normalize
+.br
+\fInormalizeTo\fP PictureBox whose bounds should be used for normalization calculations
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+
+.SS "static \fBPolygon\fP Polygons\&.PolygonVisualizer\&.PolygonNormalizedToBox (this \fBPolygon\fP p, int width, int height)\fC [static]\fP"
+
+.PP
+Create a new \fBPolygon\fP with the properties of its template, vertices coordinates scaled to fit a container of specified dimensions 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIp\fP \fBPolygon\fP to normalize
+.br
+\fIwidth\fP Width of the container
+.br
+\fIheight\fP Height of the container
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PolyGenetic Algorithm from the source code\&.

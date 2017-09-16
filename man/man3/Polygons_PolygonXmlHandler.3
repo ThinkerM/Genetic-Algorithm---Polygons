@@ -1,0 +1,76 @@
+.TH "Polygons.PolygonXmlHandler" 3 "Sat Sep 16 2017" "Version 1.1.2" "PolyGenetic Algorithm" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Polygons.PolygonXmlHandler \- Provides static methods for loading and saving \fBPolygons\fP from/to \&.xml files  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBSave\fP (this \fBPolygon\fP p, string path)"
+.br
+.RI "Saves polygon to an XML file to a specified folder and filename\&. "
+.ti -1c
+.RI "static void \fBSaveToDefaultFolder\fP (this \fBPolygon\fP p)"
+.br
+.RI "Save \fBPolygon\fP as \&.xml to the application's default shapes saving folder "
+.ti -1c
+.RI "static \fBPolygon\fP \fBLoad\fP (string uriPath)"
+.br
+.RI "Load a \fBPolygon\fP from an XML file "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides static methods for loading and saving \fBPolygons\fP from/to \&.xml files 
+
+
+.SH "Member Function Documentation"
+.PP 
+.SS "static \fBPolygon\fP Polygons\&.PolygonXmlHandler\&.Load (string uriPath)\fC [static]\fP"
+
+.PP
+Load a \fBPolygon\fP from an XML file 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuriPath\fP Path to desired XML file
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The object created from the XML file
+.RE
+.PP
+
+.SS "static void Polygons\&.PolygonXmlHandler\&.Save (this \fBPolygon\fP p, string path)\fC [static]\fP"
+
+.PP
+Saves polygon to an XML file to a specified folder and filename\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIp\fP \fBPolygon\fP to be saved
+.br
+\fIpath\fP File path including the name of the output file
+.RE
+.PP
+
+.SS "static void Polygons\&.PolygonXmlHandler\&.SaveToDefaultFolder (this \fBPolygon\fP p)\fC [static]\fP"
+
+.PP
+Save \fBPolygon\fP as \&.xml to the application's default shapes saving folder 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIp\fP \fBPolygon\fP to save
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PolyGenetic Algorithm from the source code\&.

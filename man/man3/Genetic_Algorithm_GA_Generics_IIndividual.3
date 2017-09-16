@@ -1,0 +1,74 @@
+.TH "Genetic_Algorithm.GA.Generics.IIndividual< TGene >" 3 "Sat Sep 16 2017" "Version 1.1.2" "PolyGenetic Algorithm" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Genetic_Algorithm.GA.Generics.IIndividual< TGene > \- Represents an organism/individual in a genetic algorithm  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits IEquatable< IIndividual< TGene >>\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBMutate\fP (double mutationProbability)"
+.br
+.RI "Allow for random alteration of the individual's genome "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "ICollection< TGene > \fBGenome\fP\fC [get]\fP"
+.br
+.ti -1c
+.RI "double \fBFitness\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBName\fP\fC [get]\fP"
+.br
+.ti -1c
+.RI "bool \fBIsElite\fP\fC [get, set]\fP"
+.br
+.RI "Indicates whether the individual is currently the elite member of its generation\&. Elite individuals will be copied over to the next generation without any mutations\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents an organism/individual in a genetic algorithm 
+
+
+.PP
+\fBType Constraints\fP
+.TP
+\fITGene\fP : \fI\fBIGene\fP\fP
+.SH "Member Function Documentation"
+.PP 
+.SS "void \fBGenetic_Algorithm\&.GA\&.Generics\&.IIndividual\fP< TGene >\&.Mutate (double mutationProbability)"
+
+.PP
+Allow for random alteration of the individual's genome 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImutationProbability\fP Likelihood for every single gene to mutate
+.RE
+.PP
+
+.SH "Property Documentation"
+.PP 
+.SS "double \fBGenetic_Algorithm\&.GA\&.Generics\&.IIndividual\fP< TGene >\&.Fitness\fC [get]\fP, \fC [set]\fP"
+
+.SS "ICollection<TGene> \fBGenetic_Algorithm\&.GA\&.Generics\&.IIndividual\fP< TGene >\&.Genome\fC [get]\fP"
+
+.SS "bool \fBGenetic_Algorithm\&.GA\&.Generics\&.IIndividual\fP< TGene >\&.IsElite\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Indicates whether the individual is currently the elite member of its generation\&. Elite individuals will be copied over to the next generation without any mutations\&. 
+.SS "string \fBGenetic_Algorithm\&.GA\&.Generics\&.IIndividual\fP< TGene >\&.Name\fC [get]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for PolyGenetic Algorithm from the source code\&.
