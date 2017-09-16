@@ -170,7 +170,7 @@
       <DependentUpon>PolygonGaSettings.settings</DependentUpon>
     </Compile>
     <Compile Include="Utils\Paths.cs" />
-    <Compile Include="Polygon\Polygons.cs" />
+    <Compile Include="Polygon\PolygonGenerator.cs" />
     <Compile Include="Forms\DialogForms\ShapeNameChooserPrompt.cs">
       <SubType>Form</SubType>
     </Compile>

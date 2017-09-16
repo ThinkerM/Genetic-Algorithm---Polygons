@@ -26,7 +26,7 @@ namespace Polygons.GA
 
         public PolygonIndividual()
         {
-            Polygon = Polygons.RandomPolygon(Utils.PolygonSettingsAccessor.PolygonsVertices);
+            Polygon = PolygonGenerator.RandomPolygon(Utils.PolygonSettingsAccessor.PolygonsVertices);
             CommonInitialization();
         }
 

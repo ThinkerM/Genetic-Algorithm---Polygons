@@ -11,9 +11,9 @@ using CustomExtensions.Geometry;
 namespace Polygons
 {
     /// <summary>
-    /// Provides methods for static generation of polygons
+    /// Provides static methods for generation of polygons
     /// </summary>
-    public class Polygons
+    public static class PolygonGenerator
     {
         private static readonly int MAX_VERTICES = 30;
         private static readonly int MAX_DISTANCE_CENTER = 300;
