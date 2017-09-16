@@ -48,7 +48,7 @@ var hierarchy =
       [ "Polygons.Polygon", "da/d09/class_polygons_1_1_polygon.html", null ]
     ] ],
     [ "Polygons.Paths", "de/dfe/class_polygons_1_1_paths.html", null ],
-    [ "Polygons.Polygons", "dc/d01/class_polygons_1_1_polygons.html", null ],
+    [ "Polygons.PolygonGenerator", "d0/d8c/class_polygons_1_1_polygon_generator.html", null ],
     [ "Polygons.PolygonVisualizer", "db/d5d/class_polygons_1_1_polygon_visualizer.html", null ],
     [ "Polygons.PolygonXmlHandler", "d9/d87/class_polygons_1_1_polygon_xml_handler.html", null ],
     [ "PolyGaLauncher.Program", "d6/dee/class_poly_ga_launcher_1_1_program.html", null ],

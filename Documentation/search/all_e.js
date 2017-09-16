@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['save',['Save',['../d9/d87/class_polygons_1_1_polygon_xml_handler.html#ab43ff1dadfc39aedadaee1c713163973',1,'Polygons::PolygonXmlHandler']]],
+  ['save',['Save',['../d9/d87/class_polygons_1_1_polygon_xml_handler.html#a574b130b6a3937476e1b63008092d925',1,'Polygons::PolygonXmlHandler']]],
   ['savedpopulation',['SavedPopulation',['../d7/d19/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_ga_event_args.html#a2bfcd4fc8e70ec7fb1aaa0840dbd3251',1,'Genetic_Algorithm::GA::Generics::GaEventArgs']]],
   ['savesettings',['SaveSettings',['../da/d51/class_genetic___algorithm_1_1_utils_1_1_settings_accessor.html#a1d04db37957a6e225b76a2cf82701136',1,'Genetic_Algorithm::Utils::SettingsAccessor']]],
-  ['savetodefaultfolder',['SaveToDefaultFolder',['../d9/d87/class_polygons_1_1_polygon_xml_handler.html#a1984749289f407634c92e91fe468500e',1,'Polygons::PolygonXmlHandler']]],
+  ['savetodefaultfolder',['SaveToDefaultFolder',['../d9/d87/class_polygons_1_1_polygon_xml_handler.html#ae8fdd0c474bbc4c966ace04254729cd9',1,'Polygons::PolygonXmlHandler']]],
   ['savexmlpath',['SaveXmlPath',['../de/dfe/class_polygons_1_1_paths.html#aa5011e91f0d938e6181304e15409b88e',1,'Polygons::Paths']]],
   ['selectforroulettebreeding',['SelectForRouletteBreeding',['../da/dee/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm_adapter.html#ac7c30892bc2b2527c90ec03b64c33c96',1,'Genetic_Algorithm.GA.Generics.GeneticAlgorithmAdapter.SelectForRouletteBreeding()'],['../d5/da8/interface_genetic___algorithm_1_1_g_a_1_1_generics_1_1_i_genetic_algorithm_adapter.html#a0cda7e73bca821ed67df011b5367fd52',1,'Genetic_Algorithm.GA.Generics.IGeneticAlgorithmAdapter.SelectForRouletteBreeding()']]],
   ['selection',['Selection',['../da/d51/class_genetic___algorithm_1_1_utils_1_1_settings_accessor.html#ad7a91a0d8bba48b66596479d7f9f9893',1,'Genetic_Algorithm::Utils::SettingsAccessor']]],

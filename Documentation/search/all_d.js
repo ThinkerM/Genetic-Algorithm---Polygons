@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['randompolygon',['RandomPolygon',['../dc/d01/class_polygons_1_1_polygons.html#a4f222a43974d0b0cd88675c44f5ac58b',1,'Polygons.Polygons.RandomPolygon()'],['../dc/d01/class_polygons_1_1_polygons.html#aa4de8eb5b8ceeb8a52503a107e16eab9',1,'Polygons.Polygons.RandomPolygon(int verticesCount)']]],
+  ['randompolygon',['RandomPolygon',['../d0/d8c/class_polygons_1_1_polygon_generator.html#a4e5d92b7cbebb4d49d81ccb6ba2bccc7',1,'Polygons.PolygonGenerator.RandomPolygon()'],['../d0/d8c/class_polygons_1_1_polygon_generator.html#a4877b3613864e7b8f107eebd8bf55904',1,'Polygons.PolygonGenerator.RandomPolygon(int verticesCount)']]],
   ['readme_2emd',['README.md',['../d9/dd6/_r_e_a_d_m_e_8md.html',1,'']]],
   ['remove',['Remove',['../dd/d05/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_population.html#ac0bb228fca20dedca10a5704ab1a443e',1,'Genetic_Algorithm::GA::Generics::Population']]],
   ['removeat',['RemoveAt',['../dd/d05/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_population.html#a8697360f0279adb265708977c479c93e',1,'Genetic_Algorithm::GA::Generics::Population']]],
