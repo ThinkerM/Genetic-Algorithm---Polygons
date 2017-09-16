@@ -12,6 +12,9 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+# Setup Folder
+PolyGa-Setup/
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
