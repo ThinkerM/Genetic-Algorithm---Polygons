@@ -3,7 +3,9 @@
 currently support for polygons (using their axial symmetry as a fitness function).*
 
 ## How to launch:
-After downloading the files, you can launch the app without any other necessary steps via the PolyGaLauncher in ```PolyGaLauncher\bin\Release\PolyGaLauncher.exe```
+1. Download the latest release
+2. Launch the setup and install
+3. Launch the executable in the installed folder
 
 ## Main program components:
   - Genetic Algorithm
