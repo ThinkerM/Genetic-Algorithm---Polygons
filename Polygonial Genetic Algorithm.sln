@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polygons", "Polygons\Polygo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolyGaLauncher", "PolyGaLauncher\PolyGaLauncher.csproj", "{A3D0F792-03C8-4B4F-9419-7246EFE04506}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PolyGa-Setup", "PolyGa-Setup\PolyGa-Setup.vdproj", "{3FD5CDF7-D6C5-45B1-B74A-3D3E6260F364}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,14 @@ Global
 		{A3D0F792-03C8-4B4F-9419-7246EFE04506}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A3D0F792-03C8-4B4F-9419-7246EFE04506}.Release|x86.ActiveCfg = Release|Any CPU
 		{A3D0F792-03C8-4B4F-9419-7246EFE04506}.Release|x86.Build.0 = Release|Any CPU
+		{3FD5CDF7-D6C5-45B1-B74A-3D3E6260F364}.Debug|Any CPU.ActiveCfg = Debug
+		{3FD5CDF7-D6C5-45B1-B74A-3D3E6260F364}.Debug|Any CPU.Build.0 = Debug
+		{3FD5CDF7-D6C5-45B1-B74A-3D3E6260F364}.Debug|x86.ActiveCfg = Debug
+		{3FD5CDF7-D6C5-45B1-B74A-3D3E6260F364}.Debug|x86.Build.0 = Debug
+		{3FD5CDF7-D6C5-45B1-B74A-3D3E6260F364}.Release|Any CPU.ActiveCfg = Release
+		{3FD5CDF7-D6C5-45B1-B74A-3D3E6260F364}.Release|Any CPU.Build.0 = Release
+		{3FD5CDF7-D6C5-45B1-B74A-3D3E6260F364}.Release|x86.ActiveCfg = Release
+		{3FD5CDF7-D6C5-45B1-B74A-3D3E6260F364}.Release|x86.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
