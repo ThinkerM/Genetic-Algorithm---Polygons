@@ -25,6 +25,6 @@ namespace Genetic_Algorithm.GA.Generics
         /// <summary>
         /// Name of the calculator to be used in calculators selection (improved readability)
         /// </summary>
-        string Name { get; }
+        string ToString();
     }
 }

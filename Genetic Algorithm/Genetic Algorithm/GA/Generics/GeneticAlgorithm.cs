@@ -112,7 +112,7 @@ namespace Genetic_Algorithm.GA.Generics
                     break;
 
                 default:
-                    throw new Exception($"Unexpected SelectionType in switch statement: {Selection.ToString()}");
+                    throw new InvalidOperationException($"Unexpected SelectionType in switch statement: {Selection.ToString()}");
             }
         }
 

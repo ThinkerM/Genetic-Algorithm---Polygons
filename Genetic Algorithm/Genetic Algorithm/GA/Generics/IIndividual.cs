@@ -9,7 +9,7 @@ namespace Genetic_Algorithm.GA.Generics
     /// <summary>
     /// Represents an organism/individual in a genetic algorithm
     /// </summary>
-    public interface IIndividual<TGene> : IEquatable<IIndividual<TGene>>
+    public interface IIndividual<TGene> : IEquatable<IIndividual<TGene>>,  IComparable<IIndividual<TGene>>
         where TGene : IGene
     {
         ICollection<TGene> Genome { get; }
