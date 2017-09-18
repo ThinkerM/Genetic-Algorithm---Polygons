@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Genetic Algorithm", "Genetic Algorithm\Genetic Algorithm\Genetic Algorithm.csproj", "{F459F4A5-21B3-4DED-B5CA-76F98C5CFC9D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Genetic Algorithm", "Genetic Algorithm\Genetic Algorithm.csproj", "{F459F4A5-21B3-4DED-B5CA-76F98C5CFC9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polygons", "Polygons\Polygons\Polygons.csproj", "{82FA6A37-0056-4FD8-B945-56E31A0B81FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polygons", "Polygons\Polygons.csproj", "{82FA6A37-0056-4FD8-B945-56E31A0B81FA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolyGaLauncher", "PolyGaLauncher\PolyGaLauncher.csproj", "{A3D0F792-03C8-4B4F-9419-7246EFE04506}"
 EndProject
