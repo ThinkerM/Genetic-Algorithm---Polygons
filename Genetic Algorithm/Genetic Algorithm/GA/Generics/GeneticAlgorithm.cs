@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using static Genetic_Algorithm.Utils.SettingsAccessor;
 using Genetic_Algorithm.Utils;
 
 namespace Genetic_Algorithm.GA.Generics
@@ -14,16 +15,9 @@ namespace Genetic_Algorithm.GA.Generics
         where TIndividual : IIndividual<TGene>, new()
         where TGene : IGene
     {
-        private int CurrentGenerationNumber { get; set; }
-        private int PopulationSize => SettingsAccessor.PopulationSize;
-        private bool Elitism => SettingsAccessor.Elitism;
-        private double SteadyStateSurvivorRatio => SettingsAccessor.SteadyStateSurvivalRate;
-        private double CrossoverChance => SettingsAccessor.CrossoverProbability;
-        private double MutationChance => SettingsAccessor.MutationProbability;
-        private SelectionType Selection => SettingsAccessor.Selection;
-
+        protected int CurrentGenerationNumber { get; set; }
         protected Population<TIndividual, TGene> initialPopulation;
-        public Population<TIndividual, TGene> InitialPopulation { get { return initialPopulation; } }
+        protected Population<TIndividual, TGene> InitialPopulation { get { return initialPopulation; } }
         protected Population<TIndividual, TGene> currentGeneration;
         protected Population<TIndividual, TGene> nextGeneration;
 
@@ -86,7 +80,7 @@ namespace Genetic_Algorithm.GA.Generics
             for (int i = 0; i < n; i++)
             {
                 PopulateNextGeneration();
-                adapter.MutatePopulation(nextGeneration, MutationChance);
+                adapter.MutatePopulation(nextGeneration, MutationProbability);
                 OnGenerationComplete(new GaEventArgs<TIndividual, TGene>(currentGeneration, CurrentGenerationNumber));
 
                 CurrentGenerationNumber++;
@@ -107,7 +101,7 @@ namespace Genetic_Algorithm.GA.Generics
 
                 case SelectionType.SteadyState:
                     nextGeneration.AddRange
-                        (adapter.SelectSteadyStateSurvivors(currentGeneration, SteadyStateSurvivorRatio, Elitism).ToArray());
+                        (adapter.SelectSteadyStateSurvivors(currentGeneration, SteadyStateSurvivalRate, Elitism).ToArray());
                     RoulettePopulateNextGeneration();
                     break;
 
@@ -121,7 +115,7 @@ namespace Genetic_Algorithm.GA.Generics
             while (!nextGeneration.FilledDesiredSize())
             {
                 TIndividual parent1 = adapter.SelectForRouletteBreeding(currentGeneration);
-                if (adapter.CrossoverShouldOccur(CrossoverChance))
+                if (adapter.CrossoverShouldOccur(CrossoverProbability))
                 {
                     TIndividual parent2 = adapter.SelectForRouletteBreeding(currentGeneration, parent1);
                     nextGeneration.Add(adapter.CrossOver(parent1, parent2));
