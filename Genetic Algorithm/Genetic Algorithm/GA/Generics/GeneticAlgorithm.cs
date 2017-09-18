@@ -17,7 +17,6 @@ namespace Genetic_Algorithm.GA.Generics
     {
         protected int CurrentGenerationNumber { get; set; }
         protected Population<TIndividual, TGene> initialPopulation;
-        protected Population<TIndividual, TGene> InitialPopulation { get { return initialPopulation; } }
         protected Population<TIndividual, TGene> currentGeneration;
         protected Population<TIndividual, TGene> nextGeneration;
 
@@ -62,13 +61,6 @@ namespace Genetic_Algorithm.GA.Generics
             CurrentGenerationNumber = 1;
 
             Initialised?.Invoke(new GaEventArgs<TIndividual, TGene>(initialPopulation, CurrentGenerationNumber));
-        }
-
-        private GenerationCompleteEventHandler<TIndividual, TGene> _generationComplete;
-        public event GenerationCompleteEventHandler<TIndividual, TGene> GenerationComplete
-        {
-            add { _generationComplete += value; }
-            remove { _generationComplete -= value; }
         }
 
         /// <summary>
@@ -125,17 +117,31 @@ namespace Genetic_Algorithm.GA.Generics
             }
         }
 
+        #region GA Events
+        /// <summary>
+        /// Occurs whenever a generation is crossed over, fully populated and mutated
+        /// </summary>
+        public event GenerationCompleteEventHandler<TIndividual, TGene> GenerationComplete;
         /// <summary>
         /// Invokes the <see cref="GenerationComplete"/> event
         /// </summary>
-        /// <param name="ge">Information about the event population</param>
+        /// <param name="ge"><see cref="GaEventArgs{TIndividual, TGene}"/> for the completed generation</param>
         protected virtual void OnGenerationComplete(GaEventArgs<TIndividual, TGene> ge)
         {
-            _generationComplete?.Invoke(ge);
+            GenerationComplete?.Invoke(ge);
+        }
+
+        /// <summary>
+        /// Invokes the <see cref="Initialised"/> event
+        /// </summary>
+        protected virtual void OnInitialised()
+        {
+            Initialised?.Invoke(new GaEventArgs<TIndividual, TGene>(initialPopulation, 1));
         }
         /// <summary>
         /// Raised when a <see cref="GeneticAlgorithm{TIndividual, TGene}"/> finishes its construction and initialisation
         /// </summary>
         public static event GaInitialisedEventHandler<TIndividual,TGene> Initialised;
+        #endregion
     }
 }
