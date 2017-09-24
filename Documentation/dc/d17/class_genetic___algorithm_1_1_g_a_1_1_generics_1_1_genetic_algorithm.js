@@ -1,15 +1,15 @@
 var class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm =
 [
-    [ "GeneticAlgorithm", "dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#a1ce3cd698327e04b81bd257eb219d12d", null ],
-    [ "GeneticAlgorithm", "dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#a920cee739e4aaa27fc2fc0548343e469", null ],
-    [ "OnGenerationComplete", "dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#ac8bcba807f1bf2ca5b759ab17b758b1c", null ],
-    [ "RunGenerations", "dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#adbb83b197c14ed44f940eae2a57ee410", null ],
-    [ "adapter", "dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#a113761130837a571c2ae30009541b841", null ],
-    [ "currentGeneration", "dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#a417c6cb7b8d98188cd2fe56c90c97358", null ],
-    [ "initialPopulation", "dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#ab2bb5850568c8fb9750d3691ea67f2d0", null ],
-    [ "nextGeneration", "dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#a8fb3aa646061326b5ad3399b794864ee", null ],
-    [ "CurrentGenerationNumber", "dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#aa68e5d157d71870c21443d259ab2d3fa", null ],
-    [ "GenerationComplete", "dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#a16f60575c21514fed7ded9664d6a553a", null ],
-    [ "InitialPopulation", "dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#a27e59dd9753210d49d4fcef01ce37e1f", null ],
-    [ "Initialised", "dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#a9eb933358a64d6e1b5017b3416edb87d", null ]
+    [ "GeneticAlgorithm", "dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#a3d152cb327138d527a98408c8350d13b", null ],
+    [ "GeneticAlgorithm", "dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#a780ae7d84ae9be4c12e8d331db7abe7a", null ],
+    [ "OnGenerationComplete", "dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#a5271b5325a0a7cf5b3a2ee3409c2fe60", null ],
+    [ "OnInitialised", "dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#ae9226af3f61f69ce60c3b7a45cd99f12", null ],
+    [ "RunGenerations", "dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#a3f56b1d11ae964a082967d4a228ab771", null ],
+    [ "adapter", "dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#af75cbe8012972509bc127415b1b5967e", null ],
+    [ "currentGeneration", "dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#a936added6c5f78fdd0113f1c94eb89bc", null ],
+    [ "initialPopulation", "dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#a8c898dc702d62a189deeba7642430b11", null ],
+    [ "nextGeneration", "dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#af3656a81875a285976116490d741bb78", null ],
+    [ "CurrentGenerationNumber", "dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#a8171199d2ce19e6078e1e0da1538d5c3", null ],
+    [ "GenerationComplete", "dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#aacc953d55dddbbb3d0c271ded4391291", null ],
+    [ "Initialised", "dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#ae9c0cf10e7a9f2a8a83fa4f9fac127a8", null ]
 ];

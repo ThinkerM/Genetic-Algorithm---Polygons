@@ -1,11 +1,11 @@
 var class_genetic___algorithm_1_1_utils_1_1_settings_accessor =
 [
-    [ "ResetToDefaults", "da/d51/class_genetic___algorithm_1_1_utils_1_1_settings_accessor.html#aa5f74317289f97be140f6f84b617c7ff", null ],
-    [ "SaveSettings", "da/d51/class_genetic___algorithm_1_1_utils_1_1_settings_accessor.html#a1d04db37957a6e225b76a2cf82701136", null ],
-    [ "CrossoverProbability", "da/d51/class_genetic___algorithm_1_1_utils_1_1_settings_accessor.html#ad9c9e6654e328d9a9d688cdb9f0f5dae", null ],
-    [ "Elitism", "da/d51/class_genetic___algorithm_1_1_utils_1_1_settings_accessor.html#accf1dcabf7eb09ff07c20201699be9d5", null ],
-    [ "MutationProbability", "da/d51/class_genetic___algorithm_1_1_utils_1_1_settings_accessor.html#aac781147e64d041d87e0891e178dc32a", null ],
-    [ "PopulationSize", "da/d51/class_genetic___algorithm_1_1_utils_1_1_settings_accessor.html#ad6ab078464d84cf8210c5112ffecde6a", null ],
-    [ "Selection", "da/d51/class_genetic___algorithm_1_1_utils_1_1_settings_accessor.html#ad7a91a0d8bba48b66596479d7f9f9893", null ],
-    [ "SteadyStateSurvivalRate", "da/d51/class_genetic___algorithm_1_1_utils_1_1_settings_accessor.html#af3f21a9c951ca9b9e71c7b09beb42a7b", null ]
+    [ "ResetToDefaults", "da/d51/class_genetic___algorithm_1_1_utils_1_1_settings_accessor.html#a4595203dc1f079e03b20e9d77e868535", null ],
+    [ "SaveSettings", "da/d51/class_genetic___algorithm_1_1_utils_1_1_settings_accessor.html#a2899884d35298540e39b51eb40a6fc0f", null ],
+    [ "CrossoverProbability", "da/d51/class_genetic___algorithm_1_1_utils_1_1_settings_accessor.html#a10e5275f2fdd690a11a5a650870c8b3f", null ],
+    [ "Elitism", "da/d51/class_genetic___algorithm_1_1_utils_1_1_settings_accessor.html#a0b4a3fbf340714746ef64faeced49fe3", null ],
+    [ "MutationProbability", "da/d51/class_genetic___algorithm_1_1_utils_1_1_settings_accessor.html#a0418725b658971462658a55edc5fe156", null ],
+    [ "PopulationSize", "da/d51/class_genetic___algorithm_1_1_utils_1_1_settings_accessor.html#ad4d499d40c23f69e9186b44df18ed6cb", null ],
+    [ "Selection", "da/d51/class_genetic___algorithm_1_1_utils_1_1_settings_accessor.html#a4a4da222e56f6a6a4bd24e8808e882f5", null ],
+    [ "SteadyStateSurvivalRate", "da/d51/class_genetic___algorithm_1_1_utils_1_1_settings_accessor.html#afaea2b55b14de64e0932f331007b2e79", null ]
 ];
