@@ -20,14 +20,5 @@
     <Setting Name="PopulationSize" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">20</Value>
     </Setting>
-    <Setting Name="PolygonVertices" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">10</Value>
-    </Setting>
-    <Setting Name="AngleMutationMaximumVariance" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">30</Value>
-    </Setting>
-    <Setting Name="CentroidDistanceMaximumMutation" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0.2</Value>
-    </Setting>
   </Settings>
 </SettingsFile>

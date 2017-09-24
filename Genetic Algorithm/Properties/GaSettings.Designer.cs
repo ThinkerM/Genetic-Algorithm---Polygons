@@ -94,41 +94,5 @@ namespace Genetic_Algorithm.Properties {
                 this["PopulationSize"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("10")]
-        public int PolygonVertices {
-            get {
-                return ((int)(this["PolygonVertices"]));
-            }
-            set {
-                this["PolygonVertices"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("30")]
-        public int AngleMutationMaximumVariance {
-            get {
-                return ((int)(this["AngleMutationMaximumVariance"]));
-            }
-            set {
-                this["AngleMutationMaximumVariance"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.2")]
-        public double CentroidDistanceMaximumMutation {
-            get {
-                return ((double)(this["CentroidDistanceMaximumMutation"]));
-            }
-            set {
-                this["CentroidDistanceMaximumMutation"] = value;
-            }
-        }
     }
 }
