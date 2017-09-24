@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Polygons
+namespace Polygons.Utils
 {
     /// <summary>
     /// Provides methods for determining paths to various relevant locations and creating appropriate paths for specific files
     /// </summary>
-    public static class Paths
+    internal static class Paths
     {
         //NOTE: some of these methods and their names are a mess. I managed to hook them well to different path requirements of various System.IO functionalities, but naming might be inaccurate.
 

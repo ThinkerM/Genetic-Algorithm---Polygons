@@ -1,14 +1,10 @@
-﻿using Genetic_Algorithm.GA;
-using Polygons;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MoreLinq;
 using Genetic_Algorithm.GA.Generics;
@@ -16,6 +12,8 @@ using Polygons.GA;
 using Polygons.Forms.CustomControls;
 using Polygons.Forms.DialogForms;
 using Genetic_Algorithm.Utils;
+using Polygons.Utils;
+
 
 namespace Polygons.Forms
 {
