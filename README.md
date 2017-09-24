@@ -7,6 +7,9 @@ currently support for polygons (using their axial symmetry as a fitness function
 2. Launch the setup and install
 3. Launch the executable in the installed folder
 
+## View documentation:
+If you want to see a detailed class list with documented method signatures, you need to download the repository and open one of the _.html_ files in the _Documentation_ folder.
+
 ## Main program components:
   - Genetic Algorithm
     - Adjust genetic algorithm parameters, choose between different fitness function calculators, run genetic algorithm
