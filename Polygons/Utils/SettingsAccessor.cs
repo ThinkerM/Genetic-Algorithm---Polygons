@@ -11,14 +11,18 @@ namespace Polygons.Utils
     /// <summary>
     /// Serves as an intermediary to the Genetic Algorithm's GaSettings.Default
     /// </summary>
-    internal static class PolygonSettingsAccessor
+    internal static class PolygonSettingsAccessor 
     {
+        /// <summary>
+        /// Defines how many vertices every <see cref="Polygons.GA.PolygonIndividual"/> will have.
+        /// Must be at least 3.
+        /// </summary>
         public static int PolygonsVertices
         {
             get { return Default.PolygonVertices; }
             set
             {
-                if (value >=3)
+                if (value >= 3)
                 {
                     Default.PolygonVertices = value;
                 }
@@ -27,6 +31,10 @@ namespace Polygons.Utils
             }
         }
 
+        /// <summary>
+        /// Defines how large a relative change can occur in a gene.
+        /// Must be between 0 and 1.
+        /// </summary>
         public static double CentroidDistanceMaximumMutation
         {
             get { return Default.MaximumDistanceMutation; }
@@ -38,6 +46,10 @@ namespace Polygons.Utils
             }
         }
 
+        /// <summary>
+        /// Defines how large a mutation (in angles) can occur in each gene.
+        /// Must be between 0 and 180.
+        /// </summary>
         public static int AngleMaximumMutation
         {
             get { return Default.MaximumAngleMutation; }
@@ -49,10 +61,20 @@ namespace Polygons.Utils
             }
         }
 
-        public static void SaveSettings() => Default.Save();
+        /// <summary>
+        /// Write current Polygon and generic GA settings to permanent settings file
+        /// </summary>
+        public static void SaveSettings()
+        {
+            Default.Save();
+            Genetic_Algorithm.Utils.SettingsAccessor.SaveSettings();
+        }
 
         private static readonly string PROBABILITY_ERROR_MESSAGE = "Invalid value, probability must be between 0 and 1";
 
+        /// <summary>
+        /// Retrievve Polygons GA parameters from a backup settings file
+        /// </summary>
         public static void ResetToDefaults()
         {
             PolygonsVertices = Default.PolygonVertices;
