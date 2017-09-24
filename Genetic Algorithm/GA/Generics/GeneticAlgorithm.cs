@@ -73,10 +73,11 @@ namespace Genetic_Algorithm.GA.Generics
             {
                 PopulateNextGeneration();
                 adapter.MutatePopulation(nextGeneration, MutationProbability);
-                OnGenerationComplete(new GaEventArgs<TIndividual, TGene>(currentGeneration, CurrentGenerationNumber));
 
                 CurrentGenerationNumber++;
                 currentGeneration = new Population<TIndividual, TGene>(nextGeneration);
+
+                OnGenerationComplete(new GaEventArgs<TIndividual, TGene>(currentGeneration, CurrentGenerationNumber));
             }
         }
 
