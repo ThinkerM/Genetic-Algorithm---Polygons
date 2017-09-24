@@ -43,8 +43,8 @@ namespace Polygons.Forms
             PolygonColor = Color.Black;
             polygonBox.Paint += new PaintEventHandler(polygonBox_Paint);
 
-            loadShapeDialog.InitialDirectory = Paths.PolygonSavedShapesFolderNoBacklash();
-            deleteShapeDialog.InitialDirectory = Paths.PolygonSavedShapesFolderNoBacklash();
+            loadShapeDialog.InitialDirectory = Paths.PolygonSavedShapesFolderNoBacklash;
+            deleteShapeDialog.InitialDirectory = Paths.PolygonSavedShapesFolderNoBacklash;
             TryCreateSavesFolder();
         }
 
@@ -212,7 +212,7 @@ namespace Polygons.Forms
 
         private void TryCreateSavesFolder()
         {
-            System.IO.Directory.CreateDirectory(Paths.PolygonSavedShapesFolder());
+            System.IO.Directory.CreateDirectory(Paths.PolygonSavedShapesFolder);
         }
 
         private void saveShapeButton_Click(object sender, EventArgs e)
@@ -284,7 +284,7 @@ namespace Polygons.Forms
         private void saveFileDialog_FileOk(object sender, CancelEventArgs e)
         {
             //check if user left the predefined directory
-            if (loadShapeDialog.FileName.Contains(Paths.LocalPath(loadShapeDialog.InitialDirectory)))
+            if (loadShapeDialog.FileName.Contains(loadShapeDialog.InitialDirectory))
             {
                 ValidFolderSelected = true;
             }
@@ -298,7 +298,7 @@ namespace Polygons.Forms
         private void deleteFileDialog_FileOk(object sender, CancelEventArgs e)
         {
             //check if user left the predefined directory
-            if (deleteShapeDialog.FileName.Contains(Paths.LocalPath(deleteShapeDialog.InitialDirectory)))
+            if (deleteShapeDialog.FileName.Contains(deleteShapeDialog.InitialDirectory))
             {
                 ValidFolderSelected = true;
             }

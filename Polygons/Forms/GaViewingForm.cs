@@ -73,7 +73,7 @@ namespace Polygons.Forms
             SavedGenerationsCombobox_DefaultWidth = savedGenerationsCombobox.Width;
             savedGenerationsCombobox.DataSource = savedGaPopulations;
             logBox.DataSource = logLines;
-            importPopulationDialog.InitialDirectory = Paths.PolygonSavedShapesFolderNoBacklash();
+            importPopulationDialog.InitialDirectory = Paths.PolygonSavedShapesFolderNoBacklash;
             picturesBackgroundColorDialog.Color = DefaultPicturesBackground;
             this.availableFitnessCalculators = new BindingList<IFitnessCalculator<PolygonIndividual, IPolygonGene>>(availableFitnessCalculators.ToList());
             fitnessFunctionComboBox.DataSource = this.availableFitnessCalculators;
@@ -253,7 +253,7 @@ namespace Polygons.Forms
         private void importPopulationDialog_FileOk(object sender, CancelEventArgs e)
         {
             //check if user left the predefined directory
-            if (importPopulationDialog.FileName.Contains(Paths.LocalPath(importPopulationDialog.InitialDirectory)))
+            if (importPopulationDialog.FileName.Contains(importPopulationDialog.InitialDirectory))
             {
                 ValidFolderSelected = true;
             }
