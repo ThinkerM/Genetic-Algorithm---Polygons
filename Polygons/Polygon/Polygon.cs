@@ -2,40 +2,28 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using CustomExtensions.Math;
 
 namespace Polygons
 {
-    /// <summary>
-    /// Represents a shape with a variable number of vertices, specific color and an optional name
-    /// </summary>
+    /// <inheritdoc />
     public class Polygon : IPolygon
     {
         #region Properties
         private List<Point> vertices = new List<Point>();
 
-        /// <summary>
-        /// Color of the connecting lines and points of the polygon
-        /// </summary>
-        public Color OutlineColor { get; set; }
+        /// <inheritdoc />
+        public Color OutlineColor { get; private set; }
 
         /// <summary>
         /// Name assigned to the polygon
         /// </summary>
-        public string Name { get; set; }
+        public string Name { get; private set; }
 
-        /// <summary>
-        /// All of the polygon's vertices represented as Points
-        /// </summary>
-        public List<Point> Vertices { get { return vertices; } }
+        /// <inheritdoc />
+        public List<Point> Vertices => vertices;
 
-        /// <summary>
-        /// Number of vertices
-        /// </summary>
-        public int VerticesCount { get { return vertices.Count; } }
+        /// <inheritdoc />
+        public int VerticesCount => vertices.Count;
 
         private Point? center;
         /// <summary>
@@ -55,9 +43,7 @@ namespace Polygons
         }
 
         private Point? centroid;
-        /// <summary>
-        /// Point which is the average of every vertex's coordinates
-        /// </summary>
+        /// <inheritdoc />
         public Point Centroid
         {
             get
@@ -67,7 +53,7 @@ namespace Polygons
                     UpdateCentroid();
                     return (Point)centroid;
                 }
-                return new Point(-1, -1);
+                return Point.Empty;
             }
         }
         #endregion
@@ -84,8 +70,8 @@ namespace Polygons
         {
             Point upperLeftCorner = UpperLeftCorner();
             center = new Point(
-                upperLeftCorner.X + xSpan() / 2,
-                upperLeftCorner.Y + ySpan() / 2);
+                upperLeftCorner.X + XSpan() / 2,
+                upperLeftCorner.Y + YSpan() / 2);
         }
 
         private Point UpperLeftCorner()
@@ -95,13 +81,13 @@ namespace Polygons
             return new Point(lowestX, lowestY);
         }
 
-        private int xSpan()
+        private int XSpan()
         {
             var orderedVertices = vertices.OrderBy(v => v.X);
             return orderedVertices.Last().X - orderedVertices.First().X;
         }
 
-        private int ySpan()
+        private int YSpan()
         {
             var orderedVertices = vertices.OrderBy(v => v.Y);
             return orderedVertices.Last().Y - orderedVertices.First().Y;
@@ -137,7 +123,7 @@ namespace Polygons
         /// </summary>
         /// <param name="hypotheticalCentroid"></param>
         /// <returns>List of polygon's vertices adjusted to centroid</returns>
-        public List<Point> ShiftedToCentroid(Point hypotheticalCentroid)
+        private List<Point> ShiftedToCentroid(Point hypotheticalCentroid)
         {
             int xShift = hypotheticalCentroid.X - Centroid.X;
             int yShift = hypotheticalCentroid.Y - Centroid.Y;
@@ -151,18 +137,22 @@ namespace Polygons
         /// Top-most point of the polygon will share its Y coordinate with the imaginary upper-left corner.
         /// </summary>
         /// <param name="shiftTo">Imaginary upper-left corner to shift to</param>
-        public void ShiftUpperLeftCorner(Point shiftTo) => vertices = ShiftedUpperLeftCorner(shiftTo);
+        public void ShiftUpperLeftCorner(Point shiftTo) 
+            => vertices = ShiftedUpperLeftCorner(shiftTo);
 
         /// <summary>
         /// Change the coordinates of every vertex without distorting their relative positions.
         /// </summary>
         /// <param name="dX">Shift on the horizontal axis</param>
         /// <param name="dY">Shift on the vertical axis</param>
-        public void ShiftVertices(int dX, int dY) => vertices = ShiftedVertices(vertices, dX, dY);
+        public void ShiftVertices(int dX, int dY) 
+            => vertices = ShiftedVertices(vertices, dX, dY);
 
-        private List<Point> ShiftedUpperLeftCorner(Point shiftTo) => ShiftedVertices(this.vertices, shiftTo);
+        private List<Point> ShiftedUpperLeftCorner(Point shiftTo) 
+            => ShiftedVertices(this.vertices, shiftTo);
 
-        private List<Point> ShiftedUpperLeftCorner(int dX, int dY) => ShiftedVertices(this.vertices, dX, dY);
+        private List<Point> ShiftedUpperLeftCorner(int dX, int dY) 
+            => ShiftedVertices(this.vertices, dX, dY);
 
         /// <summary>
         /// Moves vertices to a new location (specified by amount of movement on X and Y axes.
@@ -171,15 +161,8 @@ namespace Polygons
         /// <param name="dX">Amount of movement on X axis</param>
         /// <param name="dY">Amount of movement on Y axis</param>
         /// <returns>Vertices adjusted to a new location</returns>
-        public static List<Point> ShiftedVertices(List<Point> vertices, int dX, int dY)
-        {
-            List<Point> result = new List<Point>();
-            foreach (var v in vertices)
-            {
-                result.Add(new Point(v.X + dX, v.Y + dY));
-            }
-            return result;
-        }
+        public static List<Point> ShiftedVertices(IEnumerable<Point> vertices, int dX, int dY) 
+            => vertices.Select(v => new Point(v.X + dX, v.Y + dY)).ToList();
 
         /// <summary>
         /// Moves vertices to a new location (specified by upper left corner of the whole shape).
@@ -187,7 +170,7 @@ namespace Polygons
         /// <param name="vertices">Vertices to be shifted</param>
         /// <param name="shiftToCorner">Upper left corner of the desired output</param>
         /// <returns>Vertices adjusted to a new location</returns>
-        public static List<Point> ShiftedVertices(List<Point> vertices, Point shiftToCorner)
+        private static List<Point> ShiftedVertices(List<Point> vertices, Point shiftToCorner)
         {
             int lowestX = vertices.OrderBy(p => p.X).First().X;
             int xShift = shiftToCorner.X - lowestX;
@@ -205,8 +188,8 @@ namespace Polygons
         /// <returns></returns>
         public double GetScalingFactor(int normalizeToX, int normalizeToY)
         {
-            double xNorm = (double)normalizeToX / xSpan();
-            double yNorm = (double)normalizeToY / ySpan();
+            double xNorm = (double)normalizeToX / XSpan();
+            double yNorm = (double)normalizeToY / YSpan();
 
             return (Math.Min(xNorm, yNorm));
         }

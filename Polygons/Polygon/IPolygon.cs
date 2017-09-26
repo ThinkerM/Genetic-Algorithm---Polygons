@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Collections.Generic;
 using System.Drawing;
 
 namespace Polygons
@@ -21,7 +16,7 @@ namespace Polygons
         /// <summary>
         /// Color of the lines connecting vertices
         /// </summary>
-        Color OutlineColor { get; set; }
+        Color OutlineColor { get; }
 
         /// <summary>
         /// List representation of the polygon's vertices

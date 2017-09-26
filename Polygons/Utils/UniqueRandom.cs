@@ -10,19 +10,11 @@ namespace Polygons
     {
         private static UniqueRandom instance;
 
-        public static UniqueRandom Instance
-        {
-            get
-            {
-                if (instance == null) { instance = new UniqueRandom(); }
-                return instance;
-            }
-        }
+        public static UniqueRandom Instance 
+            => instance ?? (instance = new UniqueRandom());
 
-        public static bool HalfProbability()
-        {
-            return Instance.NextDouble() <= 0.5;
-        }
+        public static bool HalfProbability() 
+            => Instance.NextDouble() <= 0.5;
 
         private UniqueRandom() { }
     }

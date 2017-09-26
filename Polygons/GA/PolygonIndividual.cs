@@ -10,7 +10,7 @@ using Polygons.Utils;
 namespace Polygons.GA
 {
     /// <summary>
-    /// <see cref="IIndividual{IPolygonGene}"/> which introduces the structure of <see cref="IPolygon"/> into a genetic algorithm
+    /// <see cref="IIndividual{IPolygonGene}"/> which introduces the structure of <see cref="Polygons.IPolygon"/> into a genetic algorithm
     /// </summary>
     class PolygonIndividual : IIndividual<IPolygonGene>
     {

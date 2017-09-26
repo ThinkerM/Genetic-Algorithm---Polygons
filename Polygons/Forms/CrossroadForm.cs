@@ -16,7 +16,7 @@ namespace Polygons.Forms
         /// <summary>
         /// Access an instance of CrossroadForm
         /// </summary>
-        public static CrossroadForm Instance
+        public static Polygons.Forms.CrossroadForm Instance
         {
             get
             {

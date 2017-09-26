@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
-using Randomization;
-using CustomExtensions;
+using System.Text;
 using CustomExtensions.Geometry;
+using Randomization;
 
 namespace Polygons
 {
@@ -15,17 +12,15 @@ namespace Polygons
     /// </summary>
     public static class PolygonGenerator
     {
-        private static readonly int MAX_VERTICES = 30;
-        private static readonly int MAX_DISTANCE_CENTER = 300;
+        private const int MAX_VERTICES = 30;
+        private const int MAX_DISTANCE_CENTER = 300;
 
         /// <summary>
         /// Generate a random polygon with a random number of vertices
         /// </summary>
         /// <returns>Random polygon</returns>
-        public static Polygon RandomPolygon()
-        {
-            return RandomPolygon(UniqueRandom.Instance.Next(3, MAX_VERTICES));
-        }
+        public static Polygon RandomPolygon() 
+            => RandomPolygon(UniqueRandom.Instance.Next(3, MAX_VERTICES));
 
         /// <summary>
         /// Generate a random polygon with the specified number of vertices
@@ -78,7 +73,7 @@ namespace Polygons
         private static string GenerateName(int vertices)
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append($"{vertices.ToString()}VTX_");
+            sb.Append($"{vertices}VTX_");
             sb.Append(RandomCharsAndStrings.RandomAlphanumericString(8));
             return sb.ToString();
         }

@@ -9,7 +9,7 @@ namespace Polygons.Utils
     /// <summary>
     /// Provides methods for determining paths to various relevant locations and creating appropriate paths for specific files
     /// </summary>
-    internal static class Paths
+    internal static class PolygonPaths
     {
         private const string GA_FOLDER = @"\Genetic Algorithm - Polygons";
         private const string SAVE_FOLDER = SAVE_FOLDER_NOSLASH + @"\";
@@ -35,7 +35,7 @@ namespace Polygons.Utils
         /// <param name="folderPath">Uri class representing the target folder</param>
         /// <param name="fileName">Name of the file (without path)</param>
         /// <returns></returns>
-        public static string FileInFolderPath(Uri folderPath, string fileName)
+        private static string FileInFolderPath(Uri folderPath, string fileName)
             => $"{folderPath.LocalPath}{fileName}";
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace Polygons.Utils
         /// <param name="folderPath">Path to folder to construct in</param>
         /// <param name="fileName">Name of the file (without path)</param>
         /// <returns></returns>
-        public static string FileInFolderPath(string folderPath, string fileName)
+        private static string FileInFolderPath(string folderPath, string fileName)
             => $"{new Uri(folderPath).LocalPath}{fileName}";
 
         /// <summary>

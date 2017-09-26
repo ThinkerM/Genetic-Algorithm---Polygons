@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
-using Polygons;
 
 namespace Polygons
 {
@@ -27,11 +21,11 @@ namespace Polygons
                 {
                     g.FillEllipse(vertexBrush, point.X - 5, point.Y - 5, 10, 10);
                 }
-                if (p.VerticesCount > 1)
-                {
-                    using (Pen outlinePen = new Pen(p.OutlineColor, 3))
-                    { g.DrawPolygon(outlinePen, p.Vertices.ToArray()); }
-                }
+                if (p.VerticesCount <= 1)
+                { return; }
+
+                using (Pen outlinePen = new Pen(p.OutlineColor, 3))
+                { g.DrawPolygon(outlinePen, p.Vertices.ToArray()); }
             }
         }
 

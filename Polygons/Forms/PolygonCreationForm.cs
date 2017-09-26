@@ -44,8 +44,8 @@ namespace Polygons.Forms
             PolygonColor = Color.Black;
             polygonBox.Paint += polygonBox_Paint;
 
-            loadShapeDialog.InitialDirectory = Paths.PolygonSavedShapesFolderNoBacklash;
-            deleteShapeDialog.InitialDirectory = Paths.PolygonSavedShapesFolderNoBacklash;
+            loadShapeDialog.InitialDirectory = PolygonPaths.PolygonSavedShapesFolderNoBacklash;
+            deleteShapeDialog.InitialDirectory = PolygonPaths.PolygonSavedShapesFolderNoBacklash;
             TryCreateSavesFolder();
         }
 
@@ -213,7 +213,7 @@ namespace Polygons.Forms
 
         private static void TryCreateSavesFolder()
         {
-            System.IO.Directory.CreateDirectory(Paths.PolygonSavedShapesFolder);
+            System.IO.Directory.CreateDirectory(PolygonPaths.PolygonSavedShapesFolder);
         }
 
         private void saveShapeButton_Click(object sender, EventArgs e)
@@ -226,7 +226,7 @@ namespace Polygons.Forms
             if (ShapeName == "" || ShapeName == string.Empty) //make sure a proper name can be constructed
             { return; }
 
-            if (System.IO.File.Exists(Paths.SaveXmlPath(ShapeName)))
+            if (System.IO.File.Exists(PolygonPaths.SaveXmlPath(ShapeName)))
             {
                 using (var overwriteForm = new ShapeOverwritePromptForm(ShapeName))
                 {

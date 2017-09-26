@@ -54,7 +54,7 @@ namespace Polygons.Forms
             verticesUpdown.Value = PolygonSettingsAccessor.PolygonsVertices;
 
             picturesBackgroundColorDialog.Color = DefaultPicturesBackground;
-            openShapesDialog.InitialDirectory = Paths.PolygonSavedShapesFolder;
+            openShapesDialog.InitialDirectory = PolygonPaths.PolygonSavedShapesFolder;
 
             savedShapesNotification.Icon = SystemIcons.Information;
             savedShapesNotification.BalloonTipIcon = ToolTipIcon.Info;

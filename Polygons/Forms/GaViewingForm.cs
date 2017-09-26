@@ -71,7 +71,7 @@ namespace Polygons.Forms
             SavedGenerationsCombobox_DefaultWidth = savedGenerationsCombobox.Width;
             savedGenerationsCombobox.DataSource = savedGaPopulations;
             logBox.DataSource = logLines;
-            importPopulationDialog.InitialDirectory = Paths.PolygonSavedShapesFolderNoBacklash;
+            importPopulationDialog.InitialDirectory = PolygonPaths.PolygonSavedShapesFolderNoBacklash;
             picturesBackgroundColorDialog.Color = DefaultPicturesBackground;
             this.availableFitnessCalculators = new BindingList<IFitnessCalculator<PolygonIndividual, IPolygonGene>>(availableFitnessCalculators.ToList());
             fitnessFunctionComboBox.DataSource = this.availableFitnessCalculators;
