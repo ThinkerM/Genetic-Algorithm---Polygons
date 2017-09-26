@@ -31,7 +31,7 @@ namespace Polygons.Forms
     ///     <item><description>Change basic properties of the images</description></item>
     /// </list>
     /// </remarks>
-    partial class PopulationGeneratorForm : Form
+    public partial class PopulationGeneratorForm : Form
     {
         #region Main
         private Population<PolygonIndividual, IPolygonGene> population;

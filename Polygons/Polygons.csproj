@@ -82,8 +82,9 @@
     <Reference Include="CustomExtensions">
       <HintPath>..\..\..\Libraries\Extensions\Extensions\bin\Debug\CustomExtensions.dll</HintPath>
     </Reference>
-    <Reference Include="Genetic Algorithm">
-      <HintPath>..\..\Genetic Algorithm\Genetic Algorithm\bin\Release\Genetic Algorithm.dll</HintPath>
+    <Reference Include="Genetic Algorithm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Genetic Algorithm\bin\Debug\Genetic Algorithm.dll</HintPath>
     </Reference>
     <Reference Include="GroupControls">
       <HintPath>..\..\..\Libraries\CustomControls\GroupControls\bin\Debug\GroupControls.dll</HintPath>
@@ -94,10 +95,6 @@
     <Reference Include="MoreLinq, Version=2.6.20831.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
       <HintPath>..\..\packages\morelinq.2.7.0\lib\net40\MoreLinq.dll</HintPath>
       <Private>True</Private>
-    </Reference>
-    <Reference Include="Polygons, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\PolyGaLauncher\bin\Debug\Polygons.dll</HintPath>
     </Reference>
     <Reference Include="Randomization">
       <HintPath>..\..\..\Libraries\Randomization\Randomization\bin\Debug\Randomization.dll</HintPath>

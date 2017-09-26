@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['empty',['Empty',['../dd/d05/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_population.html#a2bce6515ae54eca41d61885ef69806b4',1,'Genetic_Algorithm::GA::Generics::Population']]]
+  ['fitnesscalculator',['FitnessCalculator',['../da/dee/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm_adapter.html#a0d8445985031695b441b91b594a2f4ba',1,'Genetic_Algorithm::GA::Generics::GeneticAlgorithmAdapter']]]
 ];

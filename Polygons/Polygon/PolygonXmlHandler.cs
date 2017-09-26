@@ -66,7 +66,7 @@ namespace Polygons
         /// <param name="p">Polygon to save</param>
         public static void SaveToDefaultFolder(this Polygon p)
         {
-            string path = Paths.SaveXmlPath(p.Name);
+            string path = Utils.PolygonPaths.SaveXmlPath(p.Name);
             Save(p, path);
         }
 

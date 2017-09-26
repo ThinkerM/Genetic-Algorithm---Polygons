@@ -2,7 +2,6 @@ var namespace_polygons =
 [
     [ "Forms", "d9/dad/namespace_polygons_1_1_forms.html", "d9/dad/namespace_polygons_1_1_forms" ],
     [ "GA", "dd/d98/namespace_polygons_1_1_g_a.html", "dd/d98/namespace_polygons_1_1_g_a" ],
-    [ "Utils", "de/dc9/namespace_polygons_1_1_utils.html", "de/dc9/namespace_polygons_1_1_utils" ],
     [ "IPolygon", "d7/dc3/interface_polygons_1_1_i_polygon.html", "d7/dc3/interface_polygons_1_1_i_polygon" ],
     [ "Polygon", "da/d09/class_polygons_1_1_polygon.html", "da/d09/class_polygons_1_1_polygon" ],
     [ "PolygonGenerator", "d0/d8c/class_polygons_1_1_polygon_generator.html", "d0/d8c/class_polygons_1_1_polygon_generator" ],

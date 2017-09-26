@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['individuals',['individuals',['../dd/d05/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_population.html#a58da354c1d9143fb4e174ebfef7900db',1,'Genetic_Algorithm::GA::Generics::Population']]],
-  ['initialpopulation',['initialPopulation',['../dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#a8c898dc702d62a189deeba7642430b11',1,'Genetic_Algorithm::GA::Generics::GeneticAlgorithm']]],
-  ['isreadonly',['IsReadOnly',['../dd/d05/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_population.html#ad1b02f19e753582b3c5f9ed71bb0318a',1,'Genetic_Algorithm::GA::Generics::Population']]]
+  ['name',['Name',['../d1/d61/class_polygons_1_1_g_a_1_1_fitness_calculators_1_1_symmetry_intersection_penalty_fitness_calculator.html#ab0ac1d6f4f094b0171294b8bd22c06ac',1,'Polygons.GA.FitnessCalculators.SymmetryIntersectionPenaltyFitnessCalculator.Name()'],['../db/dd3/class_polygons_1_1_g_a_1_1_polygon_individual.html#a7ee9065718e6628dc7791b756fa6c0f9',1,'Polygons.GA.PolygonIndividual.Name()']]]
 ];

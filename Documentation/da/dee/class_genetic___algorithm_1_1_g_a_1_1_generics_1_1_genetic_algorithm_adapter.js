@@ -9,5 +9,5 @@ var class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm_adapter
     [ "MutationShouldOccur", "da/dee/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm_adapter.html#a0f1f89bc7cc2ec2f6beca226abb14fd4", null ],
     [ "SelectForRouletteBreeding", "da/dee/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm_adapter.html#a5530961b33c48d561ea2e3208cefd3cd", null ],
     [ "SelectSteadyStateSurvivors", "da/dee/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm_adapter.html#add7e385afdf5ff337ea9d6c88c125a8a", null ],
-    [ "fitnessCalculator", "da/dee/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm_adapter.html#a1b84e807c7c56ec122197a3f10c81d0f", null ]
+    [ "FitnessCalculator", "da/dee/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm_adapter.html#a0d8445985031695b441b91b594a2f4ba", null ]
 ];

@@ -11,7 +11,7 @@ namespace Polygons.GA
     /// <summary>
     /// Gene which can be included in a <see cref="PolygonIndividual"/>'s genome
     /// </summary>
-    interface IPolygonGene : IGene<System.Drawing.Point>
+    public interface IPolygonGene : IGene<System.Drawing.Point>
     {
         /// <summary>
         /// X coordinate of the gene's encoded point

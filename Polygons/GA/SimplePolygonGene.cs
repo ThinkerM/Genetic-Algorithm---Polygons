@@ -12,19 +12,22 @@ namespace Polygons.GA
     /// <summary>
     /// Represents genetic information about one vertex of a polygon
     /// </summary>
-    class SimplePolygonGene : IPolygonGene
+    public class SimplePolygonGene : IPolygonGene
     {
+        /// <inheritdoc />
         public int X { get; private set; }
+
+        /// <inheritdoc />
         public int Y { get; private set; }
+
+        /// <inheritdoc />
         public double DistanceFromCentroid { get; private set; }
         private Point Centroid { get; }
 
-        /// <summary>
-        /// Represents angle on a circle relative to whole individual's centroid.
-        /// 0° to the right, 90° up, 180° left, 270° down
-        /// </summary>
+        /// <inheritdoc />
         public Angle AngleRelativeToCentroid { get; private set; }
 
+        /// <inheritdoc />
         public void UpdateAngularRepresentation(Point centroid)
         {
             DistanceFromCentroid = GeometryExtensions.Distance(PointRepresentation, centroid);
@@ -38,6 +41,7 @@ namespace Polygons.GA
             Y = newLocation.Y;
         }
 
+        /// <inheritdoc />
         public SimplePolygonGene(Point vertexPosition, Point centroid)
         {
             this.X = vertexPosition.X;
@@ -46,6 +50,7 @@ namespace Polygons.GA
             UpdateAngularRepresentation(centroid);
         }
 
+        /// <inheritdoc />
         public void Mutate()
         {
             int maxAngleChange = PolygonSettingsAccessor.AngleMaximumMutation;
@@ -60,6 +65,8 @@ namespace Polygons.GA
         }
 
         private Point PointRepresentation => new Point(X, Y);
+
+        /// <inheritdoc />
         public Point Decode()=> PointRepresentation;
     }
 }

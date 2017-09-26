@@ -16,7 +16,7 @@ namespace Genetic_Algorithm.GA.Generics
         where TGene : IGene
     {
         /// <summary>
-        /// Calculate fitness value for the whole individual
+        /// Calculate fitness value for the individual
         /// </summary>
         /// <param name="individual">GA Individual to calculate for</param>
         /// <returns>Fitness score</returns>

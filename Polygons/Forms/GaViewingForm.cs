@@ -28,7 +28,7 @@ namespace Polygons.Forms
     ///     <item><description>View generated populations and change basic properties of the images</description></item>
     /// </list>
     /// </remarks>
-    partial class GaViewerForm : Form
+    public partial class GaViewerForm : Form
     {
         #region Main
         private class FitnessCalculatorWrapper 
@@ -159,7 +159,7 @@ namespace Polygons.Forms
                     currentFunction = CurrentGaButtonFunction.Stop;
                     geneticAlgorithm = new GeneticAlgorithm<PolygonIndividual, IPolygonGene>
                         (new PolygonAdapter((IFitnessCalculator<PolygonIndividual, IPolygonGene>)fitnessFunctionComboBox.SelectedItem),
-                        displayPopulation);
+                         displayPopulation);
                     geneticAlgorithm.GenerationComplete += OnGaGenerationComplete;
                     break;
                 case CurrentGaButtonFunction.Stop:

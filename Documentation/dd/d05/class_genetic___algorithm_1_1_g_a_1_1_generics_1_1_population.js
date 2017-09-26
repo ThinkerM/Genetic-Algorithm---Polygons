@@ -23,7 +23,7 @@ var class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_population =
     [ "Capacity", "dd/d05/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_population.html#a5ad7f82470f145a0d6ae871ff7b623f3", null ],
     [ "Count", "dd/d05/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_population.html#aad462966ed963f892117056de1eba502", null ],
     [ "Empty", "dd/d05/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_population.html#a2bce6515ae54eca41d61885ef69806b4", null ],
-    [ "individuals", "dd/d05/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_population.html#a58da354c1d9143fb4e174ebfef7900db", null ],
+    [ "Individuals", "dd/d05/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_population.html#ac0d6b99fb4bed03d91ccca97fcf6849a", null ],
     [ "IsReadOnly", "dd/d05/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_population.html#ad1b02f19e753582b3c5f9ed71bb0318a", null ],
     [ "DesiredSize", "dd/d05/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_population.html#aa9286ef8d0de4f49f76fe675165f9546", null ],
     [ "this[int index]", "dd/d05/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_population.html#a8b0809c49a3bfc59081a30e1fa11148e", null ]

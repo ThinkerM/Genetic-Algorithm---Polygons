@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('da/d09/class_polygons_1_1_polygon.html
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="../../d0/d32/class_polygons_1_1_polygon-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -92,7 +93,7 @@ $(document).ready(function(){initNavTree('da/d09/class_polygons_1_1_polygon.html
 </div><!--header-->
 <div class="contents">
 
-<p>Represents a shape with a variable number of vertices, specific color and an optional name  
+<p> 
  <a href="../../da/d09/class_polygons_1_1_polygon.html#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> Inheritance diagram for Polygon:</div>
@@ -117,9 +118,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af4098cb0ee2c6eec699982d01d202daf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d09/class_polygons_1_1_polygon.html#af4098cb0ee2c6eec699982d01d202daf">ShiftCentroid</a> (Point newCentroid)</td></tr>
 <tr class="memdesc:af4098cb0ee2c6eec699982d01d202daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves all of polygon's vertices so that they match a new centroid position  <a href="#af4098cb0ee2c6eec699982d01d202daf">More...</a><br /></td></tr>
 <tr class="separator:af4098cb0ee2c6eec699982d01d202daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32fbedaac02496e8d308d39d650236aa"><td class="memItemLeft" align="right" valign="top">List&lt; Point &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d09/class_polygons_1_1_polygon.html#a32fbedaac02496e8d308d39d650236aa">ShiftedToCentroid</a> (Point hypotheticalCentroid)</td></tr>
-<tr class="memdesc:a32fbedaac02496e8d308d39d650236aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representation of this polygon's vertices adjusted to a hypothetical centroid  <a href="#a32fbedaac02496e8d308d39d650236aa">More...</a><br /></td></tr>
-<tr class="separator:a32fbedaac02496e8d308d39d650236aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33f366ffc4a2ae9afff2ec813a1ca42a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d09/class_polygons_1_1_polygon.html#a33f366ffc4a2ae9afff2ec813a1ca42a">ShiftUpperLeftCorner</a> (Point shiftTo)</td></tr>
 <tr class="memdesc:a33f366ffc4a2ae9afff2ec813a1ca42a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the coordinates of every vertex withotu distoring their relative positions. Left-most point of the polygon will share its X coordinate with the imaginary upper-left corner. Top-most point of the polygon will share its Y coordinate with the imaginary upper-left corner.  <a href="#a33f366ffc4a2ae9afff2ec813a1ca42a">More...</a><br /></td></tr>
 <tr class="separator:a33f366ffc4a2ae9afff2ec813a1ca42a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,41 +136,36 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a70ed5db27cc4701a7841625dbcf641bc"><td class="memItemLeft" align="right" valign="top">static List&lt; Point &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d09/class_polygons_1_1_polygon.html#a70ed5db27cc4701a7841625dbcf641bc">ShiftedVertices</a> (List&lt; Point &gt; vertices, int dX, int dY)</td></tr>
-<tr class="memdesc:a70ed5db27cc4701a7841625dbcf641bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves vertices to a new location (specified by amount of movement on X and Y axes.  <a href="#a70ed5db27cc4701a7841625dbcf641bc">More...</a><br /></td></tr>
-<tr class="separator:a70ed5db27cc4701a7841625dbcf641bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf472429e21142afdb217ec7143f1385"><td class="memItemLeft" align="right" valign="top">static List&lt; Point &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d09/class_polygons_1_1_polygon.html#acf472429e21142afdb217ec7143f1385">ShiftedVertices</a> (List&lt; Point &gt; vertices, Point shiftToCorner)</td></tr>
-<tr class="memdesc:acf472429e21142afdb217ec7143f1385"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves vertices to a new location (specified by upper left corner of the whole shape).  <a href="#acf472429e21142afdb217ec7143f1385">More...</a><br /></td></tr>
-<tr class="separator:acf472429e21142afdb217ec7143f1385"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7b7833a8701fd788328dda46a4e0eff"><td class="memItemLeft" align="right" valign="top">static List&lt; Point &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d09/class_polygons_1_1_polygon.html#ab7b7833a8701fd788328dda46a4e0eff">ShiftedVertices</a> (IEnumerable&lt; Point &gt; vertices, int dX, int dY)</td></tr>
+<tr class="memdesc:ab7b7833a8701fd788328dda46a4e0eff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves vertices to a new location (specified by amount of movement on X and Y axes.  <a href="#ab7b7833a8701fd788328dda46a4e0eff">More...</a><br /></td></tr>
+<tr class="separator:ab7b7833a8701fd788328dda46a4e0eff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3107f97ce02879649d4f99d2edfc0021"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../da/d09/class_polygons_1_1_polygon.html">Polygon</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d09/class_polygons_1_1_polygon.html#a3107f97ce02879649d4f99d2edfc0021">Copy</a> (<a class="el" href="../../da/d09/class_polygons_1_1_polygon.html">Polygon</a> original)</td></tr>
 <tr class="memdesc:a3107f97ce02879649d4f99d2edfc0021"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an identical copy of polygon  <a href="#a3107f97ce02879649d4f99d2edfc0021">More...</a><br /></td></tr>
 <tr class="separator:a3107f97ce02879649d4f99d2edfc0021"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:af56ca8fa75a4f1735018cca1dd539596"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d09/class_polygons_1_1_polygon.html#af56ca8fa75a4f1735018cca1dd539596">VerticesCount</a> =&gt; Vertices.Count</td></tr>
+<tr class="separator:af56ca8fa75a4f1735018cca1dd539596"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a3339ae4fd8253d6c511edd24ede6670c"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d09/class_polygons_1_1_polygon.html#a3339ae4fd8253d6c511edd24ede6670c">OutlineColor</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a3339ae4fd8253d6c511edd24ede6670c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color of the connecting lines and points of the polygon  <a href="#a3339ae4fd8253d6c511edd24ede6670c">More...</a><br /></td></tr>
+<tr class="memitem:a3339ae4fd8253d6c511edd24ede6670c"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d09/class_polygons_1_1_polygon.html#a3339ae4fd8253d6c511edd24ede6670c">OutlineColor</a><code> [get]</code></td></tr>
 <tr class="separator:a3339ae4fd8253d6c511edd24ede6670c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ee9065718e6628dc7791b756fa6c0f9"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d09/class_polygons_1_1_polygon.html#a7ee9065718e6628dc7791b756fa6c0f9">Name</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a7ee9065718e6628dc7791b756fa6c0f9"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d09/class_polygons_1_1_polygon.html#a7ee9065718e6628dc7791b756fa6c0f9">Name</a><code> [get]</code></td></tr>
 <tr class="memdesc:a7ee9065718e6628dc7791b756fa6c0f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name assigned to the polygon  <a href="#a7ee9065718e6628dc7791b756fa6c0f9">More...</a><br /></td></tr>
 <tr class="separator:a7ee9065718e6628dc7791b756fa6c0f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1ed9df133b917e725aaf5cb41559f46"><td class="memItemLeft" align="right" valign="top">List&lt; Point &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d09/class_polygons_1_1_polygon.html#ab1ed9df133b917e725aaf5cb41559f46">Vertices</a><code> [get]</code></td></tr>
-<tr class="memdesc:ab1ed9df133b917e725aaf5cb41559f46"><td class="mdescLeft">&#160;</td><td class="mdescRight">All of the polygon's vertices represented as Points  <a href="#ab1ed9df133b917e725aaf5cb41559f46">More...</a><br /></td></tr>
 <tr class="separator:ab1ed9df133b917e725aaf5cb41559f46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af56ca8fa75a4f1735018cca1dd539596"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d09/class_polygons_1_1_polygon.html#af56ca8fa75a4f1735018cca1dd539596">VerticesCount</a><code> [get]</code></td></tr>
-<tr class="memdesc:af56ca8fa75a4f1735018cca1dd539596"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of vertices  <a href="#af56ca8fa75a4f1735018cca1dd539596">More...</a><br /></td></tr>
-<tr class="separator:af56ca8fa75a4f1735018cca1dd539596"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f08f5fb906125d3d9d938455ed6606a"><td class="memItemLeft" align="right" valign="top">Point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d09/class_polygons_1_1_polygon.html#a5f08f5fb906125d3d9d938455ed6606a">Center</a><code> [get]</code></td></tr>
-<tr class="memdesc:a5f08f5fb906125d3d9d938455ed6606a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Point which is the average of the polygon's left/right-most and top/lower-most vertices  <a href="#a5f08f5fb906125d3d9d938455ed6606a">More...</a><br /></td></tr>
 <tr class="separator:a5f08f5fb906125d3d9d938455ed6606a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac3eba58a916cb96e6f789839bbc1f0e"><td class="memItemLeft" align="right" valign="top">Point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d09/class_polygons_1_1_polygon.html#aac3eba58a916cb96e6f789839bbc1f0e">Centroid</a><code> [get]</code></td></tr>
-<tr class="memdesc:aac3eba58a916cb96e6f789839bbc1f0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Point which is the average of every vertex's coordinates  <a href="#aac3eba58a916cb96e6f789839bbc1f0e">More...</a><br /></td></tr>
 <tr class="separator:aac3eba58a916cb96e6f789839bbc1f0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_interface_polygons_1_1_i_polygon"><td colspan="2" onclick="javascript:toggleInherit('properties_interface_polygons_1_1_i_polygon')"><img src="../../closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="../../d7/dc3/interface_polygons_1_1_i_polygon.html">IPolygon</a></td></tr>
 <tr class="memitem:af56ca8fa75a4f1735018cca1dd539596 inherit properties_interface_polygons_1_1_i_polygon"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc3/interface_polygons_1_1_i_polygon.html#af56ca8fa75a4f1735018cca1dd539596">VerticesCount</a><code> [get]</code></td></tr>
 <tr class="memdesc:af56ca8fa75a4f1735018cca1dd539596 inherit properties_interface_polygons_1_1_i_polygon"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of vertices  <a href="../../d7/dc3/interface_polygons_1_1_i_polygon.html#af56ca8fa75a4f1735018cca1dd539596">More...</a><br /></td></tr>
 <tr class="separator:af56ca8fa75a4f1735018cca1dd539596 inherit properties_interface_polygons_1_1_i_polygon"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3339ae4fd8253d6c511edd24ede6670c inherit properties_interface_polygons_1_1_i_polygon"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc3/interface_polygons_1_1_i_polygon.html#a3339ae4fd8253d6c511edd24ede6670c">OutlineColor</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a3339ae4fd8253d6c511edd24ede6670c inherit properties_interface_polygons_1_1_i_polygon"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc3/interface_polygons_1_1_i_polygon.html#a3339ae4fd8253d6c511edd24ede6670c">OutlineColor</a><code> [get]</code></td></tr>
 <tr class="memdesc:a3339ae4fd8253d6c511edd24ede6670c inherit properties_interface_polygons_1_1_i_polygon"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color of the lines connecting vertices  <a href="../../d7/dc3/interface_polygons_1_1_i_polygon.html#a3339ae4fd8253d6c511edd24ede6670c">More...</a><br /></td></tr>
 <tr class="separator:a3339ae4fd8253d6c511edd24ede6670c inherit properties_interface_polygons_1_1_i_polygon"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1ed9df133b917e725aaf5cb41559f46 inherit properties_interface_polygons_1_1_i_polygon"><td class="memItemLeft" align="right" valign="top">List&lt; Point &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc3/interface_polygons_1_1_i_polygon.html#ab1ed9df133b917e725aaf5cb41559f46">Vertices</a><code> [get]</code></td></tr>
@@ -186,8 +179,7 @@ Properties</h2></td></tr>
 <tr class="separator:aac3eba58a916cb96e6f789839bbc1f0e inherit properties_interface_polygons_1_1_i_polygon"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents a shape with a variable number of vertices, specific color and an optional name </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<div class="textblock"></div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab17f7af86d9c6a41ca66105c713630f7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab17f7af86d9c6a41ca66105c713630f7">&#9670;&nbsp;</a></span>Polygon() <span class="overload">[1/2]</span></h2>
 
@@ -422,35 +414,8 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="a32fbedaac02496e8d308d39d650236aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32fbedaac02496e8d308d39d650236aa">&#9670;&nbsp;</a></span>ShiftedToCentroid()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">List&lt;Point&gt; ShiftedToCentroid </td>
-          <td>(</td>
-          <td class="paramtype">Point&#160;</td>
-          <td class="paramname"><em>hypotheticalCentroid</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Representation of this polygon's vertices adjusted to a hypothetical centroid </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">hypotheticalCentroid</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>List of polygon's vertices adjusted to centroid</dd></dl>
-
-</div>
-</div>
-<a id="a70ed5db27cc4701a7841625dbcf641bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a70ed5db27cc4701a7841625dbcf641bc">&#9670;&nbsp;</a></span>ShiftedVertices() <span class="overload">[1/2]</span></h2>
+<a id="ab7b7833a8701fd788328dda46a4e0eff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7b7833a8701fd788328dda46a4e0eff">&#9670;&nbsp;</a></span>ShiftedVertices()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -461,7 +426,7 @@ Properties</h2></td></tr>
         <tr>
           <td class="memname">static List&lt;Point&gt; ShiftedVertices </td>
           <td>(</td>
-          <td class="paramtype">List&lt; Point &gt;&#160;</td>
+          <td class="paramtype">IEnumerable&lt; Point &gt;&#160;</td>
           <td class="paramname"><em>vertices</em>, </td>
         </tr>
         <tr>
@@ -495,52 +460,6 @@ Properties</h2></td></tr>
     <tr><td class="paramname">vertices</td><td>Vertices to be shifted</td></tr>
     <tr><td class="paramname">dX</td><td>Amount of movement on X axis</td></tr>
     <tr><td class="paramname">dY</td><td>Amount of movement on Y axis</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Vertices adjusted to a new location</dd></dl>
-
-</div>
-</div>
-<a id="acf472429e21142afdb217ec7143f1385"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf472429e21142afdb217ec7143f1385">&#9670;&nbsp;</a></span>ShiftedVertices() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static List&lt;Point&gt; ShiftedVertices </td>
-          <td>(</td>
-          <td class="paramtype">List&lt; Point &gt;&#160;</td>
-          <td class="paramname"><em>vertices</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Point&#160;</td>
-          <td class="paramname"><em>shiftToCorner</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Moves vertices to a new location (specified by upper left corner of the whole shape). </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">vertices</td><td>Vertices to be shifted</td></tr>
-    <tr><td class="paramname">shiftToCorner</td><td>Upper left corner of the desired output</td></tr>
   </table>
   </dd>
 </dl>
@@ -611,6 +530,23 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="af56ca8fa75a4f1735018cca1dd539596"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af56ca8fa75a4f1735018cca1dd539596">&#9670;&nbsp;</a></span>VerticesCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int VerticesCount =&gt; Vertices.Count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p></p>
+
+</div>
+</div>
 <h2 class="groupheader">Property Documentation</h2>
 <a id="a5f08f5fb906125d3d9d938455ed6606a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5f08f5fb906125d3d9d938455ed6606a">&#9670;&nbsp;</a></span>Center</h2>
@@ -632,7 +568,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Point which is the average of the polygon's left/right-most and top/lower-most vertices </p>
+<p></p>
 
 </div>
 </div>
@@ -656,7 +592,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Point which is the average of every vertex's coordinates </p>
+<p></p>
 
 </div>
 </div>
@@ -675,7 +611,7 @@ Properties</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -699,12 +635,12 @@ Properties</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Color of the connecting lines and points of the polygon </p>
+<p></p>
 
 </div>
 </div>
@@ -728,31 +664,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>All of the polygon's vertices represented as Points </p>
-
-</div>
-</div>
-<a id="af56ca8fa75a4f1735018cca1dd539596"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af56ca8fa75a4f1735018cca1dd539596">&#9670;&nbsp;</a></span>VerticesCount</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int VerticesCount</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Number of vertices </p>
+<p></p>
 
 </div>
 </div>

@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Genetic_Algorithm.GA.Generics
 {
-    ///<inheritdoc cref="IGeneticAlgorithmAdapter{TIndividual,TGene}"/>
+    /// <inheritdoc />
     ///  <summary>
     /// Provides methods for manipulating populations in GA to produce new generations
     /// </summary>
@@ -15,16 +15,20 @@ namespace Genetic_Algorithm.GA.Generics
     {
         protected readonly IFitnessCalculator<TIndividual, TGene> FitnessCalculator;
 
+        /// <inheritdoc />
         public GeneticAlgorithmAdapter(IFitnessCalculator<TIndividual, TGene> fitnessCalculator)
         {
             FitnessCalculator = fitnessCalculator;
         }
-        
+
+        /// <inheritdoc />
         public abstract TIndividual CrossOver(TIndividual parent1, TIndividual parent2);
 
+        /// <inheritdoc />
         public bool CrossoverShouldOccur(double crossoverProbability)
             => UniqueRandom.Instance.NextDouble() <= crossoverProbability;
 
+        /// <inheritdoc />
         public TIndividual GetEliteIndividual(Population<TIndividual,TGene> population)
         {
             var eliteIndividual = population.GetFittest(FitnessCalculator);
@@ -32,9 +36,11 @@ namespace Genetic_Algorithm.GA.Generics
             return eliteIndividual;
         }
 
+        /// <inheritdoc />
         public void Mutate(TIndividual individual, double mutationProbability)
             => individual.Mutate(mutationProbability);
 
+        /// <inheritdoc />
         public void MutatePopulation(Population<TIndividual, TGene> population, double mutationProbability)
         {
             foreach (var individual in population)
@@ -46,8 +52,10 @@ namespace Genetic_Algorithm.GA.Generics
             }
         }
 
+        /// <inheritdoc />
         public bool MutationShouldOccur(TIndividual individual) => individual.IsElite;
 
+        /// <inheritdoc />
         public TIndividual SelectForRouletteBreeding(Population<TIndividual, TGene> sourcePopulation, TIndividual forbiddenForBreeding = default(TIndividual))
         {
             double populationFitnessSum = PopulationFitnessSum(sourcePopulation);
@@ -72,10 +80,11 @@ namespace Genetic_Algorithm.GA.Generics
                 }
             }            
         }
-        private bool ExceededSelectionPoint(double currentValue, double selectionPoint, double populationFitnessSum)
+        private static bool ExceededSelectionPoint(double currentValue, double selectionPoint, double populationFitnessSum)
             => (currentValue <= populationFitnessSum && currentValue >= selectionPoint)
             || (currentValue >= populationFitnessSum && currentValue <= selectionPoint);
 
+        /// <inheritdoc />
         public IEnumerable<TIndividual> SelectSteadyStateSurvivors(Population<TIndividual, TGene> sourcePopulation, double survivalRatio, bool elitism)
         {
             TIndividual eliteIndividual = default(TIndividual);

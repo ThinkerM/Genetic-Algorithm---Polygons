@@ -10,14 +10,21 @@ using CustomExtensions.Collections;
 
 namespace Polygons.GA.FitnessCalculators
 {
+    /// <inheritdoc cref="BasicSymmetryFitnessCalculator"/>
     /// <summary>
     /// <seealso cref="BasicSymmetryFitnessCalculator"/>
     /// Additonally reduces fitness for every intersecting edge pair in the polygon
     /// </summary>
-    class SymmetryIntersectionPenaltyFitnessCalculator : BasicSymmetryFitnessCalculator
+    public class SymmetryIntersectionPenaltyFitnessCalculator : BasicSymmetryFitnessCalculator
     {
-        public override string Name => "Symmetry (Intersection penalty) FitnessCalculator";
+        /// <inheritdoc />
+        protected override string Name => "Symmetry (Intersection penalty) FitnessCalculator";
 
+        /// <summary>
+        /// Use base calculation from <see cref="BasicSymmetryFitnessCalculator"/> and additionally reduces fitness for each edge intersection
+        /// </summary>
+        /// <param name="individual"></param>
+        /// <returns></returns>
         public override double IndividualFitness(PolygonIndividual individual)
         {
             if (individual.Fitness.Equals(PolygonIndividual.InvalidFitnessIndicator))
@@ -53,6 +60,7 @@ namespace Polygons.GA.FitnessCalculators
             return resultCount;
         }
 
+        /// <inheritdoc cref="object.ToString()"/>
         public override string ToString()
         {
             return Name;

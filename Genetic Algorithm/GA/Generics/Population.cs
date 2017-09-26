@@ -4,11 +4,12 @@ using System.Linq;
 
 namespace Genetic_Algorithm.GA.Generics
 {
+    /// <inheritdoc />
     /// <summary>
     /// Extended population with additional information about its number as a generation in GA and the highest fitness value achieved
     /// </summary>
-    /// <typeparam name="TIndividual">Type of <see cref="IIndividual{IGene}"/> in the population</typeparam>
-    /// <typeparam name="TGene">Type of <see cref="IGene"/> in the population</typeparam>
+    /// <typeparam name="TIndividual">Type of <see cref="T:Genetic_Algorithm.GA.Generics.IIndividual`1" /> in the population</typeparam>
+    /// <typeparam name="TGene">Type of <see cref="T:Genetic_Algorithm.GA.Generics.IGene" /> in the population</typeparam>
     public class NumberedPopulation<TIndividual, TGene> : Population<TIndividual, TGene>
         where TIndividual : IIndividual<TGene>, new()
         where TGene : IGene
@@ -37,10 +38,7 @@ namespace Genetic_Algorithm.GA.Generics
         public void TrySetFitness(double value)
         { if (TopFitness.Equals(double.NaN)) TopFitness = value; }
 
-        /// <summary>
-        /// String representation of <see cref="NumberedPopulation{TIndividual, TGene}"/>
-        /// </summary>
-        /// <returns></returns>
+        /// <inheritdoc />
         public override string ToString() => $"Generation {Number} : Top fitness {TopFitness}";
     }
 

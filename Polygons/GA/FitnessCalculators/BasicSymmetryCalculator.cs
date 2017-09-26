@@ -9,13 +9,22 @@ using Genetic_Algorithm.GA.Generics;
 
 namespace Polygons.GA.FitnessCalculators
 {
+    /// <inheritdoc />
     /// <summary>
-    /// For every <see cref="IPolygonGene"/>, finds its closest Y axis mirrored relative and decreases fitness based on the distance difference from an ideal relative's position
+    /// For every <see cref="T:Polygons.GA.IPolygonGene" />, finds its closest Y axis mirrored relative and decreases fitness based on the distance difference from an ideal relative's position
     /// </summary>
-    class BasicSymmetryFitnessCalculator : IFitnessCalculator<PolygonIndividual, IPolygonGene>
+    public class BasicSymmetryFitnessCalculator : IFitnessCalculator<PolygonIndividual, IPolygonGene>
     {
-        public virtual string Name { get; } = "Basic Symmetry FitnessCalculator";
+        /// <summary>
+        /// Well-readable identifier
+        /// </summary>
+        protected virtual string Name { get; } = "Basic Symmetry FitnessCalculator";
 
+        /// <summary>
+        /// Evaluate fitness of a <see cref="PolygonIndividual"/> based on its symmetry
+        /// </summary>
+        /// <param name="individual"></param>
+        /// <returns></returns>
         public virtual double IndividualFitness(PolygonIndividual individual)
         {
             double fitness = 0;
@@ -31,7 +40,7 @@ namespace Polygons.GA.FitnessCalculators
             return individual.Fitness;
         }
 
-        private double GeneFitness(IPolygonGene evaluatedGene, PolygonIndividual individual)
+        private static double GeneFitness(IPolygonGene evaluatedGene, PolygonIndividual individual)
         {
             Point centroid = individual.Polygon.Centroid;
             if (evaluatedGene.X == centroid.X) { return 0; } //points directly on symmetry axis don't need to look for mirrored relatives
@@ -57,9 +66,11 @@ namespace Polygons.GA.FitnessCalculators
             { return b.X > 0; }
         }
 
+        /// <inheritdoc />
         public int Compare(PolygonIndividual x, PolygonIndividual y)
             => IndividualFitness(x).CompareTo(IndividualFitness(y));
 
+        /// <inheritdoc cref="object.ToString" />
         public override string ToString() => Name;
     }
 }

@@ -9,10 +9,11 @@ using Polygons.Utils;
 
 namespace Polygons.GA
 {
+    /// <inheritdoc />
     /// <summary>
-    /// <see cref="IIndividual{IPolygonGene}"/> which introduces the structure of <see cref="Polygons.IPolygon"/> into a genetic algorithm
+    /// <see cref="T:Genetic_Algorithm.GA.Generics.IIndividual`1" /> which introduces the structure of <see cref="T:Polygons.IPolygon" /> into a genetic algorithm
     /// </summary>
-    class PolygonIndividual : IIndividual<IPolygonGene>
+    public class PolygonIndividual : IIndividual<IPolygonGene>
     {
         private void CommonInitialization()
         {
@@ -24,18 +25,21 @@ namespace Polygons.GA
             }
         }
 
+        /// <inheritdoc />
         public PolygonIndividual()
         {
             Polygon = PolygonGenerator.RandomPolygon(Utils.PolygonSettingsAccessor.PolygonsVertices);
             CommonInitialization();
         }
 
+        /// <inheritdoc />
         public PolygonIndividual(Polygon p)
         {
             Polygon = p;
             CommonInitialization();
         }
 
+        /// <inheritdoc />
         public PolygonIndividual(IEnumerable<IPolygonGene> genome, string name, Color color)
         {
             List<Point> vertices = genome.Select(gene => gene.Decode()).ToList();
@@ -43,13 +47,28 @@ namespace Polygons.GA
             CommonInitialization();
         }
 
+        /// <summary>
+        /// <see cref="Polygons.Polygon"/> represented by the individual
+        /// </summary>
         public Polygon Polygon { get; private set; }
+
+        /// <inheritdoc />
         public ICollection<IPolygonGene> Genome { get; } = new List<IPolygonGene>();
 
+        /// <summary>
+        /// Reset <see cref="Fitness"/> to its default (invalid) state
+        /// </summary>
         public void InvalidateFitness() => Fitness = InvalidFitnessIndicator;
+
+        /// <summary>
+        /// Value indicating that <see cref="Fitness"/> is not valid
+        /// </summary>
         public static double InvalidFitnessIndicator => double.NaN;
+
+        /// <inheritdoc />
         public double Fitness { get; set; } = InvalidFitnessIndicator;
 
+        /// <inheritdoc />
         public void Mutate(double mutationProbability)
         {
             List<Point> newVertices = new List<Point>();
@@ -71,17 +90,24 @@ namespace Polygons.GA
             InvalidateFitness();
         }
 
+        /// <inheritdoc />
         public string Name => Polygon.Name;
 
         private static bool GeneShouldMutate(double mutationProbability)
             => UniqueRandom.Instance.NextDouble() <= mutationProbability;
 
+        /// <inheritdoc />
         public bool Equals(IIndividual<IPolygonGene> other)
         {
             PolygonIndividual compared = other as PolygonIndividual;
             return (compared?.Polygon == this.Polygon && compared?.Name == this.Name);
         }
 
+        /// <inheritdoc />
+        public int CompareTo(IIndividual<IPolygonGene> other)
+            => Fitness.CompareTo(other.Fitness);
+
+        /// <inheritdoc />
         public bool IsElite { get; set; }
     }
 }

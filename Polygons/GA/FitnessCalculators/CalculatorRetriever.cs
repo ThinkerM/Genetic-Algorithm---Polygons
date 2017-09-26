@@ -10,8 +10,12 @@ namespace Polygons.GA.FitnessCalculators
     /// <summary>
     /// Provides a centralised access to fitness calculators intended for <see cref="PolygonIndividual"/>s
     /// </summary>
-    static class CalculatorRetriever
+    public static class CalculatorRetriever
     {
+        /// <summary>
+        /// Access all defined calculators
+        /// </summary>
+        /// <returns></returns>
         public static IEnumerable<IFitnessCalculator<PolygonIndividual, IPolygonGene>> GetAllCalculators()
         {
             yield return new BasicSymmetryFitnessCalculator();

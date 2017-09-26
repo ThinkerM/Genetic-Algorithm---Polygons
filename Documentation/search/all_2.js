@@ -5,11 +5,11 @@ var searchData=
   ['capacity',['Capacity',['../dd/d05/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_population.html#a5ad7f82470f145a0d6ae871ff7b623f3',1,'Genetic_Algorithm::GA::Generics::Population']]],
   ['center',['Center',['../d7/dc3/interface_polygons_1_1_i_polygon.html#a5f08f5fb906125d3d9d938455ed6606a',1,'Polygons.IPolygon.Center()'],['../da/d09/class_polygons_1_1_polygon.html#a5f08f5fb906125d3d9d938455ed6606a',1,'Polygons.Polygon.Center()']]],
   ['centroid',['Centroid',['../d7/dc3/interface_polygons_1_1_i_polygon.html#aac3eba58a916cb96e6f789839bbc1f0e',1,'Polygons.IPolygon.Centroid()'],['../da/d09/class_polygons_1_1_polygon.html#aac3eba58a916cb96e6f789839bbc1f0e',1,'Polygons.Polygon.Centroid()']]],
-  ['centroiddistancemaximummutation',['CentroidDistanceMaximumMutation',['../db/d70/class_polygons_1_1_utils_1_1_polygon_settings_accessor.html#a718a6fe25140a94be0cb88a6b8eb4524',1,'Polygons::Utils::PolygonSettingsAccessor']]],
   ['chooseverticescounttoimportdialog_2ecs',['ChooseVerticesCountToImportDialog.cs',['../d2/d47/_choose_vertices_count_to_import_dialog_8cs.html',1,'']]],
   ['chooseverticescounttoimportdialog_2edesigner_2ecs',['ChooseVerticesCountToImportDialog.Designer.cs',['../dc/d3a/_choose_vertices_count_to_import_dialog_8_designer_8cs.html',1,'']]],
   ['clear',['Clear',['../dd/d05/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_population.html#aa71d36872f416feaa853788a7a7a7ef8',1,'Genetic_Algorithm::GA::Generics::Population']]],
   ['compare',['Compare',['../d5/dd8/class_polygons_1_1_g_a_1_1_fitness_calculators_1_1_basic_symmetry_fitness_calculator.html#a0c4d68b3a2c9cc7d1a9eceec08dd2882',1,'Polygons::GA::FitnessCalculators::BasicSymmetryFitnessCalculator']]],
+  ['compareto',['CompareTo',['../db/dd3/class_polygons_1_1_g_a_1_1_polygon_individual.html#a7f62f3c1f7e87f6e56f6c9fb2a732950',1,'Polygons::GA::PolygonIndividual']]],
   ['contains',['Contains',['../dd/d05/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_population.html#a77241e6a084857fe01f829be49258d7f',1,'Genetic_Algorithm::GA::Generics::Population']]],
   ['copy',['Copy',['../da/d09/class_polygons_1_1_polygon.html#a3107f97ce02879649d4f99d2edfc0021',1,'Polygons::Polygon']]],
   ['copyto',['CopyTo',['../dd/d05/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_population.html#a5257d76519760f9f3cc036fa105318da',1,'Genetic_Algorithm::GA::Generics::Population']]],
@@ -19,7 +19,5 @@ var searchData=
   ['crossovershouldoccur',['CrossoverShouldOccur',['../da/dee/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm_adapter.html#aca64c4cb752ce6a3c74207cbd42161f3',1,'Genetic_Algorithm.GA.Generics.GeneticAlgorithmAdapter.CrossoverShouldOccur()'],['../d5/da8/interface_genetic___algorithm_1_1_g_a_1_1_generics_1_1_i_genetic_algorithm_adapter.html#aca64c4cb752ce6a3c74207cbd42161f3',1,'Genetic_Algorithm.GA.Generics.IGeneticAlgorithmAdapter.CrossoverShouldOccur()']]],
   ['crossroadform',['CrossroadForm',['../de/d40/class_polygons_1_1_forms_1_1_crossroad_form.html',1,'Polygons::Forms']]],
   ['crossroadform_2ecs',['CrossroadForm.cs',['../db/d6b/_crossroad_form_8cs.html',1,'']]],
-  ['crossroadform_2edesigner_2ecs',['CrossroadForm.Designer.cs',['../da/d1e/_crossroad_form_8_designer_8cs.html',1,'']]],
-  ['currentgeneration',['currentGeneration',['../dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#a936added6c5f78fdd0113f1c94eb89bc',1,'Genetic_Algorithm::GA::Generics::GeneticAlgorithm']]],
-  ['currentgenerationnumber',['CurrentGenerationNumber',['../dc/d17/class_genetic___algorithm_1_1_g_a_1_1_generics_1_1_genetic_algorithm.html#a8171199d2ce19e6078e1e0da1538d5c3',1,'Genetic_Algorithm::GA::Generics::GeneticAlgorithm']]]
+  ['crossroadform_2edesigner_2ecs',['CrossroadForm.Designer.cs',['../da/d1e/_crossroad_form_8_designer_8cs.html',1,'']]]
 ];

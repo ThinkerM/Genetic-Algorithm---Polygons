@@ -33,9 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Polygons, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Polygons, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Polygons\Polygons\bin\Debug\Polygons.dll</HintPath>
+      <HintPath>..\Polygons\bin\Debug\Polygons.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

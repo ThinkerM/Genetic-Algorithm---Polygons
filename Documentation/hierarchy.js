@@ -18,7 +18,7 @@ var hierarchy =
       [ "IIndividual< TGene >", "d3/dfc/interface_genetic___algorithm_1_1_g_a_1_1_generics_1_1_i_individual.html", null ]
     ] ],
     [ "IComparer", null, [
-      [ "IFitnessCalculator< TIndividual, TGene >", "d7/d87/interface_genetic___algorithm_1_1_g_a_1_1_generics_1_1_i_fitness_calculator.html", null ]
+      [ "IFitnessCalculator< in in TIndividual, TGene >", "d7/d87/interface_genetic___algorithm_1_1_g_a_1_1_generics_1_1_i_fitness_calculator.html", null ]
     ] ],
     [ "IEquatable< IIndividual< TGene >>", null, [
       [ "IIndividual< TGene >", "d3/dfc/interface_genetic___algorithm_1_1_g_a_1_1_generics_1_1_i_individual.html", null ]
@@ -28,6 +28,7 @@ var hierarchy =
         [ "SymmetryIntersectionPenaltyFitnessCalculator", "d1/d61/class_polygons_1_1_g_a_1_1_fitness_calculators_1_1_symmetry_intersection_penalty_fitness_calculator.html", null ]
       ] ]
     ] ],
+    [ "IFitnessCalculator< TIndividual, TGene >", "d7/d87/interface_genetic___algorithm_1_1_g_a_1_1_generics_1_1_i_fitness_calculator.html", null ],
     [ "IGene", "df/d2c/interface_genetic___algorithm_1_1_g_a_1_1_generics_1_1_i_gene.html", [
       [ "IGene< out out TEncoded >", "df/d2c/interface_genetic___algorithm_1_1_g_a_1_1_generics_1_1_i_gene.html", null ]
     ] ],
@@ -50,9 +51,7 @@ var hierarchy =
     [ "IPolygon", "d7/dc3/interface_polygons_1_1_i_polygon.html", [
       [ "Polygon", "da/d09/class_polygons_1_1_polygon.html", null ]
     ] ],
-    [ "Paths", "d9/dcd/class_polygons_1_1_utils_1_1_paths.html", null ],
     [ "PolygonGenerator", "d0/d8c/class_polygons_1_1_polygon_generator.html", null ],
-    [ "PolygonSettingsAccessor", "db/d70/class_polygons_1_1_utils_1_1_polygon_settings_accessor.html", null ],
     [ "PolygonVisualizer", "db/d5d/class_polygons_1_1_polygon_visualizer.html", null ],
     [ "PolygonXmlHandler", "d9/d87/class_polygons_1_1_polygon_xml_handler.html", null ],
     [ "Program", "d6/dee/class_poly_ga_launcher_1_1_program.html", null ],
