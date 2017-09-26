@@ -15,22 +15,21 @@ namespace Genetic_Algorithm.GA.Generics
         where TIndividual : IIndividual<TGene>, new()
         where TGene : IGene
     {
-        protected int CurrentGenerationNumber { get; set; }
-        protected Population<TIndividual, TGene> initialPopulation;
-        protected Population<TIndividual, TGene> currentGeneration;
-        protected Population<TIndividual, TGene> nextGeneration;
+        private int CurrentGenerationNumber { get; set; }
+        private readonly Population<TIndividual, TGene> initialPopulation;
+        private Population<TIndividual, TGene> currentGeneration;
+        private Population<TIndividual, TGene> nextGeneration;
 
         /// <summary>
         /// Handles logic of breeding, selecting, mutating, etc.
         /// </summary>
-        protected IGeneticAlgorithmAdapter<TIndividual, TGene> adapter;
+        private readonly IGeneticAlgorithmAdapter<TIndividual, TGene> adapter;
 
         /// <summary>
         /// Creates an instance of GA with a random initial population sample
         /// </summary>
         /// <param name="adapter">GA Adapter to be used by the algorithm</param>
-        /// <param name="desiredSize"></param>
-        public GeneticAlgorithm(IGeneticAlgorithmAdapter<TIndividual, TGene> adapter, int desiredSize)
+        public GeneticAlgorithm(IGeneticAlgorithmAdapter<TIndividual, TGene> adapter)
         { 
             initialPopulation = new Population<TIndividual, TGene>(PopulationSize, PopulationSize);
             currentGeneration = new Population<TIndividual, TGene>(initialPopulation);
@@ -47,8 +46,7 @@ namespace Genetic_Algorithm.GA.Generics
         /// </summary>
         /// <param name="adapter">GA Adapter to be used by the algorithm</param>
         /// <param name="include">Set of individuals to be included in the initial population</param>
-        /// <param name="desiredSize"></param>
-        public GeneticAlgorithm(IGeneticAlgorithmAdapter<TIndividual, TGene> adapter, ICollection<TIndividual> include, int desiredSize)
+        public GeneticAlgorithm(IGeneticAlgorithmAdapter<TIndividual, TGene> adapter, ICollection<TIndividual> include)
         {
             int possibleToInclude = Math.Min(include.Count, PopulationSize);
             int randomIndividualsRequired = PopulationSize - possibleToInclude;

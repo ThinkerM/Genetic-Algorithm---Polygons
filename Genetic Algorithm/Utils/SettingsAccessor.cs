@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Genetic_Algorithm.Properties;
 using System.Windows.Forms;
 
@@ -97,7 +93,7 @@ namespace Genetic_Algorithm.Utils
                 {
                     GaSettings.Default.PopulationSize = value;
                 }
-                else { MessageBox.Show("Population must have at least " + MIN_POP_SIZE.ToString() + " individuals"); }
+                else { MessageBox.Show($"Population must have at least {MIN_POP_SIZE} individuals"); }
             }
         }
 

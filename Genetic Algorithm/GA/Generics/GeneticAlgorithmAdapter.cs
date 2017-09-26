@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Genetic_Algorithm.GA.Generics
 {
-    /// <summary>
+    ///<inheritdoc cref="IGeneticAlgorithmAdapter{TIndividual,TGene}"/>
+    ///  <summary>
     /// Provides methods for manipulating populations in GA to produce new generations
     /// </summary>
     /// <typeparam name="TIndividual">Class implementing GA Individual</typeparam>
@@ -15,11 +13,11 @@ namespace Genetic_Algorithm.GA.Generics
         where TIndividual : IIndividual<TGene>, new()
         where TGene : IGene
     {
-        protected IFitnessCalculator<TIndividual, TGene> fitnessCalculator;
+        protected readonly IFitnessCalculator<TIndividual, TGene> FitnessCalculator;
 
         public GeneticAlgorithmAdapter(IFitnessCalculator<TIndividual, TGene> fitnessCalculator)
         {
-            this.fitnessCalculator = fitnessCalculator;
+            FitnessCalculator = fitnessCalculator;
         }
         
         public abstract TIndividual CrossOver(TIndividual parent1, TIndividual parent2);
@@ -29,7 +27,7 @@ namespace Genetic_Algorithm.GA.Generics
 
         public TIndividual GetEliteIndividual(Population<TIndividual,TGene> population)
         {
-            var eliteIndividual = population.GetFittest(fitnessCalculator);
+            var eliteIndividual = population.GetFittest(FitnessCalculator);
             eliteIndividual.IsElite = true;
             return eliteIndividual;
         }
@@ -60,7 +58,7 @@ namespace Genetic_Algorithm.GA.Generics
                 double randomRouletteSelectionPoint = UniqueRandom.Instance.NextDouble() * populationFitnessSum;
                 foreach (var individual in sourcePopulation)
                 {
-                    rouletteSumReached += fitnessCalculator.IndividualFitness(individual);
+                    rouletteSumReached += FitnessCalculator.IndividualFitness(individual);
                     if (ExceededSelectionPoint(rouletteSumReached, randomRouletteSelectionPoint, populationFitnessSum))
                     {
                         if (forbiddenForBreeding == null || forbiddenForBreeding.Equals(default(TIndividual)))
@@ -82,21 +80,21 @@ namespace Genetic_Algorithm.GA.Generics
         {
             TIndividual eliteIndividual = default(TIndividual);
             if (elitism)
-            { eliteIndividual = sourcePopulation.GetFittest(fitnessCalculator); }
+            { eliteIndividual = sourcePopulation.GetFittest(FitnessCalculator); }
 
             int survivorCount = (int)(sourcePopulation.Count * survivalRatio);
-            survivorCount = elitism ? survivorCount-- : survivorCount; //if elitism is on, reduce survivors by one (elite is guaranteed to survive)
+            survivorCount = elitism ? survivorCount - 1 : survivorCount; //if elitism is on, reduce survivors by one (elite is guaranteed to survive)
             //get remaining survivors
             foreach (var survivor in sourcePopulation
                 .Where(indiv => !indiv.Equals(eliteIndividual)) //do not include elite individual in selection, elite is guaranteed to be added by GA
-                .OrderByDescending(indiv => RandomWeightedFitness(indiv))
+                .OrderByDescending(RandomWeightedFitness)
                 .Take(survivorCount))
                 yield return survivor;
         }
         private double RandomWeightedFitness(TIndividual indiv)
-            => fitnessCalculator.IndividualFitness(indiv) * UniqueRandom.Instance.NextDouble();
+            => FitnessCalculator.IndividualFitness(indiv) * UniqueRandom.Instance.NextDouble();
 
         private double PopulationFitnessSum(Population<TIndividual, TGene> population)
-            => population.Select(i => fitnessCalculator.IndividualFitness(i)).Sum();
+            => population.Select(i => FitnessCalculator.IndividualFitness(i)).Sum();
     }
 }

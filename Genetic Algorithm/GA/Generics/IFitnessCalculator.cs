@@ -11,7 +11,7 @@ namespace Genetic_Algorithm.GA.Generics
     /// </summary>
     /// <typeparam name="TIndividual"></typeparam>
     /// <typeparam name="TGene"></typeparam>
-    public interface IFitnessCalculator<TIndividual, TGene> : IComparer<TIndividual>
+    public interface IFitnessCalculator<in TIndividual, TGene> : IComparer<TIndividual>
         where TIndividual : IIndividual<TGene>
         where TGene : IGene
     {

@@ -159,8 +159,7 @@ namespace Polygons.Forms
                     currentFunction = CurrentGaButtonFunction.Stop;
                     geneticAlgorithm = new GeneticAlgorithm<PolygonIndividual, IPolygonGene>
                         (new PolygonAdapter((IFitnessCalculator<PolygonIndividual, IPolygonGene>)fitnessFunctionComboBox.SelectedItem),
-                        displayPopulation,
-                        (int)populationSizeUpdown.Value);
+                        displayPopulation);
                     geneticAlgorithm.GenerationComplete += OnGaGenerationComplete;
                     break;
                 case CurrentGaButtonFunction.Stop:

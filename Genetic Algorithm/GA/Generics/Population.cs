@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Genetic_Algorithm.GA.Generics
 {
@@ -20,7 +17,7 @@ namespace Genetic_Algorithm.GA.Generics
         /// Ordinal number of the generation stored in the population
         /// </summary>
         public int Number { get; }
-        public double TopFitness { get; private set; } = double.NaN;
+        public double TopFitness { get; private set; }
 
         /// <summary>
         /// Create a population with additional GA information
@@ -30,14 +27,15 @@ namespace Genetic_Algorithm.GA.Generics
         public NumberedPopulation(Population<TIndividual, TGene> population, int number) : base(population)
         {
             Number = number;
-            TopFitness = individuals.Select(i => i.Fitness).Max();
+            TopFitness = Individuals.Select(i => i.Fitness).Max();
         }
 
         /// <summary>
         /// Only allows to set <see cref="TopFitness"/> if it hasn't been initialised yet (in case top fitness couldn't be acquired during construction)
         /// </summary>
         /// <param name="value"></param>
-        public void TrySetFitness(double value) { if (TopFitness.Equals(double.NaN)) TopFitness = value; }
+        public void TrySetFitness(double value)
+        { if (TopFitness.Equals(double.NaN)) TopFitness = value; }
 
         /// <summary>
         /// String representation of <see cref="NumberedPopulation{TIndividual, TGene}"/>
@@ -55,7 +53,7 @@ namespace Genetic_Algorithm.GA.Generics
         where TIndividual : IIndividual<TGene>, new()
         where TGene : IGene
     {
-        protected List<TIndividual> individuals = new List<TIndividual>();
+        protected readonly List<TIndividual> Individuals = new List<TIndividual>();
 
         /// <summary>
         /// Number of individuals in population which need to be achieved for a complete generation
@@ -71,7 +69,7 @@ namespace Genetic_Algorithm.GA.Generics
         {
             for (int i = 0; i < randomIndividuals; i++)
             {
-                individuals.Add(new TIndividual());
+                Individuals.Add(new TIndividual());
             }
             DesiredSize = desiredSize;
         }
@@ -91,12 +89,12 @@ namespace Genetic_Algorithm.GA.Generics
         /// <param name="template">Population to copy</param>
         public Population(Population<TIndividual,TGene> template)
         {
-            individuals = new List<TIndividual>(template);
+            Individuals = new List<TIndividual>(template);
             DesiredSize = template.DesiredSize;
         }
 
         public bool Empty 
-            => individuals.Count == 0;
+            => Individuals.Count == 0;
 
         /// <summary>
         /// Indicates whether the population's size has reached or exceeded the set <see cref="DesiredSize"/>
@@ -106,76 +104,76 @@ namespace Genetic_Algorithm.GA.Generics
             => Count >= DesiredSize;
 
         public void Clear()
-            => individuals.Clear();
+            => Individuals.Clear();
 
-        public TIndividual Find(string name) => individuals.Find(i => i.Name == name);
+        public TIndividual Find(string name) => Individuals.Find(i => i.Name == name);
 
         public void Replace(TIndividual toReplace, TIndividual replaceWith)
         {
-            int replacementPosition = individuals.IndexOf(individuals.Find(i => i.Name == toReplace.Name));
-            individuals[replacementPosition] = replaceWith;
+            int replacementPosition = Individuals.IndexOf(Individuals.Find(i => i.Name == toReplace.Name));
+            Individuals[replacementPosition] = replaceWith;
         }
 
         public int Count 
-            => ((ICollection<TIndividual>)individuals).Count;
+            => ((ICollection<TIndividual>)Individuals).Count;
 
         public int Capacity 
-            => individuals.Capacity;
+            => Individuals.Capacity;
 
         public bool IsReadOnly 
-            => ((ICollection<TIndividual>)individuals).IsReadOnly;
+            => ((ICollection<TIndividual>)Individuals).IsReadOnly;
 
         public TIndividual this[int index]
         {
-            get { return ((IList<TIndividual>)individuals)[index]; }
-            set { ((IList<TIndividual>)individuals)[index] = value; }
+            get { return ((IList<TIndividual>)Individuals)[index]; }
+            set { ((IList<TIndividual>)Individuals)[index] = value; }
         }
 
         public virtual TIndividual GetIndividual(int index)
         {
-            if (index >= individuals.Count)
+            if (index >= Individuals.Count)
             { return default(TIndividual); }
 
-            return individuals[index];
+            return Individuals[index];
         }
 
         public virtual IEnumerable<TIndividual> GetFittest(IFitnessCalculator<TIndividual, TGene> fitnessCalculator, int n)
-            => individuals.OrderByDescending(indiv => fitnessCalculator.IndividualFitness(indiv)).Take(n);
+            => Individuals.OrderByDescending(indiv => fitnessCalculator.IndividualFitness(indiv)).Take(n);
 
         public virtual TIndividual GetFittest(IFitnessCalculator<TIndividual, TGene> fitnessCalculator)
-            => individuals.OrderByDescending(indiv => fitnessCalculator.IndividualFitness(indiv)).FirstOrDefault();
+            => Individuals.OrderByDescending(indiv => fitnessCalculator.IndividualFitness(indiv)).FirstOrDefault();
 
         public void Add(TIndividual item)
-            => ((ICollection<TIndividual>)individuals).Add(item);
+            => ((ICollection<TIndividual>)Individuals).Add(item);
 
         public void AddRange(IEnumerable<TIndividual> items)
-            => individuals.AddRange(items);
+            => Individuals.AddRange(items);
 
         public void Sort(IFitnessCalculator<TIndividual, TGene> fitnessCalculator)
-            => individuals.Sort(fitnessCalculator);
+            => Individuals.Sort(fitnessCalculator);
 
         public bool Contains(TIndividual item)
-            => ((ICollection<TIndividual>)individuals).Contains(item);
+            => ((ICollection<TIndividual>)Individuals).Contains(item);
 
         public void CopyTo(TIndividual[] array, int arrayIndex)
-            => ((ICollection<TIndividual>)individuals).CopyTo(array, arrayIndex);
+            => ((ICollection<TIndividual>)Individuals).CopyTo(array, arrayIndex);
 
         public bool Remove(TIndividual item)
-            => ((ICollection<TIndividual>)individuals).Remove(item);
+            => ((ICollection<TIndividual>)Individuals).Remove(item);
 
         public IEnumerator<TIndividual> GetEnumerator()
-            => ((ICollection<TIndividual>)individuals).GetEnumerator();
+            => ((ICollection<TIndividual>)Individuals).GetEnumerator();
 
         IEnumerator IEnumerable.GetEnumerator()
-            => ((ICollection<TIndividual>)individuals).GetEnumerator();
+            => ((ICollection<TIndividual>)Individuals).GetEnumerator();
 
         public int IndexOf(TIndividual item)
-            => ((IList<TIndividual>)individuals).IndexOf(item);
+            => ((IList<TIndividual>)Individuals).IndexOf(item);
 
         public void Insert(int index, TIndividual item)
-            => ((IList<TIndividual>)individuals).Insert(index, item);
+            => ((IList<TIndividual>)Individuals).Insert(index, item);
 
         public void RemoveAt(int index)
-            => ((IList<TIndividual>)individuals).RemoveAt(index);
+            => ((IList<TIndividual>)Individuals).RemoveAt(index);
     }
 }
