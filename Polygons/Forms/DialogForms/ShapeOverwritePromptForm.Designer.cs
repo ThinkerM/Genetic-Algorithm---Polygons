@@ -55,7 +55,6 @@
             this.overwriteBtn.TabIndex = 1;
             this.overwriteBtn.Text = "Overwrite";
             this.overwriteBtn.UseVisualStyleBackColor = true;
-            this.overwriteBtn.Click += new System.EventHandler(this.overwriteBtn_Click);
             // 
             // cancelBtn
             // 
@@ -67,7 +66,6 @@
             this.cancelBtn.TabIndex = 2;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // ShapeOverwritePromptForm
             // 
