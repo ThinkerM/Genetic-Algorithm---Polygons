@@ -31,7 +31,7 @@ namespace Polygons.GA
             AngleRelativeToCentroid = Angle.FromRadians(Math.Atan2(Y, X));
         }
 
-        public void UpdatePointRepresentation()
+        private void UpdatePointRepresentation()
         {
             var newLocation = GeometryExtensions.GetCoordinates(Centroid, AngleRelativeToCentroid, DistanceFromCentroid);
             X = newLocation.X;
@@ -48,18 +48,18 @@ namespace Polygons.GA
 
         public void Mutate()
         {
-            int maxAngleChange = Utils.PolygonSettingsAccessor.AngleMaximumMutation;
+            int maxAngleChange = PolygonSettingsAccessor.AngleMaximumMutation;
             int angleChange = UniqueRandom.Instance.Next(-maxAngleChange, maxAngleChange + 1);
             AngleRelativeToCentroid += angleChange;
 
-            int maxDistanceAbsoluteChange = (int)(Utils.PolygonSettingsAccessor.CentroidDistanceMaximumMutation * DistanceFromCentroid);
+            int maxDistanceAbsoluteChange = (int)(PolygonSettingsAccessor.CentroidDistanceMaximumMutation * DistanceFromCentroid);
             int distanceChange = UniqueRandom.Instance.Next(-maxDistanceAbsoluteChange, maxDistanceAbsoluteChange + 1);
             DistanceFromCentroid += distanceChange;
 
             UpdatePointRepresentation();
         }
 
-        private Point PointRepresentation { get { return new Point(X, Y); } }
+        private Point PointRepresentation => new Point(X, Y);
         public Point Decode()=> PointRepresentation;
     }
 }

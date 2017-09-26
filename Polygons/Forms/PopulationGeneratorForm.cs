@@ -34,10 +34,10 @@ namespace Polygons.Forms
     partial class PopulationGeneratorForm : Form
     {
         #region Main
-        Population<PolygonIndividual, IPolygonGene> population;
-        GA.FitnessCalculators.BasicSymmetryFitnessCalculator fitnessCalculator;
-        PolygonAdapter adapter;
-        private readonly static Color defaultPicturesBackground = Color.DarkCyan;
+        private Population<PolygonIndividual, IPolygonGene> population;
+        private readonly GA.FitnessCalculators.BasicSymmetryFitnessCalculator fitnessCalculator;
+        private readonly PolygonAdapter adapter;
+        private static readonly Color DefaultPicturesBackground = Color.DarkCyan;
 
         /// <summary>
         /// Creates a population management form for Genetic algorithm
@@ -51,10 +51,10 @@ namespace Polygons.Forms
             SettingsAccessor.SaveSettings();
 
             popSizeUpdown.Value = SettingsAccessor.PopulationSize;
-            verticesUpdown.Value = Utils.PolygonSettingsAccessor.PolygonsVertices;
+            verticesUpdown.Value = PolygonSettingsAccessor.PolygonsVertices;
 
-            picturesBackgroundColorDialog.Color = defaultPicturesBackground;
-            openShapesDialog.InitialDirectory = Paths.PolygonSavedShapesFolder();
+            picturesBackgroundColorDialog.Color = DefaultPicturesBackground;
+            openShapesDialog.InitialDirectory = Paths.PolygonSavedShapesFolder;
 
             savedShapesNotification.Icon = SystemIcons.Information;
             savedShapesNotification.BalloonTipIcon = ToolTipIcon.Info;
@@ -70,12 +70,12 @@ namespace Polygons.Forms
         /// <returns></returns>
         protected override bool ProcessDialogKey(Keys keyData)
         {
-            if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape)
+            if (Form.ModifierKeys != Keys.None || keyData != Keys.Escape)
             {
-                this.Close();
-                return true;
+                return base.ProcessDialogKey(keyData);
             }
-            return base.ProcessDialogKey(keyData);
+            this.Close();
+            return true;
         }
         #endregion
 
@@ -85,7 +85,7 @@ namespace Polygons.Forms
             foreach (var item in picturesLayoutPanel.Controls)
             {
                 Control c = item as Control;
-                c.Dispose();
+                c?.Dispose();
             }
             picturesLayoutPanel.Controls.Clear();
             if (population != null)
@@ -225,12 +225,12 @@ namespace Polygons.Forms
 
         private void resetColorButton_Click(object sender, EventArgs e)
         {
-            picturesBackgroundColorDialog.Color = defaultPicturesBackground;
+            picturesBackgroundColorDialog.Color = DefaultPicturesBackground;
             foreach (var c in picturesLayoutPanel.Controls)
             {
                 var image = c as LabeledPolygonImage;
                 if (image != null)
-                { image.BackColor = defaultPicturesBackground; }
+                { image.BackColor = DefaultPicturesBackground; }
             }
         }
         #endregion
@@ -298,7 +298,7 @@ namespace Polygons.Forms
         private void saveShapeMenuItem_Click(object sender, EventArgs e)
         {
             var image = GetImageFromSender(sender);
-            PolygonXmlHandler.SaveToDefaultFolder(image?.SavedPolygon);
+            (image?.SavedPolygon).SaveToDefaultFolder();
         }
 
         private void removeShapeFromPopulationMenuItem_Click(object sender, EventArgs e)
@@ -334,7 +334,7 @@ namespace Polygons.Forms
         private void openShapesDialog_FileOk(object sender, CancelEventArgs e)
         {
             //check if user left the predefined directory
-            if (openShapesDialog.FileName.Contains(Paths.LocalPath(openShapesDialog.InitialDirectory)))
+            if (openShapesDialog.FileName.Contains(openShapesDialog.InitialDirectory))
             {
                 ValidFolderSelected = true;
             }
@@ -355,11 +355,8 @@ namespace Polygons.Forms
         {
             foreach (var image in picturesLayoutPanel.Controls)
             {
-                if (image is LabeledPolygonImage)
-                {
-                    var labeledImage = image as LabeledPolygonImage;
-                    labeledImage.Select();
-                }
+                var labeledImage = image as LabeledPolygonImage;
+                labeledImage?.Select();
             }
         }
 
@@ -367,11 +364,8 @@ namespace Polygons.Forms
         {
             foreach (var image in picturesLayoutPanel.Controls)
             {
-                if (image is LabeledPolygonImage)
-                {
-                    var labeledImage = image as LabeledPolygonImage;
-                    labeledImage.Deselect();
-                }
+                var labeledImage = image as LabeledPolygonImage;
+                labeledImage?.Deselect();
             }
         }
         #endregion

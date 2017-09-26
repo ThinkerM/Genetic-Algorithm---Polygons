@@ -26,15 +26,16 @@ namespace Polygons.GA
             {
                 var newGenome = new List<IPolygonGene>();
 
-                var zippedGenomes = parent1.Genome.Zip(parent2.Genome, (first, second)
+                var zippedGenomes = parent1AngleOrderedGenome.Zip(parent2AngleOrderedGenome, (first, second)
                     => new {gene1 = first, gene2 = second });
+
                 foreach (var genePair in zippedGenomes)
                 {
                     var geneToAdd = UniqueRandom.HalfProbability() ? genePair.gene1 : genePair.gene2;
                     newGenome.Add(geneToAdd);
                 }
 
-                Color childColor = GetChildColor(parent1.Polygon.OutlineColor, parent2.Polygon.OutlineColor);
+                var childColor = GetChildColor(parent1.Polygon.OutlineColor, parent2.Polygon.OutlineColor);
 
                 return new PolygonIndividual(
                     newGenome,
@@ -45,7 +46,7 @@ namespace Polygons.GA
             { throw new Exception($"Incompatible genomes:{System.Environment.NewLine}{parent1.Name}: Length {parent1.Genome.Count}{System.Environment.NewLine}{parent2.Name}: Length {parent2.Genome.Count}"); }
         }
 
-        private string ChildName(string p1, string p2)
+        private static string ChildName(string p1, string p2)
         {
             int shortestParentLength = Math.Min(p1.Length, p2.Length);
             int longestParentLength = Math.Max(p1.Length, p2.Length);
@@ -54,10 +55,9 @@ namespace Polygons.GA
             {
                 if (UniqueRandom.HalfProbability())
                 {
-                    if (UniqueRandom.HalfProbability())
-                    { sb.Append(p1[i]); }
-                    else
-                    { sb.Append(p2[i]); }
+                    sb.Append(UniqueRandom.HalfProbability()
+                                  ? p1[i]
+                                  : p2[i]);
                 }
                 else
                 { sb.Append(RandomCharsAndStrings.RandomAlphanumericCharacter()); }
@@ -70,7 +70,7 @@ namespace Polygons.GA
             return sb.ToString();
         }
 
-        private Color GetChildColor(Color p1, Color p2)
+        private static Color GetChildColor(Color p1, Color p2)
         {
             return RandomColors.RandomColor();
         }

@@ -19,14 +19,13 @@ namespace Polygons.GA.FitnessCalculators
         public virtual double IndividualFitness(PolygonIndividual individual)
         {
             double fitness = 0;
-            double normalizedResult = Double.NaN;
             if (individual.Fitness.Equals(PolygonIndividual.InvalidFitnessIndicator))
             {
                 foreach (var gene in individual.Genome)
                 {
                     fitness -= GeneFitness(gene, individual);
                 }
-                normalizedResult = fitness == 0 ? Double.MaxValue : -1000 / fitness;
+                var normalizedResult = fitness == 0 ? Double.MaxValue : -1000 / fitness;
                 individual.Fitness = normalizedResult;
             }
             return individual.Fitness;
@@ -47,10 +46,10 @@ namespace Polygons.GA.FitnessCalculators
             return GeometryExtensions.Distance(perfectRelative, new Point(closest.X, closest.Y));
         }
 
-        private Point TheoreticalPerfectlyMirroredRelative(IPolygonGene gene, Point centroid)
+        private static Point TheoreticalPerfectlyMirroredRelative(IPolygonGene gene, Point centroid)
             => new Point(centroid.X - gene.X, gene.Y);
 
-        private bool OnSameAxisSide(IPolygonGene a, IPolygonGene b)
+        private static bool OnSameAxisSide(IPolygonGene a, IPolygonGene b)
         {
             if (a.X < 0)
             { return b.X < 0; }
@@ -61,9 +60,6 @@ namespace Polygons.GA.FitnessCalculators
         public int Compare(PolygonIndividual x, PolygonIndividual y)
             => IndividualFitness(x).CompareTo(IndividualFitness(y));
 
-        public override string ToString()
-        {
-            return Name;
-        }
+        public override string ToString() => Name;
     }
 }

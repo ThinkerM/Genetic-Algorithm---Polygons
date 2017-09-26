@@ -16,7 +16,7 @@ namespace Polygons.GA.FitnessCalculators
     /// </summary>
     class SymmetryIntersectionPenaltyFitnessCalculator : BasicSymmetryFitnessCalculator
     {
-        public override string Name { get { return "Symmetry (Intersection penalty) FitnessCalculator"; } }
+        public override string Name => "Symmetry (Intersection penalty) FitnessCalculator";
 
         public override double IndividualFitness(PolygonIndividual individual)
         {
@@ -30,11 +30,12 @@ namespace Polygons.GA.FitnessCalculators
             return individual.Fitness;
         }
         
-        private int GetEdgeIntersectionCount(IEnumerable<Point> vertices)
+        private static int GetEdgeIntersectionCount(IEnumerable<Point> vertices)
         {
-            var polygonEdges = vertices.
+            var verticesList = vertices as IList<Point> ?? vertices.ToList();
+            var polygonEdges = verticesList.
                 AdjacentPairs((x, y) => new { edgeStart = x, edgeEnd = y }).
-                Concat(new { edgeStart = vertices.First(), edgeEnd = vertices.Last() }); //connect first and last elements of vertices (those also form an edge)
+                Concat(new { edgeStart = verticesList.First(), edgeEnd = verticesList.Last() }); //connect first and last elements of vertices (those also form an edge)
             var edgePairs = polygonEdges.Subsets(2);
 
             int resultCount = 0;

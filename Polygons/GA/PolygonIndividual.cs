@@ -38,24 +38,21 @@ namespace Polygons.GA
 
         public PolygonIndividual(IEnumerable<IPolygonGene> genome, string name, Color color)
         {
-            List<Point> vertices = new List<Point>();
-            foreach (var gene in genome)
-            { vertices.Add(gene.Decode()); }
+            List<Point> vertices = genome.Select(gene => gene.Decode()).ToList();
             Polygon = new Polygon(vertices, color, name);
             CommonInitialization();
         }
 
         public Polygon Polygon { get; private set; }
-        public ICollection<IPolygonGene> Genome { get; private set; } = new List<IPolygonGene>();
+        public ICollection<IPolygonGene> Genome { get; } = new List<IPolygonGene>();
 
         public void InvalidateFitness() => Fitness = InvalidFitnessIndicator;
-        public static double InvalidFitnessIndicator { get { return double.NaN; } }
+        public static double InvalidFitnessIndicator => double.NaN;
         public double Fitness { get; set; } = InvalidFitnessIndicator;
 
         public void Mutate(double mutationProbability)
         {
             List<Point> newVertices = new List<Point>();
-            List<SimplePolygonGene> newGenome = new List<SimplePolygonGene>();
             //perform mutations
             foreach (var gene in Genome)
             {
@@ -74,9 +71,9 @@ namespace Polygons.GA
             InvalidateFitness();
         }
 
-        public string Name { get { return Polygon.Name; } }
+        public string Name => Polygon.Name;
 
-        private bool GeneShouldMutate(double mutationProbability)
+        private static bool GeneShouldMutate(double mutationProbability)
             => UniqueRandom.Instance.NextDouble() <= mutationProbability;
 
         public bool Equals(IIndividual<IPolygonGene> other)
