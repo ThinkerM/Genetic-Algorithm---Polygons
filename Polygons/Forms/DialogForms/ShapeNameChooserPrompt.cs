@@ -15,7 +15,7 @@ namespace Polygons.Forms.DialogForms
     /// </summary>
     internal partial class ShapeNameChooserPrompt : Form
     {
-        PolygonCreationForm parentForm;
+        private readonly PolygonCreationForm parentForm;
         internal ShapeNameChooserPrompt(PolygonCreationForm parentForm)
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace Polygons.Forms.DialogForms
         private void okButton_Click(object sender, EventArgs e)
         {
             parentForm.ShapeName = textBox1.Text;
-            if (parentForm.ShapeName == String.Empty)
+            if (parentForm.ShapeName == string.Empty)
             { label1.ForeColor = Color.Red; }
             else
             { Close(); }

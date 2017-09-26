@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CustomExtensions.Graphics;
 using System.Drawing.Drawing2D;
@@ -14,7 +8,7 @@ namespace Polygons.Forms.CustomControls
 {
     internal partial class GaComponentIcon : UserControl
     {
-        Graphics g;
+        private Graphics g;
 
         public delegate void GaIconClickedEventHandler(object sender, EventArgs e);
         public event GaIconClickedEventHandler OnGaIconClicked;
@@ -23,14 +17,13 @@ namespace Polygons.Forms.CustomControls
         {
             InitializeComponent();
 
-            iconPictureBox.Click += new EventHandler(OnClickedAnywhere);
-            componentNameLabel.Click += new EventHandler(OnClickedAnywhere);
+            iconPictureBox.Click += OnClickedAnywhere;
+            componentNameLabel.Click += OnClickedAnywhere;
         }
 
         private void OnClickedAnywhere(object sender, EventArgs e)
         {
-            if (OnGaIconClicked != null)
-            { OnGaIconClicked(this, e); }
+            OnGaIconClicked?.Invoke(this, e);
         }
 
 
@@ -42,29 +35,17 @@ namespace Polygons.Forms.CustomControls
 
         public void AssignIconPicture(string iconFilePath)
         {
-            if (System.IO.File.Exists(iconFilePath))
-            {
-                iconPictureBox.Image = new Bitmap(iconFilePath);
-                iconPictureBox.Image = GraphicalExtensions.Resize(iconPictureBox.Image, iconPictureBox.Width, iconPictureBox.Height);
-                g = Graphics.FromImage(iconPictureBox.Image);
-            }
+            if (!System.IO.File.Exists(iconFilePath))
+            { return; }
+            iconPictureBox.Image = new Bitmap(iconFilePath);
+            iconPictureBox.Image = GraphicalExtensions.Resize(iconPictureBox.Image, iconPictureBox.Width, iconPictureBox.Height);
+            g = Graphics.FromImage(iconPictureBox.Image);
         }
 
         public void AssignIconPicture(Bitmap picture)
         {
             iconPictureBox.Image = GraphicalExtensions.Resize(picture, iconPictureBox.Width, iconPictureBox.Height);
             g = Graphics.FromImage(iconPictureBox.Image);
-        }
-
-        public void AssignIconPicture(System.IO.Stream pictureStream)
-        {
-            try
-            {
-                iconPictureBox.Image = new Bitmap(pictureStream);
-                iconPictureBox.Image = GraphicalExtensions.Resize(iconPictureBox.Image, iconPictureBox.Width, iconPictureBox.Height);
-                g = Graphics.FromImage(iconPictureBox.Image);
-            }
-            catch { MessageBox.Show("Failed to load resource image"); }
         }
 
         protected override void OnResize(EventArgs e)
@@ -76,7 +57,6 @@ namespace Polygons.Forms.CustomControls
 
         private void componentNameLabel_Paint(object sender, PaintEventArgs e)
         {
-            Graphics g = e.Graphics;
             using (LinearGradientBrush lgBrush = new LinearGradientBrush(
                 componentNameLabel.ClientRectangle,
                 Color.DarkCyan, Color.White,

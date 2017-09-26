@@ -20,17 +20,5 @@ namespace Polygons.Forms.DialogForms
             InitializeComponent();
             richTextBox1.Text = $"You are about to overwrite an existing shape.{Environment.NewLine}Name: {shapeName}{Environment.NewLine}Continue?";
         }
-
-        private void overwriteBtn_Click(object sender, EventArgs e)
-        {
-            Overwrite = true;
-        }
-
-        private void cancelBtn_Click(object sender, EventArgs e)
-        {
-            Overwrite = false;
-        }
-
-        internal bool Overwrite { get; private set; }
     }
 }

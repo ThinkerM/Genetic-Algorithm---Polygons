@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using Polygons.Forms.DialogForms;
 using CustomExtensions.Graphics;
@@ -25,8 +26,8 @@ namespace Polygons.Forms
     {
         #region Main
         private List<Point> userInput = new List<Point>();
-        Polygon DefinedPolygon { get { return new Polygon(userInput, PolygonColor, ShapeName); } }
-        Color PolygonColor { get; set; }
+        private Polygon DefinedPolygon => new Polygon(userInput, PolygonColor, ShapeName);
+        private Color PolygonColor { get; set; }
 
         /// <summary>
         /// Form allowing user to specify and modify a custom shape
@@ -41,7 +42,7 @@ namespace Polygons.Forms
             genericIcon.ShowBalloonTip(5000);
            
             PolygonColor = Color.Black;
-            polygonBox.Paint += new PaintEventHandler(polygonBox_Paint);
+            polygonBox.Paint += polygonBox_Paint;
 
             loadShapeDialog.InitialDirectory = Paths.PolygonSavedShapesFolderNoBacklash;
             deleteShapeDialog.InitialDirectory = Paths.PolygonSavedShapesFolderNoBacklash;
@@ -98,7 +99,7 @@ namespace Polygons.Forms
         #endregion
 
         #region Grid
-        private int GridCellSize { get { return (int)cellSizeUpDown.Value; } }
+        private int GridCellSize => (int)cellSizeUpDown.Value;
 
         private void PaintGrid(PictureBox box, Graphics g)
         {
@@ -132,7 +133,7 @@ namespace Polygons.Forms
         }
 
         private Rectangle CurrentGridCell { get; set; }
-        private void UpdateCurrentGridCell(PictureBox box, Point location)
+        private void UpdateCurrentGridCell(Point location)
         {
             int cellsLeft = location.X / GridCellSize;
             int cellsUp = location.Y / GridCellSize;
@@ -145,22 +146,22 @@ namespace Polygons.Forms
         private void polygonBox_Click(object sender, EventArgs e)
         {
             MouseEventArgs me = (MouseEventArgs)e;
-            if (me.Button == MouseButtons.Left)
-            {
-                Point inputCoordinates;
-                if (useGridCheckBox.Checked)
-                {
-                    inputCoordinates = new Point(
-                      CurrentGridCell.Left + CurrentGridCell.Width / 2,
-                      CurrentGridCell.Top + CurrentGridCell.Height / 2);
-                }
-                else
-                { inputCoordinates = me.Location; }
+            if (me.Button != MouseButtons.Left)
+            { return; }
 
-                userInput.Add(inputCoordinates);
-                UpdateDescriptors();
-                polygonBox.Invalidate();
+            Point inputCoordinates;
+            if (useGridCheckBox.Checked)
+            {
+                inputCoordinates = new Point(
+                    CurrentGridCell.Left + CurrentGridCell.Width / 2,
+                    CurrentGridCell.Top + CurrentGridCell.Height / 2);
             }
+            else
+            { inputCoordinates = me.Location; }
+
+            userInput.Add(inputCoordinates);
+            UpdateDescriptors();
+            polygonBox.Invalidate();
         }
 
         private void ColorButton_Click(object sender, EventArgs e)
@@ -207,10 +208,10 @@ namespace Polygons.Forms
         /// <summary>
         /// Name of the shape being currently edited
         /// </summary>
-        public string ShapeName { get; set; } = String.Empty;
+        public string ShapeName { get; set; } = string.Empty;
         private bool ValidFolderSelected { get; set; }
 
-        private void TryCreateSavesFolder()
+        private static void TryCreateSavesFolder()
         {
             System.IO.Directory.CreateDirectory(Paths.PolygonSavedShapesFolder);
         }
@@ -222,62 +223,61 @@ namespace Polygons.Forms
                 nameChooser.ShowDialog(); 
             }
 
-            if (ShapeName != "" && ShapeName != String.Empty) //make sure a proper name can be constructed
+            if (ShapeName == "" || ShapeName == string.Empty) //make sure a proper name can be constructed
+            { return; }
+
+            if (System.IO.File.Exists(Paths.SaveXmlPath(ShapeName)))
             {
-                if (System.IO.File.Exists(Paths.SaveXmlPath(ShapeName)))
+                using (var overwriteForm = new ShapeOverwritePromptForm(ShapeName))
                 {
-                    using (var overwriteForm = new ShapeOverwritePromptForm(ShapeName))
+                    if (overwriteForm.ShowDialog() == DialogResult.Cancel)
                     {
-                        if (overwriteForm.ShowDialog() == DialogResult.Cancel)
-                        {
-                            //not ok to overwrite
-                            return;
-                        }
+                        //not ok to overwrite
+                        return;
                     }
                 }
-                //not overwriting or ok to overwrite
-                PolygonXmlHandler.SaveToDefaultFolder(DefinedPolygon);
-                saveSuccessfulNotification.ShowBalloonTip(2000, "Save successful", ShapeName + " has been successfully saved.", ToolTipIcon.Info);
             }
+
+            //nothing is being overwritten or ok to overwrite
+            DefinedPolygon.SaveToDefaultFolder();
+            saveSuccessfulNotification.ShowBalloonTip(2000, "Save successful", ShapeName + " has been successfully saved.", ToolTipIcon.Info);
         }
 
         private void loadShapeButton_Click(object sender, EventArgs e)
         {
-            if (loadShapeDialog.ShowDialog() == DialogResult.OK)
+            if (loadShapeDialog.ShowDialog() != DialogResult.OK)
+            { return; }
+
+            if (ValidFolderSelected)
             {
-                if (ValidFolderSelected)
+                Polygon loadedPolygon;
+                try
                 {
-                    Polygon loadedPolygon = default(Polygon);
-                    try
-                    {
-                        loadedPolygon = PolygonXmlHandler.Load(loadShapeDialog.FileName);
-                        loadedPolygon.ShiftUpperLeftCorner(new Point(0, 0));
-                    }
-                    catch (Exception ex)
-                    {
-                        if (DeleteFileConfirmation.Confirm(loadShapeDialog.FileName, true))
-                        {
-                            System.IO.File.Delete(loadShapeDialog.FileName);
-                            { deleteSuccessfulNotification.ShowBalloonTip(2000, "Deletion successful", "Faulty file has been deleted.", ToolTipIcon.Info); }
-                        }
-                        return;
-                    }
-
-                    if (loadedPolygon != default(Polygon))
-                    {
-                        loadedPolygon.ShiftCenter(new Point((int)(polygonBox.Width / 2), (int)(polygonBox.Height / 2)));
-                        userInput = loadedPolygon.Vertices;
-                        ShapeName = loadedPolygon.Name;
-                        PolygonColor = loadedPolygon.OutlineColor;
-
-                        UpdateDescriptors();
-                        polygonBox.Invalidate();
-                    }                                 
+                    loadedPolygon = PolygonXmlHandler.Load(loadShapeDialog.FileName);
+                    loadedPolygon.ShiftUpperLeftCorner(new Point(0, 0));
                 }
-                else
+                catch (Exception ex)
                 {
-                    loadShapeDialog.ShowDialog();
+                    //loaded file isn't in proper state, prompt to delete
+                    if (!DeleteFileConfirmation.Confirm(loadShapeDialog.FileName, true))
+                    { return; }
+
+                    System.IO.File.Delete(loadShapeDialog.FileName);
+                    { deleteSuccessfulNotification.ShowBalloonTip(2000, "Deletion successful", "Faulty file has been deleted.", ToolTipIcon.Info); }
+                    return;
                 }
+
+                loadedPolygon.ShiftCenter(new Point((int)(polygonBox.Width / 2), (int)(polygonBox.Height / 2)));
+                userInput = loadedPolygon.Vertices;
+                ShapeName = loadedPolygon.Name;
+                PolygonColor = loadedPolygon.OutlineColor;
+
+                UpdateDescriptors();
+                polygonBox.Invalidate();
+            }
+            else
+            {
+                loadShapeDialog.ShowDialog();
             }
         }
 
@@ -327,7 +327,8 @@ namespace Polygons.Forms
                     {
                         okToDelete = DeleteFileConfirmation.Confirm(deleteShapeDialog.FileNames.Length.ToString());
                         if (okToDelete)
-                        { deleteSuccessfulNotification.ShowBalloonTip(2000, "Deletion successful", String.Format("{0} files have been deleted.", deleteShapeDialog.FileNames.Length), ToolTipIcon.Info); }
+                        { deleteSuccessfulNotification.ShowBalloonTip(2000, "Deletion successful",
+                                                                      $"{deleteShapeDialog.FileNames.Length} files have been deleted.", ToolTipIcon.Info); }
                     }
                     
                     if (okToDelete)
@@ -356,7 +357,7 @@ namespace Polygons.Forms
 
         private void polygonBox_MouseMove(object sender, MouseEventArgs e)
         {
-            UpdateCurrentGridCell(polygonBox, e.Location);
+            UpdateCurrentGridCell(e.Location);
             if (e.Button == MouseButtons.Right)
             {
                 int dX = e.X - MouseDownLocation.X;

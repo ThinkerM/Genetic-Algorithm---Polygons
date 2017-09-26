@@ -32,7 +32,7 @@ namespace Polygons.Forms.DialogForms
     /// </summary>
     internal partial class ChooseVerticesCountToImportDialog : Form
     {
-        List<RadioButton> allRadioButtons = new List<RadioButton>();
+        private readonly List<RadioButton> allRadioButtons = new List<RadioButton>();
 
         /// <summary>
         /// Creates a dialog window asking the user to select one of multiple groups

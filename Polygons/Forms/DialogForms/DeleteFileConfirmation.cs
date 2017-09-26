@@ -12,41 +12,40 @@ namespace Polygons.Forms.DialogForms
 {
     internal partial class DeleteFileConfirmation : Form
     {
-        internal DeleteFileConfirmation(string caption, bool faultyFile = false)
+        private DeleteFileConfirmation(string captionFileName, bool faultyFile = false)
         {
             InitializeComponent();
 
             if (!faultyFile)
             {
                 int nFiles;
-                if (int.TryParse(caption, out nFiles))
-                { captionTextBox.Text = String.Format("Delete {0} files?", nFiles); }
-                else
-                { captionTextBox.Text = String.Format("Delete {0}?", caption); } 
+                captionTextBox.Text = int.TryParse(captionFileName, out nFiles)
+                    ? $"Delete {nFiles} files?"
+                    : $"Delete {captionFileName}?";
             }
             else
             {
-                captionTextBox.Text = String.Format("There's something wrong with {0}. Get rid of it?", caption);
+                captionTextBox.Text = $"There's something wrong with {captionFileName}. Get rid of it?";
             }
         }
 
-        private static bool DeleteOK { get; set; }
+        private static bool DeleteOk { get; set; }
         internal static bool Confirm(string fileDescription = "", bool faultyFile = false)
         {
             DeleteFileConfirmation del = new DeleteFileConfirmation(fileDescription, faultyFile);
             del.ShowDialog();
-            return DeleteOK;
+            return DeleteOk;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            DeleteOK = false;
+            DeleteOk = false;
             Close();
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            DeleteOK = true;
+            DeleteOk = true;
             Close();
         }
     }

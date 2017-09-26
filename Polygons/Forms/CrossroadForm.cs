@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
-using System.Reflection;
 
 namespace Polygons.Forms
 {
@@ -20,7 +11,7 @@ namespace Polygons.Forms
     {
         #region Singleton
         private static CrossroadForm instance;
-        private static readonly object padlock = new object();
+        private static readonly object Lock = new object();
 
         /// <summary>
         /// Access an instance of CrossroadForm
@@ -29,10 +20,9 @@ namespace Polygons.Forms
         {
             get
             {
-                lock (padlock)
+                lock (Lock)
                 {
-                    if (instance == null) { instance = new CrossroadForm(); }
-                    return instance; 
+                    return instance ?? (instance = new CrossroadForm());
                 }
             }
         }
@@ -58,13 +48,10 @@ namespace Polygons.Forms
             shapeCreationIcon.OnGaIconClicked += shapeCreationIcon_Click;
             populationGenerationIcon.OnGaIconClicked += populationGenerationIcon_Click;
         }
-        Stream GetStream(string name, Assembly assembly) 
-            => assembly.GetManifestResourceStream($"{assembly.GetName().Name}.{name}".Replace(' ','_'));
 
-        string AssemblyResourceString(string fileName, Assembly assembly)
-            => $"{assembly.GetName().Name}.{fileName}".Replace(' ', '_').Replace('/', '.').Replace('\\', '.');
-        string PictureFolderPath => Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-        string PilePath(string fileName) => $"{PictureFolderPath}/{fileName}";
+        private static string PictureFolderPath => Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+
+        private string PilePath(string fileName) => $"{PictureFolderPath}/{fileName}";
 
         private void shapeCreationIcon_Click(object sender, EventArgs e) => new Forms.PolygonCreationForm().Show();
 

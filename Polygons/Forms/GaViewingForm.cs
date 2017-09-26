@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Windows.Forms;
-using MoreLinq;
 using Genetic_Algorithm.GA.Generics;
 using Polygons.GA;
 using Polygons.Forms.CustomControls;
@@ -54,7 +52,7 @@ namespace Polygons.Forms
         }
         private GeneticAlgorithm<PolygonIndividual, IPolygonGene> geneticAlgorithm;
 
-        private BindingList<NumberedPopulation<PolygonIndividual, IPolygonGene>> savedGaPopulations = new BindingList<NumberedPopulation<PolygonIndividual, IPolygonGene>>();
+        private readonly BindingList<NumberedPopulation<PolygonIndividual, IPolygonGene>> savedGaPopulations = new BindingList<NumberedPopulation<PolygonIndividual, IPolygonGene>>();
         private double bestInitialFitness;
         private Population<PolygonIndividual, IPolygonGene> displayPopulation;
 
@@ -198,24 +196,20 @@ namespace Polygons.Forms
                 if (orRadioButton.Checked) return (bool)generationNumberTermination || (bool)improvementTermination;
             }
 
-            bool? conditionWithValue = new bool?[] { generationNumberTermination, improvementTermination }
+            bool? conditionWithValue = new[] { generationNumberTermination, improvementTermination }
                 .FirstOrDefault(x => x.HasValue);
             if (conditionWithValue.HasValue)
+            { return (bool)conditionWithValue; }
+
+            if(!ignoreTerminationConditionsAbsence)
             {
-                return (bool)conditionWithValue;
+                MessageBoxManager.OK = "I know :P";
+                MessageBoxManager.Register();
+                var action = MessageBox.Show("No termination conditions activated.", "Warning", MessageBoxButtons.OK);
+                MessageBoxManager.Unregister();
+                ignoreTerminationConditionsAbsence = (action == DialogResult.OK);
             }
-            else
-            {
-                if(!ignoreTerminationConditionsAbsence)
-                {
-                    MessageBoxManager.OK = "I know :P";
-                    MessageBoxManager.Register();
-                    var action = MessageBox.Show("No termination conditions activated.", "Warning", MessageBoxButtons.OK);
-                    MessageBoxManager.Unregister();
-                    ignoreTerminationConditionsAbsence = (action == DialogResult.OK ? true : false);
-                }
-                return false;
-            }            
+            return false;
         }
         private bool ignoreTerminationConditionsAbsence = false;
 
@@ -278,13 +272,13 @@ namespace Polygons.Forms
         {
             if (displayPopulation == null || displayPopulation.Empty) return;
             int displayedVertexCount = displayPopulation.First().Polygon.VerticesCount;
-            if (displayedVertexCount == Utils.PolygonSettingsAccessor.PolygonsVertices) return;
+            if (displayedVertexCount == PolygonSettingsAccessor.PolygonsVertices) return;
 
             MessageBoxManager.Yes = "Remove";
             MessageBoxManager.No = "Change settings";
             MessageBoxManager.Register();
-            var action = MessageBox.Show($"Displayed population vertices count ({displayedVertexCount}) don't match the specified vertex count in settings ({Utils.PolygonSettingsAccessor.PolygonsVertices})." 
-                + $"{System.Environment.NewLine}Do you want to remove displayed individuals or adjust the settings accordingly?", "Resolve vertex counts", MessageBoxButtons.YesNo);
+            var action = MessageBox.Show($"Displayed population vertices count ({displayedVertexCount}) don't match the specified vertex count in settings ({PolygonSettingsAccessor.PolygonsVertices})." 
+                + $"{Environment.NewLine}Do you want to remove displayed individuals or adjust the settings accordingly?", "Resolve vertex counts", MessageBoxButtons.YesNo);
             MessageBoxManager.Unregister();
 
             switch (action)
@@ -318,8 +312,8 @@ namespace Polygons.Forms
 
             if (populationGroupsByCount.Count() > 1)
             {
-                var possibleCounts = populationGroupsByCount.
-                    Select(group => new IndividualsOfVertexCountPair(group.VertexCount, group.Individuals.Count)).ToList();
+                var possibleCounts = populationGroupsByCount
+                    .Select(group => new IndividualsOfVertexCountPair(group.VertexCount, group.Individuals.Count)).ToList();
                 using (var countChooser = new ChooseVerticesCountToImportDialog(possibleCounts))
                 {
                     countChooser.ShowDialog();
@@ -361,7 +355,7 @@ namespace Polygons.Forms
 
         private SizeF LongestFitnessFunctionNameWidth(ComboBox box)
         {
-            string longestName = String.Empty;
+            string longestName = string.Empty;
             foreach (var item in box.Items)
             {
                 if (box.GetItemText(item).Length > longestName?.Length)
@@ -427,13 +421,15 @@ namespace Polygons.Forms
 
         private LabeledPolygonImage BuildLabeledImage(PolygonIndividual buildFrom)
         {
-            var result = new LabeledPolygonImage(Polygon.Copy(buildFrom.Polygon));
-            result.Description =
-                $"{buildFrom.Polygon.Name}{System.Environment.NewLine}Fitness: {FitnessCalculator?.IndividualFitness(buildFrom)}";
-            result.BackColor = picturesBackgroundColorDialog.Color;
-            result.Width = currentImagesWidth;
-            result.Height = currentImagesHeight;
-            result.AllowSelectionCheckbox = false;
+            var result = new LabeledPolygonImage(Polygon.Copy(buildFrom.Polygon))
+            {
+                Description =
+                    $"{buildFrom.Polygon.Name}{Environment.NewLine}Fitness: {FitnessCalculator?.IndividualFitness(buildFrom)}",
+                BackColor = picturesBackgroundColorDialog.Color,
+                Width = currentImagesWidth,
+                Height = currentImagesHeight,
+                AllowSelectionCheckbox = false
+            };
             return result;
         }
 
@@ -460,8 +456,11 @@ namespace Polygons.Forms
                 foreach (var c in picturesLayoutPanel.Controls)
                 {
                     var image = c as LabeledPolygonImage;
-                    image.BackColor = picturesBackgroundColorDialog.Color;
-                    image.Invalidate();
+                    if (image != null)
+                    {
+                        image.BackColor = picturesBackgroundColorDialog.Color;
+                        image.Invalidate();
+                    }
                 }
             }
         }
@@ -471,15 +470,18 @@ namespace Polygons.Forms
             int scaleValue = picturesSizeBar.Value;
             scaleValue = scaleValue < 3 ? 3 : scaleValue;
             double sizeBarMean = (double)((picturesSizeBar.Minimum + picturesSizeBar.Maximum) / 2);
-            double scaleFactor = (double)scaleValue / sizeBarMean;
+            double scaleFactor = (double)(scaleValue / sizeBarMean);
             currentImagesWidth = (int)(DEFAULT_IMAGES_WIDTH * scaleFactor);
             currentImagesHeight = (int)(DEFAULT_IMAGES_HEIGHT * scaleFactor);
             foreach (var c in picturesLayoutPanel.Controls)
             {
                 var image = c as LabeledPolygonImage;
-                image.Width = currentImagesWidth;
-                image.Height = currentImagesHeight;
-                image.Invalidate();
+                if (image != null)
+                {
+                    image.Width = currentImagesWidth;
+                    image.Height = currentImagesHeight;
+                    image.Invalidate();
+                }
             }
         }
 
@@ -494,8 +496,11 @@ namespace Polygons.Forms
             foreach (var c in picturesLayoutPanel.Controls)
             {
                 var image = c as LabeledPolygonImage;
-                image.BackColor = DefaultPicturesBackground;
-                image.Invalidate();
+                if (image != null)
+                {
+                    image.BackColor = DefaultPicturesBackground;
+                    image.Invalidate();
+                }
             }
         }
         #endregion
@@ -506,11 +511,11 @@ namespace Polygons.Forms
             populationSizeUpdown.Value = SettingsAccessor.PopulationSize;
             mutationUpdown.Value = (decimal)SettingsAccessor.MutationProbability;
             crossoverUpdown.Value = (decimal)SettingsAccessor.CrossoverProbability;
-            maxAngleMutationUpdown.Value = Utils.PolygonSettingsAccessor.AngleMaximumMutation;
-            maxDistanceMutationUpdown.Value = (decimal)Utils.PolygonSettingsAccessor.CentroidDistanceMaximumMutation;
+            maxAngleMutationUpdown.Value = PolygonSettingsAccessor.AngleMaximumMutation;
+            maxDistanceMutationUpdown.Value = (decimal)PolygonSettingsAccessor.CentroidDistanceMaximumMutation;
             elitismCheckbox.Checked = SettingsAccessor.Elitism;
             steadyStateRateUpdown.Value = (decimal)SettingsAccessor.SteadyStateSurvivalRate;
-            verticesCountUpdown.Value = Utils.PolygonSettingsAccessor.PolygonsVertices;
+            verticesCountUpdown.Value = PolygonSettingsAccessor.PolygonsVertices;
             switch (SettingsAccessor.Selection)
             {
                 case SelectionType.Roulette:
@@ -524,17 +529,19 @@ namespace Polygons.Forms
             }
         }
 
-        private void saveSettingsButton_Click(object sender, EventArgs e) => Utils.PolygonSettingsAccessor.SaveSettings();
+        private void saveSettingsButton_Click(object sender, EventArgs e) => PolygonSettingsAccessor.SaveSettings();
 
         private void resetSettingsButton_Click(object sender, EventArgs e)
         {
-            Utils.PolygonSettingsAccessor.ResetToDefaults();
+            PolygonSettingsAccessor.ResetToDefaults();
             ReadParametersFromSettings();
         }
 
-        private void populationSizeUpdown_ValueChanged(object sender, EventArgs e) => SettingsAccessor.PopulationSize = (int)populationSizeUpdown.Value;
+        private void populationSizeUpdown_ValueChanged(object sender, EventArgs e) 
+            => SettingsAccessor.PopulationSize = (int)populationSizeUpdown.Value;
 
-        private void verticesCountUpdown_ValueChanged(object sender, EventArgs e) => Utils.PolygonSettingsAccessor.PolygonsVertices = (int)verticesCountUpdown.Value;
+        private void verticesCountUpdown_ValueChanged(object sender, EventArgs e) 
+            => PolygonSettingsAccessor.PolygonsVertices = (int)verticesCountUpdown.Value;
 
         private void steadyStateRadioButton_CheckedChanged(object sender, EventArgs e)
         {
@@ -550,26 +557,30 @@ namespace Polygons.Forms
             if (rouletteRadioButton.Checked) { SettingsAccessor.Selection = SelectionType.Roulette; }
         }
 
-        private void steadyStateRateUpdown_ValueChanged(object sender, EventArgs e) => SettingsAccessor.SteadyStateSurvivalRate = (double)steadyStateRateUpdown.Value;
+        private void steadyStateRateUpdown_ValueChanged(object sender, EventArgs e) 
+            => SettingsAccessor.SteadyStateSurvivalRate = (double)steadyStateRateUpdown.Value;
 
-        private void elitismCheckbox_CheckedChanged(object sender, EventArgs e) => SettingsAccessor.Elitism = elitismCheckbox.Checked;
+        private void elitismCheckbox_CheckedChanged(object sender, EventArgs e) 
+            => SettingsAccessor.Elitism = elitismCheckbox.Checked;
 
-        private void maxDistanceMutationUpdown_ValueChanged(object sender, EventArgs e) => Utils.PolygonSettingsAccessor.CentroidDistanceMaximumMutation = (double)maxDistanceMutationUpdown.Value;
+        private void maxDistanceMutationUpdown_ValueChanged(object sender, EventArgs e) 
+            => PolygonSettingsAccessor.CentroidDistanceMaximumMutation = (double)maxDistanceMutationUpdown.Value;
 
         private void maxAngleMutationUpdown_ValueChanged(object sender, EventArgs e)
         {
             int testInt = (int)(Math.Round(maxAngleMutationUpdown.Value));
-            Utils.PolygonSettingsAccessor.AngleMaximumMutation = testInt;
+            PolygonSettingsAccessor.AngleMaximumMutation = testInt;
         }
 
-        private void crossoverUpdown_ValueChanged(object sender, EventArgs e) => SettingsAccessor.CrossoverProbability = (double)crossoverUpdown.Value;
+        private void crossoverUpdown_ValueChanged(object sender, EventArgs e) 
+            => SettingsAccessor.CrossoverProbability = (double)crossoverUpdown.Value;
 
-        private void mutationUpdown_ValueChanged(object sender, EventArgs e) => SettingsAccessor.MutationProbability = (double)mutationUpdown.Value;
+        private void mutationUpdown_ValueChanged(object sender, EventArgs e) 
+            => SettingsAccessor.MutationProbability = (double)mutationUpdown.Value;
         #endregion
 
         #region GaLogs
-        private const int MAXIMUM_LOG_LINES = 500;
-        private BindingList<string> logLines = new BindingList<string>();
+        private readonly BindingList<string> logLines = new BindingList<string>();
         private void LogGeneration(NumberedPopulation<PolygonIndividual, IPolygonGene> populationToLog)
         {
             var sortedFitnesses = populationToLog
@@ -582,8 +593,6 @@ namespace Polygons.Forms
                 + $"      Average fitness: {averageFitness}";
 
             logLines.Add(message);
-            //   while (logLines.Count > MAXIMUM_LOG_LINES)
-            // { logLines.RemoveAt(logLines.Count - 1); }
             logBox.SelectedIndex = logLines.Count - 1;
         }
         #endregion  
@@ -596,9 +605,9 @@ namespace Polygons.Forms
         /// <returns>True to close form, False otherwise</returns>
         protected override bool ProcessDialogKey(Keys keyData)
         {
-            if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape)
+            if (ModifierKeys == Keys.None && keyData == Keys.Escape)
             {
-                this.Close();
+                Close();
                 return true;
             }
             return base.ProcessDialogKey(keyData);

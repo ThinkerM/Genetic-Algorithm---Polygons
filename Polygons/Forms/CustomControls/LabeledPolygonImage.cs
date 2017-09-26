@@ -36,24 +36,28 @@ namespace Polygons.Forms.CustomControls
             this.SendToBack();
             SavedPolygon = assignedPolygon;
             AllowSelectionCheckbox = enableSelectionCheckbox;
+            Description = description;
         }
 
         /// <summary>
         /// Height of the image part of the control
         /// </summary>
-        public int ImageHeight { get { return pictureBox.Height; } }
+        private int ImageHeight => PictureBox.Height;
+
         /// <summary>
         /// Width of the image part of the control
         /// </summary>
-        public int ImageWidth { get { return pictureBox.Width; } }
+        private int ImageWidth => PictureBox.Width;
+
         /// <summary>
         /// Handle of the picturebox of the control
         /// </summary>
-        public PictureBox PictureBox { get { return pictureBox; } }
+        private PictureBox PictureBox { get; set; }
+
         /// <summary>
         /// Indicates whether the control's selection box is checked
         /// </summary>
-        public bool Selected { get { return selectionCheckbox.Checked; } }
+        public bool Selected => selectionCheckbox.Checked;
 
         /// <summary>
         /// Change state of SelectionCheckbox to true
@@ -65,10 +69,7 @@ namespace Polygons.Forms.CustomControls
         /// </summary>
         public void Deselect() => selectionCheckbox.Checked = false;
 
-        private Point ImageCenter
-        {
-            get { return new Point(ImageWidth / 2, ImageHeight / 2); }
-        }
+        private Point ImageCenter => new Point(ImageWidth / 2, ImageHeight / 2);
 
         /// <summary>
         /// Optional description tag of the image
@@ -83,7 +84,7 @@ namespace Polygons.Forms.CustomControls
             }
         }
 
-        private void PaintSymmetryAxis(Polygon p, Graphics g)
+        private void PaintSymmetryAxis(IPolygon p, Graphics g)
         {
             Point upperPoint = new Point(p.Centroid.X, 0);
             Point lowerPoint = new Point(p.Centroid.X, Height - descriptionLabel.Height);
@@ -98,12 +99,11 @@ namespace Polygons.Forms.CustomControls
         {
             base.OnPaint(e);
             var drawablePolygon = 
-                PolygonVisualizer.PolygonNormalizedToBox(
-                    SavedPolygon, (int)(pictureBox.Width * 0.9), (int)(pictureBox.Height * 0.9));
+                SavedPolygon.PolygonNormalizedToBox((int)(PictureBox.Width * 0.9), (int)(PictureBox.Height * 0.9));
             drawablePolygon.ShiftCenter(ImageCenter);
 
             PaintSymmetryAxis(drawablePolygon, e.Graphics);
-            PolygonVisualizer.Draw(drawablePolygon, e.Graphics);   
+            drawablePolygon.Draw(e.Graphics);   
         }
 
         /// <summary>
@@ -119,6 +119,7 @@ namespace Polygons.Forms.CustomControls
         {
             LabeledImageMouseRightClicked?.Invoke(this, e);
         }
+
         private void LabeledPolygonImage_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
