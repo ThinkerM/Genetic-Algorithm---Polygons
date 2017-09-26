@@ -493,9 +493,8 @@
             // 
             // populationSizeUpdown
             // 
-            this.helpProvider.SetHelpKeyword(this.populationSizeUpdown, "Mutation Probability");
-            this.helpProvider.SetHelpString(this.populationSizeUpdown, "Indicates how likely a mutation is to occur on evach gene. Lower values (0.05-0.1" +
-        "5) recommended.");
+            this.helpProvider.SetHelpKeyword(this.populationSizeUpdown, "");
+            this.helpProvider.SetHelpString(this.populationSizeUpdown, "");
             this.populationSizeUpdown.Increment = new decimal(new int[] {
             5,
             0,
@@ -524,9 +523,8 @@
             // populationSizeLabel
             // 
             this.populationSizeLabel.AutoSize = true;
-            this.helpProvider.SetHelpKeyword(this.populationSizeLabel, "Mutation Probability");
-            this.helpProvider.SetHelpString(this.populationSizeLabel, "Indicates how likely a mutation is to occur on evach gene. Lower values (0.05-0.1" +
-        "5) recommended.");
+            this.helpProvider.SetHelpKeyword(this.populationSizeLabel, "");
+            this.helpProvider.SetHelpString(this.populationSizeLabel, "");
             this.populationSizeLabel.Location = new System.Drawing.Point(3, 3);
             this.populationSizeLabel.Name = "populationSizeLabel";
             this.helpProvider.SetShowHelp(this.populationSizeLabel, true);
@@ -538,25 +536,22 @@
             // 
             // resetSettingsButton
             // 
-            this.helpProvider.SetHelpKeyword(this.resetSettingsButton, "Save current settings");
-            this.helpProvider.SetHelpString(this.resetSettingsButton, "Saving current settings will make every future GA instance load with these settin" +
-        "gs");
+            this.helpProvider.SetHelpKeyword(this.resetSettingsButton, "");
+            this.helpProvider.SetHelpString(this.resetSettingsButton, "");
             this.resetSettingsButton.Location = new System.Drawing.Point(50, 446);
             this.resetSettingsButton.Name = "resetSettingsButton";
             this.helpProvider.SetShowHelp(this.resetSettingsButton, true);
             this.resetSettingsButton.Size = new System.Drawing.Size(44, 23);
             this.resetSettingsButton.TabIndex = 19;
             this.resetSettingsButton.Text = "Reset";
-            this.toolTip.SetToolTip(this.resetSettingsButton, "Saving current settings will make every future GA instance load with these settin" +
-        "gs.\r\nYou do not need to save for this window\'s GA to use them.\r\n");
+            this.toolTip.SetToolTip(this.resetSettingsButton, "Reset all settings to pre-set defaults");
             this.resetSettingsButton.UseVisualStyleBackColor = true;
             this.resetSettingsButton.Click += new System.EventHandler(this.resetSettingsButton_Click);
             // 
             // saveSettingsButton
             // 
-            this.helpProvider.SetHelpKeyword(this.saveSettingsButton, "Save current settings");
-            this.helpProvider.SetHelpString(this.saveSettingsButton, "Saving current settings will make every future GA instance load with these settin" +
-        "gs");
+            this.helpProvider.SetHelpKeyword(this.saveSettingsButton, "");
+            this.helpProvider.SetHelpString(this.saveSettingsButton, "");
             this.saveSettingsButton.Location = new System.Drawing.Point(3, 446);
             this.saveSettingsButton.Name = "saveSettingsButton";
             this.helpProvider.SetShowHelp(this.saveSettingsButton, true);
@@ -573,10 +568,8 @@
             this.elitismCheckbox.AutoSize = true;
             this.elitismCheckbox.Checked = true;
             this.elitismCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.helpProvider.SetHelpKeyword(this.elitismCheckbox, "Elitism");
-            this.helpProvider.SetHelpString(this.elitismCheckbox, "Individual with the best fitness score is guaranteed to continue into next genera" +
-        "tion and be immune to mutations. Elitism ensures that top fitness of generations" +
-        " doesn\'t deteriorate.");
+            this.helpProvider.SetHelpKeyword(this.elitismCheckbox, "");
+            this.helpProvider.SetHelpString(this.elitismCheckbox, "");
             this.elitismCheckbox.Location = new System.Drawing.Point(5, 230);
             this.elitismCheckbox.Name = "elitismCheckbox";
             this.helpProvider.SetShowHelp(this.elitismCheckbox, true);
@@ -622,9 +615,8 @@
             // 
             this.rouletteRadioButton.AutoSize = true;
             this.rouletteRadioButton.Checked = true;
-            this.helpProvider.SetHelpKeyword(this.rouletteRadioButton, "Roulette Selection Type");
-            this.helpProvider.SetHelpString(this.rouletteRadioButton, "Candidates for breeding are selected with a weighted chance based on their fitnes" +
-        "s values");
+            this.helpProvider.SetHelpKeyword(this.rouletteRadioButton, "");
+            this.helpProvider.SetHelpString(this.rouletteRadioButton, "");
             this.rouletteRadioButton.Location = new System.Drawing.Point(8, 34);
             this.rouletteRadioButton.Name = "rouletteRadioButton";
             this.helpProvider.SetShowHelp(this.rouletteRadioButton, true);
@@ -639,9 +631,8 @@
             // 
             // steadyStateRadioButton
             // 
-            this.helpProvider.SetHelpKeyword(this.steadyStateRadioButton, "Steady State Selection Type");
-            this.helpProvider.SetHelpString(this.steadyStateRadioButton, "Certain percentage of the population will continue without crossover, rest is fil" +
-        "led by regular Roulette selection");
+            this.helpProvider.SetHelpKeyword(this.steadyStateRadioButton, "");
+            this.helpProvider.SetHelpString(this.steadyStateRadioButton, "");
             this.steadyStateRadioButton.Location = new System.Drawing.Point(8, 48);
             this.steadyStateRadioButton.Name = "steadyStateRadioButton";
             this.helpProvider.SetShowHelp(this.steadyStateRadioButton, true);
@@ -664,9 +655,8 @@
             // 
             // maximumDistanceMutationLabel
             // 
-            this.helpProvider.SetHelpKeyword(maximumDistanceMutationLabel, "Maximum Distance to Centroid Mutation Ratio");
-            this.helpProvider.SetHelpString(maximumDistanceMutationLabel, "This indicates how large a mutation can occur on every gene. This is a ratio, i.e" +
-        ". vertices further apart from centroid are allowed to mutate more.");
+            this.helpProvider.SetHelpKeyword(maximumDistanceMutationLabel, "");
+            this.helpProvider.SetHelpString(maximumDistanceMutationLabel, "");
             maximumDistanceMutationLabel.Location = new System.Drawing.Point(1, 173);
             maximumDistanceMutationLabel.Name = "maximumDistanceMutationLabel";
             this.helpProvider.SetShowHelp(maximumDistanceMutationLabel, true);
@@ -679,8 +669,8 @@
             // crossoverChanceLabel
             // 
             crossoverChanceLabel.AutoSize = true;
-            this.helpProvider.SetHelpKeyword(crossoverChanceLabel, "Crossover Probability");
-            this.helpProvider.SetHelpString(crossoverChanceLabel, resources.GetString("crossoverChanceLabel.HelpString"));
+            this.helpProvider.SetHelpKeyword(crossoverChanceLabel, "");
+            this.helpProvider.SetHelpString(crossoverChanceLabel, "");
             crossoverChanceLabel.Location = new System.Drawing.Point(3, 82);
             crossoverChanceLabel.Name = "crossoverChanceLabel";
             this.helpProvider.SetShowHelp(crossoverChanceLabel, true);
@@ -692,9 +682,8 @@
             // mutationChanceLabel
             // 
             mutationChanceLabel.AutoSize = true;
-            this.helpProvider.SetHelpKeyword(mutationChanceLabel, "Mutation Probability");
-            this.helpProvider.SetHelpString(mutationChanceLabel, "Indicates how likely a mutation is to occur on evach gene. Lower values (0.05-0.1" +
-        "5) recommended.");
+            this.helpProvider.SetHelpKeyword(mutationChanceLabel, "");
+            this.helpProvider.SetHelpString(mutationChanceLabel, "");
             mutationChanceLabel.Location = new System.Drawing.Point(3, 43);
             mutationChanceLabel.Name = "mutationChanceLabel";
             this.helpProvider.SetShowHelp(mutationChanceLabel, true);
@@ -707,8 +696,8 @@
             // crossoverUpdown
             // 
             this.crossoverUpdown.DecimalPlaces = 2;
-            this.helpProvider.SetHelpKeyword(this.crossoverUpdown, "Crossover Probability");
-            this.helpProvider.SetHelpString(this.crossoverUpdown, resources.GetString("crossoverUpdown.HelpString"));
+            this.helpProvider.SetHelpKeyword(this.crossoverUpdown, "");
+            this.helpProvider.SetHelpString(this.crossoverUpdown, "");
             this.crossoverUpdown.Increment = new decimal(new int[] {
             5,
             0,
@@ -737,8 +726,7 @@
             // 
             this.steadyStateRateUpdown.DecimalPlaces = 2;
             this.helpProvider.SetHelpKeyword(this.steadyStateRateUpdown, "Steady State Survival Rate");
-            this.helpProvider.SetHelpString(this.steadyStateRateUpdown, "Indicates the proportion of every generation that automatically passes into the n" +
-        "ext generation");
+            this.helpProvider.SetHelpString(this.steadyStateRateUpdown, "");
             this.steadyStateRateUpdown.Increment = new decimal(new int[] {
             5,
             0,
@@ -768,9 +756,8 @@
             // maxDistanceMutationUpdown
             // 
             this.maxDistanceMutationUpdown.DecimalPlaces = 2;
-            this.helpProvider.SetHelpKeyword(this.maxDistanceMutationUpdown, "Maximum Distance to Centroid Mutation Ratio");
-            this.helpProvider.SetHelpString(this.maxDistanceMutationUpdown, "This indicates how large a mutation can occur on every gene. This is a ratio, i.e" +
-        ". vertices further apart from centroid are allowed to mutate more.");
+            this.helpProvider.SetHelpKeyword(this.maxDistanceMutationUpdown, "");
+            this.helpProvider.SetHelpString(this.maxDistanceMutationUpdown, "");
             this.maxDistanceMutationUpdown.Increment = new decimal(new int[] {
             5,
             0,
@@ -798,9 +785,8 @@
             // 
             // maxAngleMutationUpdown
             // 
-            this.helpProvider.SetHelpKeyword(this.maxAngleMutationUpdown, "Maximum Angular Mutation");
-            this.helpProvider.SetHelpString(this.maxAngleMutationUpdown, "Maximum variance (in degrees) that a gene/vertex can rotate relative to the centr" +
-        "oid when mutating.");
+            this.helpProvider.SetHelpKeyword(this.maxAngleMutationUpdown, "");
+            this.helpProvider.SetHelpString(this.maxAngleMutationUpdown, "");
             this.maxAngleMutationUpdown.Location = new System.Drawing.Point(40, 150);
             this.maxAngleMutationUpdown.Maximum = new decimal(new int[] {
             180,
@@ -824,9 +810,8 @@
             // mutationUpdown
             // 
             this.mutationUpdown.DecimalPlaces = 2;
-            this.helpProvider.SetHelpKeyword(this.mutationUpdown, "Mutation Probability");
-            this.helpProvider.SetHelpString(this.mutationUpdown, "Indicates how likely a mutation is to occur on evach gene. Lower values (0.05-0.1" +
-        "5) recommended.");
+            this.helpProvider.SetHelpKeyword(this.mutationUpdown, "");
+            this.helpProvider.SetHelpString(this.mutationUpdown, "");
             this.mutationUpdown.Increment = new decimal(new int[] {
             5,
             0,
@@ -854,9 +839,8 @@
             // 
             // maximumDegreesMutationLabel
             // 
-            this.helpProvider.SetHelpKeyword(maximumDegreesMutationLabel, "Maximum Angular Mutation");
-            this.helpProvider.SetHelpString(maximumDegreesMutationLabel, "Maximum variance (in degrees) that a gene/vertex can rotate relative to the centr" +
-        "oid when mutating.");
+            this.helpProvider.SetHelpKeyword(maximumDegreesMutationLabel, "");
+            this.helpProvider.SetHelpString(maximumDegreesMutationLabel, "");
             maximumDegreesMutationLabel.Location = new System.Drawing.Point(1, 121);
             maximumDegreesMutationLabel.Name = "maximumDegreesMutationLabel";
             this.helpProvider.SetShowHelp(maximumDegreesMutationLabel, true);
@@ -868,9 +852,8 @@
             // 
             // steadyStateLabel
             // 
-            this.helpProvider.SetHelpKeyword(this.steadyStateLabel, "Steady State Survival Rate");
-            this.helpProvider.SetHelpString(this.steadyStateLabel, "Indicates the proportion of every generation that automatically passes into the n" +
-        "ext generation");
+            this.helpProvider.SetHelpKeyword(this.steadyStateLabel, "");
+            this.helpProvider.SetHelpString(this.steadyStateLabel, "");
             this.steadyStateLabel.Location = new System.Drawing.Point(4, 250);
             this.steadyStateLabel.Name = "steadyStateLabel";
             this.helpProvider.SetShowHelp(this.steadyStateLabel, true);
