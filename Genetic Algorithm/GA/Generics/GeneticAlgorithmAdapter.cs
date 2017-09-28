@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Genetic_Algorithm.Utils;
 
 namespace Genetic_Algorithm.GA.Generics
 {

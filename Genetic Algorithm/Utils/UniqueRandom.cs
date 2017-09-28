@@ -1,13 +1,22 @@
 ﻿using System;
 
-namespace Genetic_Algorithm
+namespace Genetic_Algorithm.Utils
 {
     internal sealed class UniqueRandom : Random
     {
-        private static UniqueRandom instance;
+        private static UniqueRandom instance =null;
+        private static readonly object Lock = new object();
 
         public static UniqueRandom Instance
-            => instance ?? (instance = new UniqueRandom());
+        {
+            get
+            {
+                lock (Lock)
+                {
+                    return instance ?? new UniqueRandom();
+                }
+            }
+        }
 
         public static bool HalfProbability() 
             => Instance.NextDouble() <= 0.5;
