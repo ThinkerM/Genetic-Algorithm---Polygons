@@ -28,16 +28,12 @@ namespace Polygons.GA
             var parent2AngleOrderedGenome = parent2.Genome.OrderBy(g => g.AngleRelativeToCentroid.Radians);
             if (parent1.Genome.Count == parent2.Genome.Count)
             {
-                var newGenome = new List<IPolygonGene>();
-
                 var zippedGenomes = parent1AngleOrderedGenome.Zip(parent2AngleOrderedGenome, (first, second)
                     => new {gene1 = first, gene2 = second });
 
-                foreach (var genePair in zippedGenomes)
-                {
-                    var geneToAdd = UniqueRandom.HalfProbability() ? genePair.gene1 : genePair.gene2;
-                    newGenome.Add(geneToAdd);
-                }
+                var newGenome = zippedGenomes.Select(genePair => UniqueRandom.HalfProbability()
+                                                         ? genePair.gene1
+                                                         : genePair.gene2);
 
                 var childColor = GetChildColor(parent1.Polygon.OutlineColor, parent2.Polygon.OutlineColor);
 
