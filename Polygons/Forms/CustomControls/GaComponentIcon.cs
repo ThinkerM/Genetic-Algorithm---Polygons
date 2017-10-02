@@ -63,9 +63,11 @@ namespace Polygons.Forms.CustomControls
                 LinearGradientMode.Vertical))
             { g.FillRectangle(lgBrush, componentNameLabel.ClientRectangle); }
 
-            StringFormat sf = new StringFormat();
-            sf.Alignment = StringAlignment.Center;
-            sf.LineAlignment = StringAlignment.Center;
+            StringFormat sf = new StringFormat
+            {
+                Alignment = StringAlignment.Center,
+                LineAlignment = StringAlignment.Center
+            };
 
             g.DrawString(Text, componentNameLabel.Font, Brushes.Black, componentNameLabel.ClientRectangle, sf);
         }
