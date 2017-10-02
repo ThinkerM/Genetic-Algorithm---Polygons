@@ -17,7 +17,7 @@ namespace Genetic_Algorithm.GA.Generics
         protected readonly IFitnessCalculator<TIndividual, TGene> FitnessCalculator;
 
         /// <inheritdoc />
-        public GeneticAlgorithmAdapter(IFitnessCalculator<TIndividual, TGene> fitnessCalculator)
+        protected GeneticAlgorithmAdapter(IFitnessCalculator<TIndividual, TGene> fitnessCalculator)
         {
             FitnessCalculator = fitnessCalculator;
         }
