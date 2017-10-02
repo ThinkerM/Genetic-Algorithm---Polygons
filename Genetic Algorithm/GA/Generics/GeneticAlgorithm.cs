@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using static Genetic_Algorithm.Utils.SettingsAccessor;
 using Genetic_Algorithm.Utils;
@@ -97,7 +98,7 @@ namespace Genetic_Algorithm.GA.Generics
                     break;
 
                 default:
-                    throw new InvalidOperationException($"Unexpected SelectionType in switch statement: {Selection.ToString()}");
+                    throw new InvalidEnumArgumentException($"Unexpected SelectionType in switch statement: {Selection.ToString()}");
             }
         }
 
