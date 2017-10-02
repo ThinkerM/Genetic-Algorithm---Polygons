@@ -16,7 +16,7 @@ namespace Polygons.Forms
         /// <summary>
         /// Access an instance of CrossroadForm
         /// </summary>
-        public static Polygons.Forms.CrossroadForm Instance
+        public static CrossroadForm Instance
         {
             get
             {
@@ -51,9 +51,9 @@ namespace Polygons.Forms
 
         private static string PictureFolderPath => Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
 
-        private string PilePath(string fileName) => $"{PictureFolderPath}/{fileName}";
+        private string FilePath(string fileName) => $"{PictureFolderPath}/{fileName}";
 
-        private void shapeCreationIcon_Click(object sender, EventArgs e) => new Forms.PolygonCreationForm().Show();
+        private void shapeCreationIcon_Click(object sender, EventArgs e) => new PolygonCreationForm().Show();
 
         private void populationGenerationIcon_Click(object sender, EventArgs e) => new PopulationGeneratorForm().Show();
 
