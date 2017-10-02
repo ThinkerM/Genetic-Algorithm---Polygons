@@ -68,15 +68,15 @@ namespace Genetic_Algorithm.GA.Generics
                 foreach (var individual in sourcePopulation)
                 {
                     rouletteSumReached += FitnessCalculator.IndividualFitness(individual);
-                    if (ExceededSelectionPoint(rouletteSumReached, randomRouletteSelectionPoint, populationFitnessSum))
+                    if (!ExceededSelectionPoint(rouletteSumReached, randomRouletteSelectionPoint, populationFitnessSum))
+                    { continue; }
+
+                    if (forbiddenForBreeding == null || forbiddenForBreeding.Equals(default(TIndividual)))
+                    { return individual; }
+                    else
                     {
-                        if (forbiddenForBreeding == null || forbiddenForBreeding.Equals(default(TIndividual)))
+                        if (!forbiddenForBreeding.Equals(individual))
                         { return individual; }
-                        else
-                        {
-                            if (!forbiddenForBreeding.Equals(individual))
-                            { return individual; }
-                        }
                     }
                 }
             }            
