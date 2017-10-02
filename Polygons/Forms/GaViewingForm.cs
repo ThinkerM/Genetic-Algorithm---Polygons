@@ -307,9 +307,9 @@ namespace Polygons.Forms
             var populationGroupsByCount = displayPopulation
                 .GroupBy(individual => individual.Polygon.VerticesCount)
                 .Select(group => new { VertexCount = group.Key, Individuals = group.ToList() })
-                .OrderBy(group => group.VertexCount);
+                .OrderBy(group => group.VertexCount).ToList();
 
-            if (populationGroupsByCount.Count() > 1)
+            if (populationGroupsByCount.Count > 1)
             {
                 var possibleCounts = populationGroupsByCount
                     .Select(group => new IndividualsOfVertexCountPair(group.VertexCount, group.Individuals.Count)).ToList();
@@ -320,12 +320,12 @@ namespace Polygons.Forms
                     if (chosenCount != null)
                     {
                         resultUniformPopulation.AddRange(populationGroupsByCount
-                            .FirstOrDefault(group => group.VertexCount == chosenCount)
+                            .FirstOrDefault(group => group.VertexCount == chosenCount)?
                             .Individuals);
                     }
                 }
             }
-            else { resultUniformPopulation.AddRange(populationGroupsByCount.FirstOrDefault().Individuals); }
+            else { resultUniformPopulation.AddRange(populationGroupsByCount.FirstOrDefault()?.Individuals); }
 
             displayPopulation = resultUniformPopulation;
             ResolveDisplayedVertexCount();
@@ -484,10 +484,15 @@ namespace Polygons.Forms
             }
         }
 
-        private void sortPopulationCheckbox_CheckedChanged(object sender, EventArgs e)
+        private void savedGenerationsCombobox_SelectedItemChanged(object sender, EventArgs e)
         {
+            displayPopulation = (Population<PolygonIndividual, IPolygonGene>)savedGenerationsCombobox.SelectedItem;
             UpdatePopulationPictures();
         }
+
+        private void sortPopulationCheckbox_CheckedChanged(object sender, EventArgs e)
+            => UpdatePopulationPictures();
+        
 
         private void resetColorButton_Click(object sender, EventArgs e)
         {
@@ -528,7 +533,8 @@ namespace Polygons.Forms
             }
         }
 
-        private void saveSettingsButton_Click(object sender, EventArgs e) => PolygonSettingsAccessor.SaveSettings();
+        private void saveSettingsButton_Click(object sender, EventArgs e) 
+            => PolygonSettingsAccessor.SaveSettings();
 
         private void resetSettingsButton_Click(object sender, EventArgs e)
         {
@@ -584,7 +590,7 @@ namespace Polygons.Forms
         {
             var sortedFitnesses = populationToLog
                 .Select(i => FitnessCalculator.IndividualFitness(i))
-                .OrderByDescending(fitness => fitness);
+                .OrderByDescending(fitness => fitness).ToList();
             double bestFitness = sortedFitnesses.First();
             double averageFitness = sortedFitnesses.Average();
             string message = $@"Generation {populationToLog.Number}:"
@@ -612,11 +618,5 @@ namespace Polygons.Forms
             return base.ProcessDialogKey(keyData);
         }
         #endregion
-
-        private void savedGenerationsCombobox_SelectedItemChanged(object sender, EventArgs e)
-        {
-            displayPopulation = (Population<PolygonIndividual, IPolygonGene>)savedGenerationsCombobox.SelectedItem;
-            UpdatePopulationPictures();
-        }
     }
 }
