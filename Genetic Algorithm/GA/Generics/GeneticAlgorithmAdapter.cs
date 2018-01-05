@@ -46,7 +46,7 @@ namespace GeneticAlgorithm.GA.Generics
             }
         }
         
-        public bool MutationShouldOccur(TIndividual individual) => individual.IsElite;
+        public bool MutationShouldOccur(TIndividual individual) => !individual.IsElite;
 
         public TIndividual SelectForRouletteBreeding(Population<TIndividual, TGene> sourcePopulation, TIndividual forbiddenForBreeding = default(TIndividual))
         {
