@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Drawing;
+using MoreLinq;
+using ThinkerExtensions.Geometry;
 
 namespace Polygons.GA.FitnessCalculators
 {
@@ -33,31 +36,14 @@ namespace Polygons.GA.FitnessCalculators
         
         private static int GetEdgeIntersectionCount(IEnumerable<Point> vertices)
         {
-            var verticesList = vertices as IList<Point> ?? vertices.ToList();
-            var polygonEdges = verticesList.
-                AdjacentPairs((x, y) => new { edgeStart = x, edgeEnd = y }).
-                Concat(new { edgeStart = verticesList.First(), edgeEnd = verticesList.Last() }); //connect first and last elements of vertices (those also form an edge)
-            var edgePairs = polygonEdges.Subsets(2);
+            var verticesList = vertices as IList<Point> ?? vertices.ToList(); //avoid multiple enumeration
+            IEnumerable<LineEquation> polygonEdges = verticesList
+                .Zip(verticesList.Skip(1), (start, end) => new {start, end})
+                .Select(vertexPair => new LineEquation(vertexPair.start, vertexPair.end))
+                .Concat(new LineEquation(verticesList[0], verticesList[verticesList.Count - 1])); //add first and last vertices as an edge
+            IEnumerable<IList<LineEquation>> edgePairs = polygonEdges.Subsets(2);
 
-            int resultCount = 0;
-            foreach (var pair in edgePairs)
-            {
-                var edge1 = pair.First();
-                var edgeEquation1 = new LineEquation(edge1.edgeStart, edge1.edgeEnd);
-
-                var edge2 = pair.Last();
-                var edgeEquation2 = new LineEquation(edge2.edgeStart, edge2.edgeEnd);
-
-                if (edgeEquation1.GetSegmentIntersectionWithOtherSegment(edgeEquation2) != null)
-                { resultCount++; }
-            }
-            return resultCount;
-        }
-
-        /// <inheritdoc cref="object.ToString()"/>
-        public override string ToString()
-        {
-            return Name;
+            return edgePairs.Count(pair => pair[0].GetSegmentIntersectionWithOtherSegment(pair[1]).HasValue);
         }
     }
 }

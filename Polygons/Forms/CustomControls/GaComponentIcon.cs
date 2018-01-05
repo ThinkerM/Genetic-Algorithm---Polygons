@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using CustomExtensions.Graphics;
 using System.Drawing.Drawing2D;
 
 namespace Polygons.Forms.CustomControls
@@ -38,13 +37,13 @@ namespace Polygons.Forms.CustomControls
             if (!System.IO.File.Exists(iconFilePath))
             { return; }
             iconPictureBox.Image = new Bitmap(iconFilePath);
-            iconPictureBox.Image = GraphicalExtensions.Resize(iconPictureBox.Image, iconPictureBox.Width, iconPictureBox.Height);
+            iconPictureBox.Image = ThinkerExtensions.Graphics.GdiExtensions.Resize(iconPictureBox.Image, iconPictureBox.Width, iconPictureBox.Height);
             g = Graphics.FromImage(iconPictureBox.Image);
         }
 
         public void AssignIconPicture(Bitmap picture)
         {
-            iconPictureBox.Image = GraphicalExtensions.Resize(picture, iconPictureBox.Width, iconPictureBox.Height);
+            iconPictureBox.Image = ThinkerExtensions.Graphics.GdiExtensions.Resize(picture, iconPictureBox.Width, iconPictureBox.Height);
             g = Graphics.FromImage(iconPictureBox.Image);
         }
 
@@ -52,7 +51,7 @@ namespace Polygons.Forms.CustomControls
         {
             base.OnResize(e);
             if (iconPictureBox.Image != null)
-            { iconPictureBox.Image = GraphicalExtensions.Resize(iconPictureBox.Image, iconPictureBox.Width, iconPictureBox.Height); }
+            { iconPictureBox.Image = ThinkerExtensions.Graphics.GdiExtensions.Resize(iconPictureBox.Image, iconPictureBox.Width, iconPictureBox.Height); }
         }
 
         private void componentNameLabel_Paint(object sender, PaintEventArgs e)

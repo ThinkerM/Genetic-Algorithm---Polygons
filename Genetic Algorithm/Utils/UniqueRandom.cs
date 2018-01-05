@@ -4,7 +4,7 @@ namespace GeneticAlgorithm.Utils
 {
     internal sealed class UniqueRandom : Random
     {
-        private static UniqueRandom instance =null;
+        private static readonly UniqueRandom instance =null;
         private static readonly object Lock = new object();
 
         public static UniqueRandom Instance
@@ -18,8 +18,8 @@ namespace GeneticAlgorithm.Utils
             }
         }
 
-        public static bool HalfProbability() 
-            => Instance.NextDouble() <= 0.5;
+        public bool HalfProbability() 
+            => NextDouble() <= 0.5;
 
         private UniqueRandom() { }
     }

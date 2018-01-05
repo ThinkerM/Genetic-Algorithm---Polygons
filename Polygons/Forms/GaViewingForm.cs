@@ -202,10 +202,7 @@ namespace Polygons.Forms
 
             if(!ignoreTerminationConditionsAbsence)
             {
-                MessageBoxManager.OK = "I know :P";
-                MessageBoxManager.Register();
                 var action = MessageBox.Show("No termination conditions activated.", "Warning", MessageBoxButtons.OK);
-                MessageBoxManager.Unregister();
                 ignoreTerminationConditionsAbsence = (action == DialogResult.OK);
             }
             return false;
@@ -273,12 +270,8 @@ namespace Polygons.Forms
             int displayedVertexCount = displayPopulation.First().Polygon.VerticesCount;
             if (displayedVertexCount == PolygonSettingsAccessor.PolygonsVertices) return;
 
-            MessageBoxManager.Yes = "Remove";
-            MessageBoxManager.No = "Change settings";
-            MessageBoxManager.Register();
             var action = MessageBox.Show($"Displayed population vertices count ({displayedVertexCount}) don't match the specified vertex count in settings ({PolygonSettingsAccessor.PolygonsVertices})." 
                 + $"{Environment.NewLine}Do you want to remove displayed individuals or adjust the settings accordingly?", "Resolve vertex counts", MessageBoxButtons.YesNo);
-            MessageBoxManager.Unregister();
 
             switch (action)
             {

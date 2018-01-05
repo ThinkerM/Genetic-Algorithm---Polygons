@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Polygons.Properties.PolygonGaSettings;
+﻿using static Polygons.Properties.PolygonGaSettings;
 using System.Windows.Forms;
 
 namespace Polygons.Utils

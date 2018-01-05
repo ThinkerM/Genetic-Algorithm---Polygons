@@ -123,10 +123,10 @@ namespace GeneticAlgorithm.GA.Generics
         }
 
         public virtual IEnumerable<TIndividual> GetFittest(IFitnessCalculator<TIndividual, TGene> fitnessCalculator, int n)
-            => Individuals.OrderByDescending(fitnessCalculator.IndividualFitness).Take(n);
+            => Individuals.OrderByDescending(fitnessCalculator.CalculateFitness).Take(n);
 
         public virtual TIndividual GetFittest(IFitnessCalculator<TIndividual, TGene> fitnessCalculator)
-            => Individuals.OrderByDescending(fitnessCalculator.IndividualFitness).FirstOrDefault();
+            => Individuals.OrderByDescending(fitnessCalculator.CalculateFitness).FirstOrDefault();
 
         public void Add(TIndividual item)
             => Individuals.Add(item);

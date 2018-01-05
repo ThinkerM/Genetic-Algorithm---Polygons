@@ -28,7 +28,7 @@ namespace Polygons.GA
                 var zippedGenomes = parent1AngleOrderedGenome.Zip(parent2AngleOrderedGenome, (first, second)
                     => new {gene1 = first, gene2 = second });
 
-                var newGenome = zippedGenomes.Select(genePair => UniqueRandom.HalfProbability()
+                var newGenome = zippedGenomes.Select(genePair => UniqueRandom.Instance.HalfProbability()
                                                          ? genePair.gene1
                                                          : genePair.gene2);
 
@@ -47,29 +47,26 @@ namespace Polygons.GA
         {
             int shortestParentLength = Math.Min(p1.Length, p2.Length);
             int longestParentLength = Math.Max(p1.Length, p2.Length);
-            StringBuilder sb = new StringBuilder(longestParentLength);
+            var sb = new StringBuilder(longestParentLength);
             for (int i = 0; i < shortestParentLength; i++)
             {
-                if (UniqueRandom.HalfProbability())
+                if (UniqueRandom.Instance.HalfProbability())
                 {
-                    sb.Append(UniqueRandom.HalfProbability()
+                    sb.Append(UniqueRandom.Instance.HalfProbability()
                                   ? p1[i]
                                   : p2[i]);
                 }
                 else
-                { sb.Append(RandomCharsAndStrings.RandomAlphanumericCharacter()); }
+                { sb.Append(UniqueRandom.Instance.RandomAlphanumericString(1)); }
             }
             int lengthToFill = Math.Min(longestParentLength, 15); //prevent too long names to avoid this becoming a bottleneck
-            for (int i = sb.Length;  i <= lengthToFill; i++)
-            {
-                sb.Append(RandomCharsAndStrings.RandomAlphanumericCharacter());
-            }
+            sb.Append(UniqueRandom.Instance.RandomAlphanumericString(lengthToFill - sb.Length));
             return sb.ToString();
         }
 
         private static Color GetChildColor(Color p1, Color p2)
         {
-            return RandomColors.RandomColor();
+            return UniqueRandom.Instance.RandomColor();
         }
     }
 }

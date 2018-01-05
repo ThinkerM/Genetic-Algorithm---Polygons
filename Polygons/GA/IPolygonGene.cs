@@ -1,4 +1,5 @@
 ﻿using Genetic_Algorithm.GA.Generics;
+using ThinkerExtensions.Geometry;
 
 namespace Polygons.GA
 {

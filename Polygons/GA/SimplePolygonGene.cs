@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using Polygons.Utils;
+using ThinkerExtensions.Geometry;
 
 namespace Polygons.GA
 {
@@ -25,17 +26,23 @@ namespace Polygons.GA
         
         public void UpdateAngularRepresentation(Point centroid)
         {
-            DistanceFromCentroid = GeometryExtensions.Distance(PointRepresentation, centroid);
+            DistanceFromCentroid = PointRepresentation.DistanceTo(centroid);
             AngleRelativeToCentroid = Angle.FromRadians(Math.Atan2(Y, X));
         }
 
         private void UpdatePointRepresentation()
         {
-            var newLocation = GeometryExtensions.GetCoordinates(Centroid, AngleRelativeToCentroid, DistanceFromCentroid);
+            var newLocation = GetCoordinates(Centroid, AngleRelativeToCentroid, DistanceFromCentroid);
             X = newLocation.X;
             Y = newLocation.Y;
-        }
 
+            Point GetCoordinates(Point origin, Angle angle, double distance)
+            {
+                int x = (int)(origin.X + Math.Cos(angle.Radians) * distance);
+                int y = (int)(origin.Y - Math.Sin(angle.Radians) * distance);
+                return new Point(x, y);
+            }
+        }
         
         public SimplePolygonGene(Point vertexPosition, Point centroid)
         {

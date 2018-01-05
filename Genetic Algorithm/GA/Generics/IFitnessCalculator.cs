@@ -16,11 +16,11 @@ namespace GeneticAlgorithm.GA.Generics
         /// </summary>
         /// <param name="individual">GA Individual to calculate for</param>
         /// <returns>Fitness score</returns>
-        double IndividualFitness(TIndividual individual);
+        double CalculateFitness(TIndividual individual);
 
         /// <summary>
         /// Name of the calculator to be used in calculators selection (improved readability)
         /// </summary>
-        string ToString();
+        string DisplayName();
     }
 }

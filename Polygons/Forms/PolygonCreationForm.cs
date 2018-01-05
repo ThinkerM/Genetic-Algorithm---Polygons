@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
 using Polygons.Forms.DialogForms;
-using CustomExtensions.Graphics;
 using Polygons.Utils;
+using ThinkerExtensions.Graphics;
 
 namespace Polygons.Forms
 {

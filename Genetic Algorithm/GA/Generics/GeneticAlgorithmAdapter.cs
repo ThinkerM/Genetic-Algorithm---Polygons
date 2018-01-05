@@ -50,33 +50,30 @@ namespace GeneticAlgorithm.GA.Generics
 
         public TIndividual SelectForRouletteBreeding(Population<TIndividual, TGene> sourcePopulation, TIndividual forbiddenForBreeding = default(TIndividual))
         {
-            double populationFitnessSum = PopulationFitnessSum(sourcePopulation);
-            //repeat in case forbiddenIndividual happens to be last and happens to be chosen
-            while (true)
+            double populationFitnessSum = sourcePopulation.Sum(indiv => FitnessCalculator.CalculateFitness(indiv));
+            
+            while (true) //repeat in case forbiddenIndividual happens to be last and happens to be chosen
             {
                 double rouletteSumReached = 0;
                 double randomRouletteSelectionPoint = UniqueRandom.Instance.NextDouble() * populationFitnessSum;
                 foreach (var individual in sourcePopulation)
                 {
-                    rouletteSumReached += FitnessCalculator.IndividualFitness(individual);
+                    rouletteSumReached += FitnessCalculator.CalculateFitness(individual);
                     if (!ExceededSelectionPoint(rouletteSumReached, randomRouletteSelectionPoint, populationFitnessSum))
                     { continue; }
 
                     if (forbiddenForBreeding == null || forbiddenForBreeding.Equals(default(TIndividual)))
                     { return individual; }
-                    else
-                    {
-                        if (!forbiddenForBreeding.Equals(individual))
-                        { return individual; }
-                    }
+                    if (!forbiddenForBreeding.Equals(individual))
+                    { return individual; }
                 }
             }            
         }
+
         private static bool ExceededSelectionPoint(double currentValue, double selectionPoint, double populationFitnessSum)
             => (currentValue <= populationFitnessSum && currentValue >= selectionPoint)
             || (currentValue >= populationFitnessSum && currentValue <= selectionPoint);
 
-        
         public IEnumerable<TIndividual> SelectSteadyStateSurvivors(Population<TIndividual, TGene> sourcePopulation, double survivalRatio, bool elitism)
         {
             TIndividual eliteIndividual = default(TIndividual);
@@ -92,10 +89,8 @@ namespace GeneticAlgorithm.GA.Generics
                 .Take(survivorCount))
                 yield return survivor;
         }
-        private double RandomWeightedFitness(TIndividual indiv)
-            => FitnessCalculator.IndividualFitness(indiv) * UniqueRandom.Instance.NextDouble();
 
-        private double PopulationFitnessSum(Population<TIndividual, TGene> population)
-            => population.Select(i => FitnessCalculator.IndividualFitness(i)).Sum();
+        private double RandomWeightedFitness(TIndividual indiv)
+            => FitnessCalculator.CalculateFitness(indiv) * UniqueRandom.Instance.NextDouble();
     }
 }

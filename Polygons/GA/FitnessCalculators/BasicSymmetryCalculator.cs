@@ -67,8 +67,5 @@ namespace Polygons.GA.FitnessCalculators
         
         public int Compare(PolygonIndividual x, PolygonIndividual y)
             => IndividualFitness(x).CompareTo(IndividualFitness(y));
-
-        /// <inheritdoc cref="object.ToString" />
-        public override string ToString() => Name;
     }
 }

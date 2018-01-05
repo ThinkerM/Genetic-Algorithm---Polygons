@@ -76,36 +76,15 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CustomButtons, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\CustomControls\Buttons\bin\Debug\CustomButtons.dll</HintPath>
-    </Reference>
-    <Reference Include="CustomExtensions">
-      <HintPath>..\..\..\Libraries\Extensions\Extensions\bin\Debug\CustomExtensions.dll</HintPath>
-    </Reference>
     <Reference Include="Genetic Algorithm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Genetic Algorithm\bin\Debug\Genetic Algorithm.dll</HintPath>
     </Reference>
-    <Reference Include="GroupControls">
-      <HintPath>..\..\..\Libraries\CustomControls\GroupControls\bin\Debug\GroupControls.dll</HintPath>
-    </Reference>
-    <Reference Include="MessageBoxManager">
-      <HintPath>..\..\Genetic Algorithm\Genetic Algorithm\bin\Release\MessageBoxManager.dll</HintPath>
-    </Reference>
-    <Reference Include="MoreLinq, Version=2.6.20831.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\morelinq.2.7.0\lib\net40\MoreLinq.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Randomization">
-      <HintPath>..\..\..\Libraries\Randomization\Randomization\bin\Debug\Randomization.dll</HintPath>
+    <Reference Include="MoreLinq, Version=2.9.21302.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
+      <HintPath>..\packages\morelinq.2.9.0\lib\net40\MoreLinq.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />

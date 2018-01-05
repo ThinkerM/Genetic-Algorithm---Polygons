@@ -12,7 +12,7 @@
     }
 
     /// <summary>
-    /// Represents GA Gene with a specified encoded object
+    /// Represents a gene with a specified encoded object
     /// </summary>
     /// <typeparam name="TEncoded">Encoded object type</typeparam>
     public interface IGene<out TEncoded> : IGene

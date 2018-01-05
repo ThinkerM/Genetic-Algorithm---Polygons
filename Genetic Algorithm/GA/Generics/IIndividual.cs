@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace GeneticAlgorithm.GA.Generics
 {                
@@ -9,8 +8,6 @@ namespace GeneticAlgorithm.GA.Generics
     public interface IIndividual<TGene> : IEquatable<IIndividual<TGene>>,  IComparable<IIndividual<TGene>>
         where TGene : IGene
     {
-        ICollection<TGene> Genome { get; }
-
         double Fitness { get; set; }
 
         string Name { get; }
