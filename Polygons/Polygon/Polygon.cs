@@ -5,12 +5,12 @@ using System.Linq;
 
 namespace Polygons
 {
-    /// <inheritdoc />
+    
     public class Polygon : IPolygon
     {
         #region Properties
 
-        /// <inheritdoc />
+        
         public Color OutlineColor { get; private set; }
 
         /// <summary>
@@ -18,14 +18,14 @@ namespace Polygons
         /// </summary>
         public string Name { get; private set; }
 
-        /// <inheritdoc />
+        
         public List<Point> Vertices { get; private set; } = new List<Point>();
 
-        /// <inheritdoc />
+        
         public int VerticesCount => Vertices.Count;
 
         private Point? center;
-        /// <inheritdoc />
+        
         public Point Center
         {
             get
@@ -40,7 +40,7 @@ namespace Polygons
         }
 
         private Point? centroid;
-        /// <inheritdoc />
+        
         public Point Centroid
         {
             get

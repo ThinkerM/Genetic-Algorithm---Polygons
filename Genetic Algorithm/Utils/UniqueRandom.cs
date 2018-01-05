@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Genetic_Algorithm.Utils
+namespace GeneticAlgorithm.Utils
 {
     internal sealed class UniqueRandom : Random
     {

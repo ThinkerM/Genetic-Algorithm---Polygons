@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using static Genetic_Algorithm.Utils.SettingsAccessor;
-using Genetic_Algorithm.Utils;
+using GeneticAlgorithm.Utils;
 
-namespace Genetic_Algorithm.GA.Generics
+namespace GeneticAlgorithm.GA.Generics
 { 
     /// <summary>
     /// Main driver class to handle logic of the genetic algorithm
@@ -32,9 +31,9 @@ namespace Genetic_Algorithm.GA.Generics
         /// <param name="adapter">GA Adapter to be used by the algorithm</param>
         public GeneticAlgorithm(IGeneticAlgorithmAdapter<TIndividual, TGene> adapter)
         { 
-            initialPopulation = new Population<TIndividual, TGene>(PopulationSize, PopulationSize);
+            initialPopulation = new Population<TIndividual, TGene>(SettingsAccessor.PopulationSize, SettingsAccessor.PopulationSize);
             currentGeneration = new Population<TIndividual, TGene>(initialPopulation);
-            nextGeneration = new Population<TIndividual, TGene>(desiredSize: PopulationSize);
+            nextGeneration = new Population<TIndividual, TGene>(desiredSize: SettingsAccessor.PopulationSize);
             this.adapter = adapter;
             CurrentGenerationNumber = 1;
 
@@ -49,13 +48,13 @@ namespace Genetic_Algorithm.GA.Generics
         /// <param name="include">Set of individuals to be included in the initial population</param>
         public GeneticAlgorithm(IGeneticAlgorithmAdapter<TIndividual, TGene> adapter, ICollection<TIndividual> include)
         {
-            int possibleToInclude = Math.Min(include.Count, PopulationSize);
-            int randomIndividualsRequired = PopulationSize - possibleToInclude;
-            initialPopulation = new Population<TIndividual, TGene>(randomIndividualsRequired, PopulationSize);
+            int possibleToInclude = Math.Min(include.Count, SettingsAccessor.PopulationSize);
+            int randomIndividualsRequired = SettingsAccessor.PopulationSize - possibleToInclude;
+            initialPopulation = new Population<TIndividual, TGene>(randomIndividualsRequired, SettingsAccessor.PopulationSize);
             initialPopulation.AddRange(include.Take(possibleToInclude).ToArray());
 
             currentGeneration = new Population<TIndividual, TGene>(initialPopulation);
-            nextGeneration = new Population<TIndividual, TGene>(desiredSize: PopulationSize);
+            nextGeneration = new Population<TIndividual, TGene>(desiredSize: SettingsAccessor.PopulationSize);
             this.adapter = adapter;
             CurrentGenerationNumber = 1;
 
@@ -71,7 +70,7 @@ namespace Genetic_Algorithm.GA.Generics
             for (int i = 0; i < n; i++)
             {
                 PopulateNextGeneration();
-                adapter.MutatePopulation(nextGeneration, MutationProbability);
+                adapter.MutatePopulation(nextGeneration, SettingsAccessor.MutationProbability);
 
                 CurrentGenerationNumber++;
                 currentGeneration = new Population<TIndividual, TGene>(nextGeneration);
@@ -83,9 +82,9 @@ namespace Genetic_Algorithm.GA.Generics
         private void PopulateNextGeneration()
         {
             nextGeneration.Clear();
-            if (Elitism)
+            if (SettingsAccessor.Elitism)
             { nextGeneration.Add(adapter.GetEliteIndividual(currentGeneration)); }
-            switch (Selection)
+            switch (SettingsAccessor.Selection)
             {
                 case SelectionType.Roulette:
                     RoulettePopulateNextGeneration();
@@ -93,21 +92,21 @@ namespace Genetic_Algorithm.GA.Generics
 
                 case SelectionType.SteadyState:
                     nextGeneration.AddRange
-                        (adapter.SelectSteadyStateSurvivors(currentGeneration, SteadyStateSurvivalRate, Elitism).ToArray());
+                        (adapter.SelectSteadyStateSurvivors(currentGeneration, SettingsAccessor.SteadyStateSurvivalRate, SettingsAccessor.Elitism).ToArray());
                     RoulettePopulateNextGeneration();
                     break;
 
                 default:
-                    throw new InvalidEnumArgumentException($"Unexpected SelectionType in switch statement: {Selection.ToString()}");
+                    throw new InvalidEnumArgumentException($"Unexpected SelectionType in switch statement: {SettingsAccessor.Selection.ToString()}");
             }
         }
 
         private void RoulettePopulateNextGeneration()
         {
-            while (!nextGeneration.FilledDesiredSize())
+            while (!nextGeneration.FilledDesiredSize)
             {
                 TIndividual parent1 = adapter.SelectForRouletteBreeding(currentGeneration);
-                if (adapter.CrossoverShouldOccur(CrossoverProbability))
+                if (adapter.CrossoverShouldOccur(SettingsAccessor.CrossoverProbability))
                 {
                     TIndividual parent2 = adapter.SelectForRouletteBreeding(currentGeneration, parent1);
                     nextGeneration.Add(adapter.CrossOver(parent1, parent2));

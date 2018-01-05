@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Genetic_Algorithm.GA.Generics
+namespace GeneticAlgorithm.GA.Generics
 {
     public delegate void GenerationCompleteEventHandler<TIndividual, TGene>(GaEventArgs<TIndividual, TGene> ge)
         where TIndividual : IIndividual<TGene>, new()

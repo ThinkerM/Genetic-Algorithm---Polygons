@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
-using CustomExtensions.Geometry;
 using Polygons.Utils;
 
 namespace Polygons.GA
@@ -14,20 +9,20 @@ namespace Polygons.GA
     /// </summary>
     public class SimplePolygonGene : IPolygonGene
     {
-        /// <inheritdoc />
+        
         public int X { get; private set; }
 
-        /// <inheritdoc />
+        
         public int Y { get; private set; }
 
-        /// <inheritdoc />
+        
         public double DistanceFromCentroid { get; private set; }
         private Point Centroid { get; }
 
-        /// <inheritdoc />
+        
         public Angle AngleRelativeToCentroid { get; private set; }
 
-        /// <inheritdoc />
+        
         public void UpdateAngularRepresentation(Point centroid)
         {
             DistanceFromCentroid = GeometryExtensions.Distance(PointRepresentation, centroid);
@@ -41,7 +36,7 @@ namespace Polygons.GA
             Y = newLocation.Y;
         }
 
-        /// <inheritdoc />
+        
         public SimplePolygonGene(Point vertexPosition, Point centroid)
         {
             this.X = vertexPosition.X;
@@ -50,7 +45,7 @@ namespace Polygons.GA
             UpdateAngularRepresentation(centroid);
         }
 
-        /// <inheritdoc />
+        
         public void Mutate()
         {
             int maxAngleChange = PolygonSettingsAccessor.AngleMaximumMutation;
@@ -66,7 +61,7 @@ namespace Polygons.GA
 
         private Point PointRepresentation => new Point(X, Y);
 
-        /// <inheritdoc />
+        
         public Point Decode()=> PointRepresentation;
     }
 }

@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Genetic_Algorithm.GA.Generics
+namespace GeneticAlgorithm.GA.Generics
 {
-    /// <inheritdoc />
     /// <summary>
     /// Extended population with additional information about its number as a generation in GA and the highest fitness value achieved
     /// </summary>
-    /// <typeparam name="TIndividual">Type of <see cref="T:Genetic_Algorithm.GA.Generics.IIndividual`1" /> in the population</typeparam>
-    /// <typeparam name="TGene">Type of <see cref="T:Genetic_Algorithm.GA.Generics.IGene" /> in the population</typeparam>
+    /// <typeparam name="TIndividual">Type of <see cref="T:GeneticAlgorithm.GA.Generics.IIndividual`1" /> in the population</typeparam>
+    /// <typeparam name="TGene">Type of <see cref="T:GeneticAlgorithm.GA.Generics.IGene" /> in the population</typeparam>
     public class NumberedPopulation<TIndividual, TGene> : Population<TIndividual, TGene>
         where TIndividual : IIndividual<TGene>, new()
         where TGene : IGene
@@ -18,7 +17,7 @@ namespace Genetic_Algorithm.GA.Generics
         /// Ordinal number of the generation stored in the population
         /// </summary>
         public int Number { get; }
-        public double TopFitness { get; private set; }
+        public double TopFitness { get; }
 
         /// <summary>
         /// Create a population with additional GA information
@@ -31,14 +30,6 @@ namespace Genetic_Algorithm.GA.Generics
             TopFitness = Individuals.Select(i => i.Fitness).Max();
         }
 
-        /// <summary>
-        /// Only allows to set <see cref="TopFitness"/> if it hasn't been initialised yet (in case top fitness couldn't be acquired during construction)
-        /// </summary>
-        /// <param name="value"></param>
-        public void TrySetFitness(double value)
-        { if (TopFitness.Equals(double.NaN)) TopFitness = value; }
-
-        /// <inheritdoc />
         public override string ToString() => $"Generation {Number} : Top fitness {TopFitness}";
     }
 
@@ -91,18 +82,15 @@ namespace Genetic_Algorithm.GA.Generics
             DesiredSize = template.DesiredSize;
         }
 
-        public bool Empty 
-            => Individuals.Count == 0;
+        public bool Empty => Individuals.Count == 0;
 
         /// <summary>
         /// Indicates whether the population's size has reached or exceeded the set <see cref="DesiredSize"/>
         /// </summary>
-        /// <returns></returns>
-        public bool FilledDesiredSize() 
-            => Count >= DesiredSize;
+        /// <value></value>
+        public bool FilledDesiredSize => Count >= DesiredSize;
 
-        public void Clear()
-            => Individuals.Clear();
+        public void Clear() => Individuals.Clear();
 
         public TIndividual Find(string name) => Individuals.Find(i => i.Name == name);
 
@@ -113,7 +101,7 @@ namespace Genetic_Algorithm.GA.Generics
         }
 
         public int Count 
-            => ((ICollection<TIndividual>)Individuals).Count;
+            => Individuals.Count;
 
         public int Capacity 
             => Individuals.Capacity;
@@ -123,26 +111,25 @@ namespace Genetic_Algorithm.GA.Generics
 
         public TIndividual this[int index]
         {
-            get { return ((IList<TIndividual>)Individuals)[index]; }
-            set { ((IList<TIndividual>)Individuals)[index] = value; }
+            get => Individuals[index];
+            set => Individuals[index] = value;
         }
 
         public virtual TIndividual GetIndividual(int index)
         {
-            if (index >= Individuals.Count)
-            { return default(TIndividual); }
-
-            return Individuals[index];
+            return index >= Individuals.Count
+                ? default(TIndividual)
+                : Individuals[index];
         }
 
         public virtual IEnumerable<TIndividual> GetFittest(IFitnessCalculator<TIndividual, TGene> fitnessCalculator, int n)
-            => Individuals.OrderByDescending(indiv => fitnessCalculator.IndividualFitness(indiv)).Take(n);
+            => Individuals.OrderByDescending(fitnessCalculator.IndividualFitness).Take(n);
 
         public virtual TIndividual GetFittest(IFitnessCalculator<TIndividual, TGene> fitnessCalculator)
-            => Individuals.OrderByDescending(indiv => fitnessCalculator.IndividualFitness(indiv)).FirstOrDefault();
+            => Individuals.OrderByDescending(fitnessCalculator.IndividualFitness).FirstOrDefault();
 
         public void Add(TIndividual item)
-            => ((ICollection<TIndividual>)Individuals).Add(item);
+            => Individuals.Add(item);
 
         public void AddRange(IEnumerable<TIndividual> items)
             => Individuals.AddRange(items);
@@ -151,13 +138,13 @@ namespace Genetic_Algorithm.GA.Generics
             => Individuals.Sort(fitnessCalculator);
 
         public bool Contains(TIndividual item)
-            => ((ICollection<TIndividual>)Individuals).Contains(item);
+            => Individuals.Contains(item);
 
         public void CopyTo(TIndividual[] array, int arrayIndex)
-            => ((ICollection<TIndividual>)Individuals).CopyTo(array, arrayIndex);
+            => Individuals.CopyTo(array, arrayIndex);
 
         public bool Remove(TIndividual item)
-            => ((ICollection<TIndividual>)Individuals).Remove(item);
+            => Individuals.Remove(item);
 
         public IEnumerator<TIndividual> GetEnumerator()
             => ((ICollection<TIndividual>)Individuals).GetEnumerator();
@@ -166,12 +153,12 @@ namespace Genetic_Algorithm.GA.Generics
             => ((ICollection<TIndividual>)Individuals).GetEnumerator();
 
         public int IndexOf(TIndividual item)
-            => ((IList<TIndividual>)Individuals).IndexOf(item);
+            => Individuals.IndexOf(item);
 
         public void Insert(int index, TIndividual item)
-            => ((IList<TIndividual>)Individuals).Insert(index, item);
+            => Individuals.Insert(index, item);
 
         public void RemoveAt(int index)
-            => ((IList<TIndividual>)Individuals).RemoveAt(index);
+            => Individuals.RemoveAt(index);
     }
 }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CustomExtensions.Geometry;
-using Genetic_Algorithm.GA.Generics;
+﻿using Genetic_Algorithm.GA.Generics;
 
 namespace Polygons.GA
 {

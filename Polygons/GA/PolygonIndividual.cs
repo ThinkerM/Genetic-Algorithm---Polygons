@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
 using Genetic_Algorithm.GA.Generics;
 using Polygons.Utils;
 
 namespace Polygons.GA
 {
-    /// <inheritdoc />
+    
     /// <summary>
     /// <see cref="T:Genetic_Algorithm.GA.Generics.IIndividual`1" /> which introduces the structure of <see cref="T:Polygons.IPolygon" /> into a genetic algorithm
     /// </summary>
@@ -25,21 +22,21 @@ namespace Polygons.GA
             }
         }
 
-        /// <inheritdoc />
+        
         public PolygonIndividual()
         {
             Polygon = PolygonGenerator.RandomPolygon(Utils.PolygonSettingsAccessor.PolygonsVertices);
             CommonInitialization();
         }
 
-        /// <inheritdoc />
+        
         public PolygonIndividual(Polygon p)
         {
             Polygon = p;
             CommonInitialization();
         }
 
-        /// <inheritdoc />
+        
         public PolygonIndividual(IEnumerable<IPolygonGene> genome, string name, Color color)
         {
             List<Point> vertices = genome.Select(gene => gene.Decode()).ToList();
@@ -52,7 +49,7 @@ namespace Polygons.GA
         /// </summary>
         public Polygon Polygon { get; private set; }
 
-        /// <inheritdoc />
+        
         public ICollection<IPolygonGene> Genome { get; } = new List<IPolygonGene>();
 
         /// <summary>
@@ -65,10 +62,10 @@ namespace Polygons.GA
         /// </summary>
         public static double InvalidFitnessIndicator => double.NaN;
 
-        /// <inheritdoc />
+        
         public double Fitness { get; set; } = InvalidFitnessIndicator;
 
-        /// <inheritdoc />
+        
         public void Mutate(double mutationProbability)
         {
             List<Point> newVertices = new List<Point>();
@@ -90,24 +87,24 @@ namespace Polygons.GA
             InvalidateFitness();
         }
 
-        /// <inheritdoc />
+        
         public string Name => Polygon.Name;
 
         private static bool GeneShouldMutate(double mutationProbability)
             => UniqueRandom.Instance.NextDouble() <= mutationProbability;
 
-        /// <inheritdoc />
+        
         public bool Equals(IIndividual<IPolygonGene> other)
         {
             PolygonIndividual compared = other as PolygonIndividual;
             return (compared?.Polygon == this.Polygon && compared?.Name == this.Name);
         }
 
-        /// <inheritdoc />
+        
         public int CompareTo(IIndividual<IPolygonGene> other)
             => Fitness.CompareTo(other.Fitness);
 
-        /// <inheritdoc />
+        
         public bool IsElite { get; set; }
     }
 }

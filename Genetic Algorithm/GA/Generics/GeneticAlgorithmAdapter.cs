@@ -1,35 +1,30 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Genetic_Algorithm.Utils;
+using GeneticAlgorithm.Utils;
 
-namespace Genetic_Algorithm.GA.Generics
+namespace GeneticAlgorithm.GA.Generics
 {
-    /// <inheritdoc />
     ///  <summary>
     /// Provides methods for manipulating populations in GA to produce new generations
     /// </summary>
     /// <typeparam name="TIndividual">Class implementing GA Individual</typeparam>
     /// <typeparam name="TGene">Class implementing GA IGene</typeparam>
     public abstract class GeneticAlgorithmAdapter<TIndividual, TGene> : IGeneticAlgorithmAdapter<TIndividual, TGene>
-        where TIndividual : IIndividual<TGene>, new()
+        where TIndividual : class, IIndividual<TGene>, new()
         where TGene : IGene
     {
         protected readonly IFitnessCalculator<TIndividual, TGene> FitnessCalculator;
-
-        /// <inheritdoc />
+        
         protected GeneticAlgorithmAdapter(IFitnessCalculator<TIndividual, TGene> fitnessCalculator)
         {
             FitnessCalculator = fitnessCalculator;
         }
-
-        /// <inheritdoc />
+        
         public abstract TIndividual CrossOver(TIndividual parent1, TIndividual parent2);
-
-        /// <inheritdoc />
+        
         public bool CrossoverShouldOccur(double crossoverProbability)
             => UniqueRandom.Instance.NextDouble() <= crossoverProbability;
-
-        /// <inheritdoc />
+        
         public TIndividual GetEliteIndividual(Population<TIndividual,TGene> population)
         {
             var eliteIndividual = population.GetFittest(FitnessCalculator);
@@ -37,11 +32,9 @@ namespace Genetic_Algorithm.GA.Generics
             return eliteIndividual;
         }
 
-        /// <inheritdoc />
         public void Mutate(TIndividual individual, double mutationProbability)
             => individual.Mutate(mutationProbability);
-
-        /// <inheritdoc />
+        
         public void MutatePopulation(Population<TIndividual, TGene> population, double mutationProbability)
         {
             foreach (var individual in population)
@@ -52,11 +45,9 @@ namespace Genetic_Algorithm.GA.Generics
                 { individual.IsElite = false; } //revert individual's elite property to normal for the next generation
             }
         }
-
-        /// <inheritdoc />
+        
         public bool MutationShouldOccur(TIndividual individual) => individual.IsElite;
 
-        /// <inheritdoc />
         public TIndividual SelectForRouletteBreeding(Population<TIndividual, TGene> sourcePopulation, TIndividual forbiddenForBreeding = default(TIndividual))
         {
             double populationFitnessSum = PopulationFitnessSum(sourcePopulation);
@@ -85,7 +76,7 @@ namespace Genetic_Algorithm.GA.Generics
             => (currentValue <= populationFitnessSum && currentValue >= selectionPoint)
             || (currentValue >= populationFitnessSum && currentValue <= selectionPoint);
 
-        /// <inheritdoc />
+        
         public IEnumerable<TIndividual> SelectSteadyStateSurvivors(Population<TIndividual, TGene> sourcePopulation, double survivalRatio, bool elitism)
         {
             TIndividual eliteIndividual = default(TIndividual);

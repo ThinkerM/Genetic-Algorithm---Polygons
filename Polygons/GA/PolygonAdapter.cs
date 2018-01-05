@@ -1,27 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using Randomization;
 using System.Drawing;
 using Genetic_Algorithm.GA.Generics;
 using Polygons.Utils;
 
 namespace Polygons.GA
 {
-    /// <inheritdoc />
+    
     /// <summary>
     /// <see cref="T:Genetic_Algorithm.GA.Generics.GeneticAlgorithmAdapter`2" /> which contains the logic for crossover of the <see cref="T:Polygons.GA.PolygonIndividual" />s
     /// </summary>
     public class PolygonAdapter : GeneticAlgorithmAdapter<PolygonIndividual, IPolygonGene>
     {
-        /// <inheritdoc />
+        
         public PolygonAdapter(IFitnessCalculator<PolygonIndividual, IPolygonGene> fitnessCalculator) : base(fitnessCalculator)
         {
         }
 
-        /// <inheritdoc />
+        
         public override PolygonIndividual CrossOver(PolygonIndividual parent1, PolygonIndividual parent2)
         {
             var parent1AngleOrderedGenome = parent1.Genome.OrderBy(g => g.AngleRelativeToCentroid.Radians);

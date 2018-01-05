@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
-using CustomExtensions.Geometry;
-using MoreLinq;
-using CustomExtensions.Collections;
 
 namespace Polygons.GA.FitnessCalculators
 {
@@ -17,7 +11,7 @@ namespace Polygons.GA.FitnessCalculators
     /// </summary>
     public class SymmetryIntersectionPenaltyFitnessCalculator : BasicSymmetryFitnessCalculator
     {
-        /// <inheritdoc />
+        
         protected override string Name => "Symmetry (Intersection penalty) FitnessCalculator";
 
         /// <summary>

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Genetic_Algorithm.GA.Generics
+﻿namespace GeneticAlgorithm.GA.Generics
 {
     /// <summary>
     /// Stores an encoded representation of any trait which can be mutated

@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CustomExtensions.Geometry;
+﻿using System.Linq;
 using System.Drawing;
 using Genetic_Algorithm.GA.Generics;
+using ThinkerExtensions.Geometry;
 
 namespace Polygons.GA.FitnessCalculators
 {
-    /// <inheritdoc />
+    
     /// <summary>
     /// For every <see cref="T:Polygons.GA.IPolygonGene" />, finds its closest Y axis mirrored relative and decreases fitness based on the distance difference from an ideal relative's position
     /// </summary>
@@ -34,7 +30,9 @@ namespace Polygons.GA.FitnessCalculators
                 {
                     fitness -= GeneFitness(gene, individual);
                 }
-                var normalizedResult = fitness == 0 ? Double.MaxValue : -1000 / fitness;
+                double normalizedResult = fitness == 0 
+                    ? double.MaxValue 
+                    : -1000 / fitness;
                 individual.Fitness = normalizedResult;
             }
             return individual.Fitness;
@@ -48,11 +46,11 @@ namespace Polygons.GA.FitnessCalculators
             Point perfectRelative = TheoreticalPerfectlyMirroredRelative(evaluatedGene, centroid);
             IPolygonGene closest = individual.Genome
                 .OrderBy(gene => OnSameAxisSide(evaluatedGene, gene)) //vertices on opposite side of axis have priority, OnSameAxisSide()=="false"(0) go first, "true"(1) second
-                .ThenBy(gene => GeometryExtensions.Distance(perfectRelative, gene.Decode()))
+                .ThenBy(gene => perfectRelative.DistanceTo(gene.Decode()))
                 .First(); //.First(gene => gene != evaluatedGene); 
                           //considering whether evaluatedGene itself can be chosen as closest relative (usually happens when it is fairly close to symmetry axis)
 
-            return GeometryExtensions.Distance(perfectRelative, new Point(closest.X, closest.Y));
+            return perfectRelative.DistanceTo(new Point(closest.X, closest.Y));
         }
 
         private static Point TheoreticalPerfectlyMirroredRelative(IPolygonGene gene, Point centroid)
@@ -66,7 +64,7 @@ namespace Polygons.GA.FitnessCalculators
             { return b.X > 0; }
         }
 
-        /// <inheritdoc />
+        
         public int Compare(PolygonIndividual x, PolygonIndividual y)
             => IndividualFitness(x).CompareTo(IndividualFitness(y));
 

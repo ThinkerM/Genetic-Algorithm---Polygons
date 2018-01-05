@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace Genetic_Algorithm.GA.Generics
+namespace GeneticAlgorithm.GA.Generics
 {
     /// <summary>
     /// Evaluates <see cref="IIndividual{IGene}"/>s and sets + returns their calculated fitness score

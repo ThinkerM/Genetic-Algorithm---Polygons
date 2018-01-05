@@ -1,8 +1,8 @@
 ﻿using System;
-using Genetic_Algorithm.Properties;
 using System.Windows.Forms;
+using GeneticAlgorithm.Properties;
 
-namespace Genetic_Algorithm.Utils
+namespace GeneticAlgorithm.Utils
 {
     /// <summary>
     /// Defines different methods of selecting individuals to advance into further generations
@@ -36,8 +36,8 @@ namespace Genetic_Algorithm.Utils
         /// </summary>
         public static bool Elitism
         {
-            get { return GaSettings.Default.Elitism; }
-            set { GaSettings.Default.Elitism = value; }
+            get => GaSettings.Default.Elitism;
+            set => GaSettings.Default.Elitism = value;
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace Genetic_Algorithm.Utils
         /// </summary>
         public static double CrossoverProbability
         {
-            get { return GaSettings.Default.CrossoverProbability; }
+            get => GaSettings.Default.CrossoverProbability;
             set
             {
                 if (value >= 0 && value <= 1)
@@ -59,7 +59,7 @@ namespace Genetic_Algorithm.Utils
         /// </summary>
         public static double SteadyStateSurvivalRate
         {
-            get { return GaSettings.Default.SteadyStateSurvivalRate; }
+            get => GaSettings.Default.SteadyStateSurvivalRate;
             set
             {
                 if (value >= 0 && value <= 1)
@@ -73,8 +73,8 @@ namespace Genetic_Algorithm.Utils
         /// </summary>
         public static double MutationProbability
         {
-                get { return GaSettings.Default.MutationProbability; }
-                set {
+                get => GaSettings.Default.MutationProbability;
+            set {
                 if (value >= 0 && value <= 1)
                 { GaSettings.Default.MutationProbability = value; }
                 else { MessageBox.Show(PROBABILITY_ERROR_MESSAGE); }
@@ -87,7 +87,7 @@ namespace Genetic_Algorithm.Utils
         /// </summary>
         public static int PopulationSize
         {
-            get { return GaSettings.Default.PopulationSize; }
+            get => GaSettings.Default.PopulationSize;
             set {
                 if (value >= MIN_POP_SIZE)
                 {
@@ -102,8 +102,8 @@ namespace Genetic_Algorithm.Utils
         /// </summary>
         public static SelectionType Selection
         {
-            get { return (SelectionType)Enum.Parse(typeof(SelectionType), GaSettings.Default.SelectionType, true); }
-            set { GaSettings.Default.SelectionType = Enum.GetName(typeof(SelectionType), value); }
+            get => (SelectionType)Enum.Parse(typeof(SelectionType), GaSettings.Default.SelectionType, true);
+            set => GaSettings.Default.SelectionType = Enum.GetName(typeof(SelectionType), value);
         }
 
         /// <summary>
@@ -118,12 +118,12 @@ namespace Genetic_Algorithm.Utils
         /// </summary>
         public static void ResetToDefaults()
         {
-            Elitism = Settings.Default.Elitism;
-            MutationProbability = Settings.Default.MutationProbability;
-            CrossoverProbability = Settings.Default.CrossoverProbability;
-            PopulationSize  = Settings.Default.PopulationSize;
-            SteadyStateSurvivalRate = Settings.Default.SteadyStateSurvivalRate;
-            Selection = (SelectionType)Enum.Parse(typeof(SelectionType), Settings.Default.SelectionType, true);
+            Elitism = DefaultSettings.Default.Elitism;
+            MutationProbability = DefaultSettings.Default.MutationProbability;
+            CrossoverProbability = DefaultSettings.Default.CrossoverProbability;
+            PopulationSize  = DefaultSettings.Default.PopulationSize;
+            SteadyStateSurvivalRate = DefaultSettings.Default.SteadyStateSurvivalRate;
+            Selection = (SelectionType)Enum.Parse(typeof(SelectionType), DefaultSettings.Default.SelectionType, true);
         }
     }
 }

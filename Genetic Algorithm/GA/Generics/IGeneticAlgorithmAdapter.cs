@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Genetic_Algorithm.GA.Generics
+namespace GeneticAlgorithm.GA.Generics
 {
     /// <summary>
     /// Provides methods for manipulating populations in GA to produce new generations
